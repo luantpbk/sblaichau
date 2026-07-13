@@ -1,0 +1,99 @@
+/* Deleted custom styles to rely purely on static WordPress CSS */
+
+/* --- FIX GAP AND LOGO OVERLAP --- */
+#main-container {
+    /* Remove the tall min-height that causes the gap */
+    min-height: auto !important;
+    /* Prevent flex spacing issues */
+    display: block !important;
+}
+
+#header {
+    /* Ensure header stays on top and occupies space so banner doesn't cover it */
+    position: relative !important;
+    z-index: 9999 !important;
+    background-color: #fff;
+}
+
+#main {
+    /* Ensure main content starts below the header normally */
+    position: relative;
+    z-index: 1;
+}
+
+/* --- FIX LOGO SIZE --- */
+.site-logo-container img {
+    max-height: 60px !important;
+    width: auto !important;
+    object-fit: contain;
+}
+
+/* Fix Zalo Phone Number Layout */
+.elementor-widget-icon-box .elementor-icon-box-title a[href^="https://zalo.me/"] {
+    font-size: 16px !important;
+    white-space: nowrap !important;
+    font-weight: bold !important;
+    display: inline-block;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+
+/* Fix Elementor animations not triggering in React */
+.elementor-invisible { visibility: visible !important; opacity: 1 !important; animation: none !important; }
+[data-animation] { opacity: 1 !important; }
+
+
+/* Restore missing structural CSS for Elementor Slides */
+.swiper-slide { position: relative; overflow: hidden; }
+.swiper-slide-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background-size: cover; background-position: center; }
+.swiper-slide-inner { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+
+
+/* Default heights for Elementor sliders */
+.elementor-widget-slides .swiper-slide { min-height: 500px; }
+.elementor-widget-image-carousel .swiper-slide img { width: 100%; height: auto; }
+
+
+/* Force mobile menu visibility */
+#offcanvas.active { opacity: 1 !important; visibility: visible !important; transform: translateX(0) !important; z-index: 999999 !important; }
+.ct-panel-active { overflow: hidden; }
+
+/* Fix Swiper Width to prevent 0px */
+.swiper { width: 100% !important; }
+.swiper-wrapper { width: 100% !important; display: flex !important; }
+.swiper-slide { width: 100% !important; flex-shrink: 0 !important; }
+
+/* Fix Flex container squeezing widgets to 0 width */
+.e-con > .elementor-widget, .elementor-widget-container { width: 100% !important; flex-grow: 1; }
+.elementor-widget-slides { width: 100% !important; }
+body.home .ct-header { position: absolute; top: 0; left: 0; width: 100%; z-index: 999; background: transparent !important; border: none; } body.home .ct-header [data-row] { background: transparent !important; }
+body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-header .ct-button-ghost { padding: 5px 15px !important; font-size: 13px !important; } .site-logo-container img { max-height: 35px !important; }
+.woocommerce-product-gallery { opacity: 1 !important; }
+@media (min-width: 1000px) {
+  .header-menu-1 .menu-item-has-children:hover > .sub-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+  .header-menu-1 .menu-item-has-children {
+    position: relative !important;
+  }
+  .header-menu-1 .menu-item-has-children::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: transparent;
+    z-index: 999;
+  }
+}
+
+/* Fix for Swiper images */
+.elementor-image-carousel .swiper-slide img { display: block !important; width: 100% !important; height: auto !important; max-height: 150px; object-fit: contain; opacity: 1 !important; visibility: visible !important; }
+.elementor-image-carousel .swiper-slide { min-height: 150px; display: flex; align-items: center; justify-content: center; opacity: 1 !important; visibility: visible !important; }

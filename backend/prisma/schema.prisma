@@ -1,0 +1,135 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  role      String   @default("USER") // ADMIN, USER
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Page {
+  id             Int      @id @default(autoincrement())
+  slug           String   @unique
+  title          String
+  content        String?  @db.Text
+  seoDescription String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  isTranslated   Boolean  @default(false)
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  slug        String    @unique
+  name        String
+  description String?   @db.Text
+  content     String?   @db.Text
+  imageUrl    String?
+  products    Product[]
+  solutions   Solution[]
+  news        News[]
+  blogs       Blog[]
+  cases       Case[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  isTranslated Boolean  @default(false)
+}
+
+model Product {
+  id             Int       @id @default(autoincrement())
+  slug           String    @unique
+  name           String
+  description    String?   @db.Text
+  content        String?   @db.Text
+  imageUrl       String?
+  images         Json?     // Array of strings
+  features       Json?     // Array of strings
+  certifications Json?     // Array of strings
+  specifications Json?     // Array of { name, value, details }
+  powerCards     Json?     // Array of { title, description }
+  sidePanels     Json?     // Array of { title, items: [] }
+  categoryId     Int?
+  category       Category? @relation(fields: [categoryId], references: [id])
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  isTranslated   Boolean   @default(false)
+}
+
+model News {
+  id          Int       @id @default(autoincrement())
+  slug        String    @unique
+  title       String
+  excerpt     String?   @db.Text
+  content     String?   @db.Text
+  imageUrl    String?
+  publishedAt DateTime?
+  categoryId  Int?
+  category    Category? @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  isTranslated Boolean  @default(false)
+}
+
+model Blog {
+  id          Int       @id @default(autoincrement())
+  slug        String    @unique
+  title       String
+  excerpt     String?   @db.Text
+  content     String?   @db.Text
+  imageUrl    String?
+  publishedAt DateTime?
+  categoryId  Int?
+  category    Category? @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  isTranslated Boolean  @default(false)
+}
+
+model Case {
+  id          Int       @id @default(autoincrement())
+  slug        String    @unique
+  title       String
+  excerpt     String?   @db.Text
+  content     String?   @db.Text
+  imageUrl    String?
+  publishedAt DateTime?
+  categoryId  Int?
+  category    Category? @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  isTranslated Boolean  @default(false)
+}
+
+model Solution {
+  id             Int       @id @default(autoincrement())
+  slug           String    @unique
+  title          String
+  description    String?   @db.Text
+  content        String?   @db.Text
+  imageUrl       String?
+  images         Json?     // Array of strings
+  features       Json?     // Array of strings
+  certifications Json?     // Array of strings
+  specifications Json?     // Array of { name, value, details }
+  powerCards     Json?     // Array of { title, description }
+  sidePanels     Json?     // Array of { title, items: [] }
+  categoryId     Int?
+  category       Category? @relation(fields: [categoryId], references: [id])
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  isTranslated   Boolean   @default(false)
+}
+  
+model Setting {  
+  id    Int    @id @default(autoincrement())  
+  key   String @unique  
+  value String @db.Text  
+} 
