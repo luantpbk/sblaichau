@@ -21,7 +21,7 @@ git pull origin main
 # 2. Deploy Backend
 echo ">>> [2/4] Đang cài đặt và khởi động lại Backend..."
 cd /sblaichau/backend
-npm install
+npm install --legacy-peer-deps
 npx prisma generate
 # Khởi động lại bằng PM2. Nếu chưa có tiến trình sblaichau-backend thì tạo mới
 pm2 restart sblaichau-backend || pm2 start index.js --name "sblaichau-backend"
@@ -30,13 +30,13 @@ pm2 save
 # 3. Build Frontend
 echo ">>> [3/4] Đang cài đặt và build Frontend..."
 cd /sblaichau/frontend
-npm install
+npm install --legacy-peer-deps
 npm run build
 
 # 4. Build Admin
 echo ">>> [4/4] Đang cài đặt và build Admin..."
 cd /sblaichau/admin
-npm install
+npm install --legacy-peer-deps
 npm run build
 
 # 5. Nginx Configuration
