@@ -11,6 +11,7 @@ export default function Layout({ children }) {
       style.id = 'force-mobile-menu-css';
       style.innerHTML = `
         @media (max-width: 767px) {
+            /* ROOT CONTAINER: Fixed to bottom, flex row */
             body .elementor-element-75b9e865.elementor-element-75b9e865 {
                 position: fixed !important;
                 bottom: 0 !important;
@@ -20,44 +21,60 @@ export default function Layout({ children }) {
                 background: #fff !important;
                 z-index: 999999 !important;
                 box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
-                padding: 8px 0 !important;
-                display: block !important;
+                padding: 10px 0 !important;
                 margin: 0 !important;
                 transform: none !important;
-            }
-            body .elementor-element-75b9e865 .elementor-element-2628cf49.elementor-element-2628cf49 {
                 display: flex !important;
                 flex-direction: row !important;
                 justify-content: space-around !important;
-                align-items: center !important;
-                width: 100% !important;
+                align-items: stretch !important;
                 flex-wrap: nowrap !important;
             }
-            body .elementor-element-75b9e865 .elementor-element-2628cf49 > .elementor-element {
-                width: auto !important;
-                flex: 1 !important;
-                min-width: 0 !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            body .elementor-element-75b9e865 .elementor-widget-icon-box .elementor-icon-box-wrapper,
-            body .elementor-element-75b9e865 .elementor-widget-icon .elementor-icon-wrapper {
+            
+            /* EACH OF THE 5 MENU ITEMS: Flex column (icon above text) */
+            body .elementor-element-75b9e865 > .e-child {
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
                 justify-content: center !important;
+                flex: 1 !important;
+                width: auto !important;
+                min-width: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                gap: 5px !important;
             }
+            
+            /* WIDGET WRAPPERS INSIDE MENU ITEMS: Reset widths */
+            body .elementor-element-75b9e865 > .e-child > .elementor-widget {
+                width: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+            /* ICON SIZING */
+            body .elementor-element-75b9e865 .elementor-icon {
+                padding: 0 !important;
+                margin: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            body .elementor-element-75b9e865 .elementor-icon svg {
+                width: 20px !important;
+                height: 20px !important;
+                fill: #22a349 !important; /* Force green color to match reference */
+            }
+            
+            /* TEXT SIZING */
             body .elementor-element-75b9e865 .elementor-heading-title {
                 font-size: 11px !important;
-                margin-top: 5px !important;
+                font-weight: 600 !important;
+                margin: 0 !important;
+                padding: 0 !important;
                 text-align: center !important;
-                line-height: 1 !important;
-            }
-            body .elementor-element-75b9e865 .elementor-widget {
-                margin-bottom: 0 !important;
+                line-height: 1.2 !important;
+                color: #555 !important;
             }
         }
       `;
