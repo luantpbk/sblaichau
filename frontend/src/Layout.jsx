@@ -675,7 +675,56 @@ export default function Layout({ children }) {
 					</div>
 				</div>
 				</div>
-		<div class="elementor-element elementor-element-75b9e865 e-con-full elementor-hidden-desktop elementor-hidden-tablet e-flex e-con e-child" data-id="75b9e865" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;bottom&quot;,&quot;sticky_on&quot;:[&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+		
+<style id="force-bottom-menu-css">
+@media (max-width: 767px) {
+    .elementor-element-75b9e865 {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #fff !important;
+        z-index: 999999 !important;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
+        padding: 8px 0 !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+    .elementor-element-75b9e865 .elementor-element-2628cf49 {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        width: 100% !important;
+        flex-wrap: nowrap !important;
+    }
+    .elementor-element-75b9e865 .elementor-element-2628cf49 > .elementor-element {
+        width: auto !important;
+        flex: 1 !important;
+        min-width: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .elementor-element-75b9e865 .elementor-widget-icon-box .elementor-icon-box-wrapper,
+    .elementor-element-75b9e865 .elementor-widget-icon .elementor-icon-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .elementor-element-75b9e865 .elementor-heading-title {
+        font-size: 11px !important;
+        margin-top: 5px !important;
+        text-align: center !important;
+        line-height: 1 !important;
+    }
+    .elementor-element-75b9e865 .elementor-widget {
+        margin-bottom: 0 !important;
+    }
+}
+</style>
+<div class="elementor-element elementor-element-75b9e865 e-con-full elementor-hidden-desktop elementor-hidden-tablet e-flex e-con e-child" data-id="75b9e865" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;bottom&quot;,&quot;sticky_on&quot;:[&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
 		<div class="elementor-element elementor-element-2628cf49 e-con-full e-flex e-con e-child" data-id="2628cf49" data-element_type="container">
 				<div class="elementor-element elementor-element-2be38781 elementor-view-default elementor-widget elementor-widget-icon" data-id="2be38781" data-element_type="widget" data-widget_type="icon.default">
 				<div class="elementor-widget-container">
