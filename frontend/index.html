@@ -444,7 +444,22 @@ fbq('track', 'PageView');
            min-height: auto !important;
         }
       </style>
-    </head>
+    <style>
+/* Fix for unclickable first submenu items */
+.sub-menu > li:first-child {
+    position: relative !important;
+    z-index: 99999 !important;
+}
+.sub-menu > li:first-child > a {
+    position: relative !important;
+    z-index: 99999 !important;
+    pointer-events: auto !important;
+}
+.ct-toggle-dropdown-desktop-ghost {
+    pointer-events: none !important;
+}
+</style>
+</head>
 
 
 <body data-cmplz=1 class="home wp-singular page-template-default page page-id-309 wp-custom-logo wp-embed-responsive wp-theme-blocksy wp-child-theme-blocksy-child theme-blocksy woocommerce-no-js elementor-default elementor-kit-26 elementor-page elementor-page-309 ct-elementor-default-template" data-link="type-2" data-prefix="single_page" data-header="type-1:sticky" data-footer="type-1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
