@@ -4,6 +4,35 @@
 
 
 <head>
+<script>
+// Mock WordPress 'wp' object to prevent ReferenceErrors and TypeErrors in legacy scripts
+window.wp = window.wp || {};
+window.wp.i18n = {
+    __: function(s){return s;},
+    _x: function(s){return s;},
+    _n: function(s){return s;},
+    _nx: function(s){return s;},
+    sprintf: function(s){return s;},
+    setLocaleData: function(){}
+};
+window.wp.hooks = {
+    addAction: function(){},
+    doAction: function(){},
+    addFilter: function(){},
+    applyFilters: function(){},
+    removeAction: function(){},
+    removeFilter: function(){}
+};
+window.wp.date = {
+    date: function(){return new Date();},
+    format: function(){return "";}
+};
+window.wp.apiFetch = function(){ return Promise.resolve({}); };
+window.wp.url = {
+    addQueryArgs: function(url){return url;}
+};
+</script>
+
 	<base href="/">
 	
 	<meta charset="UTF-8">
