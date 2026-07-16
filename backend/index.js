@@ -140,15 +140,29 @@ app.get('/api/elementor-css/:id', (req, res) => {
 
 // New generic endpoint to find content by slug across all tables
 app.get('/api/content', async (req, res) => {
-  const { slug } = req.query;
+  let { slug } = req.query;
   const models = ['page', 'category', 'product', 'news', 'blog', 'case', 'solution'];
   
+  // Clean up slug if it has prefixes like 'products/' or 'solution/'
+  const baseSlug = slug.split('/').pop();
+  
   for (const model of models) {
+    // Try exact match first
     let queryArgs = { where: { slug: slug || '' } };
     if (model === 'category') {
       queryArgs.include = { products: true, solutions: true, news: true, blogs: true, cases: true };
     }
-    const item = await prisma[model].findUnique(queryArgs);
+    let item = await prisma[model].findUnique(queryArgs);
+    
+    // If not found, try base slug
+    if (!item && slug !== baseSlug) {
+        let baseQueryArgs = { where: { slug: baseSlug || '' } };
+        if (model === 'category') {
+            baseQueryArgs.include = { products: true, solutions: true, news: true, blogs: true, cases: true };
+        }
+        item = await prisma[model].findUnique(baseQueryArgs);
+    }
+
     if (item) {
       if (!item.isTranslated) {
           console.log(`[LAZY-TRANSLATE] Translating ${model} - ${slug}`);
