@@ -45,7 +45,7 @@ export default function App() {
 
   const applyDynamicSettings = (content) => {
       if (!content) return content;
-      const email = settingsRef.current.find(s => s.key === 'footer_email')?.value || 'support@sblaichau.vn';
+      const email = settingsRef.current.find(s => s.key === 'footer_email')?.value || 'info@sblaichau.vn';
       const p1 = settingsRef.current.find(s => s.key === 'footer_phone1')?.value || '0964.822.438';
       const p2 = settingsRef.current.find(s => s.key === 'footer_phone2')?.value || '0986.072.277';
       const address = settingsRef.current.find(s => s.key === 'footer_address')?.value || 'Lai Châu, Việt Nam';
