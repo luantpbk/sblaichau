@@ -440,9 +440,7 @@ fbq('track', 'PageView');
         }
         
         /* Additional fix for any hidden elementor widgets that should show */
-        .elementor-widget-container {
-           min-height: auto !important;
-        }
+        
       </style>
     
 
@@ -706,6 +704,91 @@ var _wpUtilSettings = {"ajax":{"url":"/wp-admin/admin-ajax.php"}};
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"a9bbfffb353847e181bf05856a237f15","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
   <script type="module" src="/src/main.jsx"></script>
 <script src="/assets/plugins/elementor/assets/lib/swiper/v8/swiper.min.js?ver=8.4.5"></script>
+
+<style id="custom-mobile-menu-css">
+/* Mobile Menu Missing CSS fix */
+.ct-drawer-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    background: rgba(0,0,0,0.5);
+}
+.ct-drawer-canvas.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+#offcanvas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    max-width: 80vw;
+    height: 100%;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+.ct-drawer-canvas.active #offcanvas {
+    transform: translateX(0);
+}
+</style>
+<script id="custom-mobile-menu-js">
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.addEventListener('click', function(e) {
+        // Toggle offcanvas
+        const toggleBtn = e.target.closest('[data-toggle-panel="#offcanvas"]');
+        if (toggleBtn) {
+            e.preventDefault();
+            const offcanvas = document.getElementById('offcanvas');
+            const drawer = document.querySelector('.ct-drawer-canvas');
+            if (offcanvas) offcanvas.classList.add('active');
+            if (drawer) drawer.classList.add('active');
+        }
+        
+        // Close offcanvas
+        const closeBtn = e.target.closest('.ct-toggle-close');
+        if (closeBtn) {
+            e.preventDefault();
+            const offcanvas = document.getElementById('offcanvas');
+            const drawer = document.querySelector('.ct-drawer-canvas');
+            if (offcanvas) offcanvas.classList.remove('active');
+            if (drawer) drawer.classList.remove('active');
+        }
+        
+        // Close offcanvas if clicking outside #offcanvas (on the backdrop)
+        if (e.target.classList.contains('ct-drawer-canvas')) {
+            e.target.classList.remove('active');
+            const offcanvas = document.getElementById('offcanvas');
+            if (offcanvas) offcanvas.classList.remove('active');
+        }
+
+        // Toggle mobile submenus
+        const mobileDropdownToggle = e.target.closest('.ct-toggle-dropdown-mobile, .ct-sub-menu-parent');
+        if (mobileDropdownToggle && mobileDropdownToggle.closest('#offcanvas')) {
+            const parentLi = mobileDropdownToggle.closest('.menu-item-has-children, .page_item_has_children');
+            if (parentLi) {
+                if (e.target.closest('.ct-toggle-dropdown-mobile')) {
+                    e.preventDefault();
+                }
+                parentLi.classList.toggle('ct-active');
+                const submenu = parentLi.querySelector('.sub-menu');
+                if (submenu) {
+                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                }
+            }
+        }
+    });
+});
+</script>
 </body>
 
 
