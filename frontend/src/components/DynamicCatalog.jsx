@@ -59,7 +59,7 @@ export default function DynamicCatalog({ data }) {
   const getFullImageUrl = (url) => {
       if (!url) return '';
       if (url.startsWith('http')) return url;
-      return `http://localhost:3001${url}`;
+      return ``;
   };
 
   const isFullElementorPage = content && content.includes('data-elementor-type="wp-page"');

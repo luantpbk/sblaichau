@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 export default function Layout({ children }) {
   const [siteSettings, setSiteSettings] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3001/api/settings')
+    fetch('/api/settings')
       .then(res => res.json())
       .then(data => setSiteSettings(data))
       .catch(console.error);
@@ -17,7 +17,7 @@ export default function Layout({ children }) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/categories')
+    fetch('/api/categories')
       .then(res => res.json())
       .then(data => setCategories(data))
       .catch(console.error);

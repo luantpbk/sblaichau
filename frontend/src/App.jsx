@@ -7,7 +7,7 @@ import PostList from './components/PostList';
 import PostDetail from './components/PostDetail';
 import pageCssMap from './pageCssMap.json';
 
-const api = axios.create({ baseURL: 'http://localhost:3001/api' });
+const api = axios.create({ baseURL: '/api' });
 
 // Intercept all API responses to strip out problematic WebP source tags injected by WordPress,
 // which cause broken images since the .webp files aren't available locally.

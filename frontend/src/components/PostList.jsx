@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Layout from '../Layout';
 
-const api = axios.create({ baseURL: 'http://localhost:3001/api' });
+const api = axios.create({ baseURL: '/api' });
 
 export default function PostList({ categorySlug, categoryName }) {
     const [posts, setPosts] = useState([]);

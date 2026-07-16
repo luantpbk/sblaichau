@@ -3,7 +3,7 @@ import axios from 'axios';
 import Layout from '../Layout';
 import pageCssMap from '../pageCssMap.json';
 
-const api = axios.create({ baseURL: 'http://localhost:3001/api' });
+const api = axios.create({ baseURL: '/api' });
 
 export default function PostDetail({ type }) {
     let slug = window.location.pathname.replace(/^\/|\/$/g, '');
