@@ -145,7 +145,7 @@ export default function Layout({ children }) {
 <nav
 	class="mobile-menu has-submenu"
 	data-id="mobile-menu" data-interaction="click" data-toggle-type="type-1" data-submenu-dots="yes"	aria-label="Off Canvas Menu">
-	<ul><li class="page_item page-item-3917"><a href="about-welfull/index.html" class="ct-menu-link">About Welfull</a></li><li class="page_item page-item-5191"><a href="about-weltrus/index.html" class="ct-menu-link">About Weltrus</a></li><li class="page_item page-item-702"><a href="about-us/index.html" class="ct-menu-link">About Weltrus-X</a></li><li class="page_item page-item-2307"><a href="blog/index.html" class="ct-menu-link">Blog</a></li><li class="page_item page-item-29"><a href="cart/index.html" class="ct-menu-link">Cart</a></li><li class="page_item page-item-1314"><a href="case/index.html" class="ct-menu-link">Case</a></li><li class="page_item page-item-30"><a href="checkout/index.html" class="ct-menu-link">Checkout</a></li><li class="page_item page-item-3683 page_item_has_children menu-item-has-children"><span class="ct-sub-menu-parent"><a href="ci-ess/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"/></svg></button></span><ul class='sub-menu' role='menu'><li class="page_item page-item-3454"><a href="ci-ess/commercial-industrial-ess-105kw/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS 105kW-241kWh</a></li><li class="page_item page-item-3495"><a href="ci-ess/commercial-industrial-ess-105kw-261kwh/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS 105kW-261kWh</a></li><li class="page_item page-item-3519"><a href="ci-ess/commercial-industrial-ess-125kw-261kwh/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS 125kW-261kWh</a></li><li class="page_item page-item-3248"><a href="ci-ess/commercial-industrial-ess-50kw/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS 50kW-100kWh</a></li><li class="page_item page-item-3174"><a href="ci-ess/commercial-industrial-ess-5mwh/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS 5MWh</a></li></ul></li><li class="page_item page-item-688"><a href="contact-us/index.html" class="ct-menu-link">Liên hệ với chúng tôi</a></li><li class="page_item page-item-5007"><a href="energy-storage-case-studies/index.html" class="ct-menu-link">Energy Storage Case Studies</a></li><li class="page_item page-item-4995"><a href="energy-storage-solution/index.html" class="ct-menu-link">energy storage solution</a></li><li class="page_item page-item-4853"><a href="epc-one-stop-solution/index.html" class="ct-menu-link">EPC ONE-STOP SOLUTION</a></li><li class="page_item page-item-4855"><a href="epc-test-page/index.html" class="ct-menu-link">EPC TEST PAGE</a></li><li class="page_item page-item-7744"><a href="fx-h-hybrid-inverter-series/index.html" class="ct-menu-link">FX-H Hybrid Inverter Series | FX-E Battery Storage</a></li><li class="page_item page-item-6061"><a href="100-120w-topcon-half-cut-solar-module/index.html" class="ct-menu-link">FX-M636H 100-120W TOPCon Half-Cut Solar Module</a></li><li class="page_item page-item-6091"><a href="100-120w-topcon-half-cut-solar-module-2/index.html" class="ct-menu-link">FX-M836 182mm Half-Cut Solar Module 130-150W</a></li><li class="page_item page-item-6100"><a href="300w-mono-10bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M836H 300W Mono 10BB Half-Cut Solar Module</a></li><li class="page_item page-item-6105"><a href="395-415w-mono-10bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M854H 395-415W Mono 10BB Half-Cut Solar Module</a></li><li class="page_item page-item-6109"><a href="445-465w-mono-10bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M860H 445-465W Mono 10BB Half-Cut Solar Module</a></li><li class="page_item page-item-6033"><a href="485-505w-topcon-half-cut-solar-module/index.html" class="ct-menu-link">FX-M866H (485-505W) TOPCon Half-Cut Solar Module Product Page</a></li><li class="page_item page-item-6113"><a href="485-505w-mono-10bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M866H 485-505W Mono 10BB Half-Cut Solar Module</a></li><li class="page_item page-item-6119"><a href="535-555w-mono-10bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M872H 535-555W Mono 10BB Half-Cut Solar Module</a></li><li class="page_item page-item-6128"><a href="200-230w-mono-12bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M939H 200-230W Mono 12BB Half-Cut Solar Module</a></li><li class="page_item page-item-6133"><a href="560-580w-mono-12bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M939H 560-580W Mono 12BB Half-Cut Solar Module</a></li><li class="page_item page-item-6145"><a href="half-cut-solar-module-585-610w/index.html" class="ct-menu-link">FX-M960H Mono 12BB Half-Cut Solar Module 585-610W</a></li><li class="page_item page-item-6151"><a href="half-cut-bifacial-double-glass-module-650-670w/index.html" class="ct-menu-link">FX-M966GF 12BB Half-Cut Bifacial Double Glass Module 650-670W</a></li><li class="page_item page-item-7442"><a href="fx-ms3000-portable-energy-storage-weltrus/index.html" class="ct-menu-link">FX-MS3000 All-in-One Micro ESS | 3014Wh Portable Energy Storage | WELTRUS</a></li><li class="page_item page-item-6139"><a href="half-cut-bifacial-double-glass-module-580-600w/index.html" class="ct-menu-link">FX-T872GF Topcon 16BB Half-Cut Bifacial Double Glass Module 580-600W</a></li><li class="page_item page-item-6124"><a href="680-700w-topcon-half-cut-bifacial-double-glass-module/index.html" class="ct-menu-link">FX-T966GF 680-700W Topcon Half-Cut Bifacial Double Glass Module</a></li><li class="page_item page-item-7523"><a href="fx10ft1044lp-2-all-in-one-liquid-cooled-ess-container-weltrus/index.html" class="ct-menu-link">FX10FT1044LP-2 All-in-one Liquid-cooled ESS Container | WELTRUS</a></li><li class="page_item page-item-7532"><a href="fx20ft2170lp-2-all-in-one-liquid-cooled-ess-container-weltrus/index.html" class="ct-menu-link">FX20FT2170LP-2 All-in-one Liquid-cooled ESS Container | WELTRUS</a></li><li class="page_item page-item-6624"><a href="grpu-new-solar-panel-frame/index.html" class="ct-menu-link">Glass Fiber Reinforced Polyurethane Solar Mounting &#038; Frame | WELTRUS</a></li><li class="page_item page-item-5402"><a href="global-representatives/index.html" class="ct-menu-link">Global Representatives</a></li><li class="page_item page-item-309 current_page_item current-menu-item"><span class="ct-sub-menu-parent"><a href="index.html" aria-current="page" class="ct-menu-link">Trang chủ</a></li><li class="page_item page-item-7287"><a href="household-energy-storage-system/index.html" class="ct-menu-link">Household Energy Storage System</a></li><li class="page_item page-item-31"><a href="my-account/index.html" class="ct-menu-link">My account</a></li><li class="page_item page-item-4882"><a href="new-energy-solutions/index.html" class="ct-menu-link">NEW ENERGY SOLUTIONS</a></li><li class="page_item page-item-310"><a href="news/index.html" class="ct-menu-link">Thông tin</a></li><li class="page_item page-item-6234"><a href="politica-de-privacidade/index.html" class="ct-menu-link">Política de Privacidade</a></li><li class="page_item page-item-4281"><a href="power-distribution-industrial-control-series-product-catalog/index.html" class="ct-menu-link">Power Distribution Industrial Control Series Product Catalog</a></li><li class="page_item page-item-3"><a href="privacy-policy/index.html" class="ct-menu-link">Privacy Policy</a></li><li class="page_item page-item-5974"><a href="privacy-policy-2/index.html" class="ct-menu-link">PRIVACY POLICY</a></li>
+	<ul><li class="page_item page-item-3917"><a href="about-welfull/index.html" class="ct-menu-link">About Welfull</a></li><li class="page_item page-item-5191"><a href="about-weltrus/index.html" class="ct-menu-link">About Weltrus</a></li><li class="page_item page-item-702"><a href="about-us/index.html" class="ct-menu-link">About Weltrus-X</a></li><li class="page_item page-item-2307"><a href="blog/index.html" class="ct-menu-link">Blog</a></li><li class="page_item page-item-29"><a href="cart/index.html" class="ct-menu-link">Cart</a></li><li class="page_item page-item-1314"><a href="case/index.html" class="ct-menu-link">Case</a></li><li class="page_item page-item-30"><a href="checkout/index.html" class="ct-menu-link">Checkout</a></li><li class="page_item page-item-3683 page_item_has_children menu-item-has-children"><span class="ct-sub-menu-parent"><a href="ci-ess/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"/></svg></button></span><ul class='sub-menu' role='menu'><li class="page_item page-item-3454"><a href="ci-ess/commercial-industrial-ess-105kw/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS 105kW-241kWh</a></li><li class="page_item page-item-3495"><a href="ci-ess/commercial-industrial-ess-105kw-261kwh/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS 105kW-261kWh</a></li><li class="page_item page-item-3519"><a href="ci-ess/commercial-industrial-ess-125kw-261kwh/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS 125kW-261kWh</a></li><li class="page_item page-item-3248"><a href="ci-ess/commercial-industrial-ess-50kw/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS 50kW-100kWh</a></li><li class="page_item page-item-3174"><a href="ci-ess/commercial-industrial-ess-5mwh/index.html" class="ct-menu-link">COMMERCIAL &amp; INDUSTRIAL ESS 5MWh</a></li></ul></li><li class="page_item page-item-688"><a href="contact-us/index.html" class="ct-menu-link">Liên hệ với chúng tôi</a></li><li class="page_item page-item-5007"><a href="energy-storage-case-studies/index.html" class="ct-menu-link">Energy Storage Case Studies</a></li><li class="page_item page-item-4995"><a href="energy-storage-solution/index.html" class="ct-menu-link">energy storage solution</a></li><li class="page_item page-item-4853"><a href="epc-one-stop-solution/index.html" class="ct-menu-link">EPC ONE-STOP SOLUTION</a></li><li class="page_item page-item-4855"><a href="epc-test-page/index.html" class="ct-menu-link">EPC TEST PAGE</a></li><li class="page_item page-item-7744"><a href="fx-h-hybrid-inverter-series/index.html" class="ct-menu-link">FX-H Hybrid Inverter Series | FX-E Battery Storage</a></li><li class="page_item page-item-6061"><a href="100-120w-topcon-half-cut-solar-module/index.html" class="ct-menu-link">FX-M636H 100-120W TOPCon Half-Cut Solar Module</a></li><li class="page_item page-item-6091"><a href="100-120w-topcon-half-cut-solar-module-2/index.html" class="ct-menu-link">FX-M836 182mm Half-Cut Solar Module 130-150W</a></li><li class="page_item page-item-6100"><a href="300w-mono-10bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M836H 300W Mono 10BB Half-Cut Solar Module</a></li><li class="page_item page-item-6105"><a href="395-415w-mono-10bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M854H 395-415W Mono 10BB Half-Cut Solar Module</a></li><li class="page_item page-item-6109"><a href="445-465w-mono-10bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M860H 445-465W Mono 10BB Half-Cut Solar Module</a></li><li class="page_item page-item-6033"><a href="485-505w-topcon-half-cut-solar-module/index.html" class="ct-menu-link">FX-M866H (485-505W) TOPCon Half-Cut Solar Module Product Page</a></li><li class="page_item page-item-6113"><a href="485-505w-mono-10bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M866H 485-505W Mono 10BB Half-Cut Solar Module</a></li><li class="page_item page-item-6119"><a href="535-555w-mono-10bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M872H 535-555W Mono 10BB Half-Cut Solar Module</a></li><li class="page_item page-item-6128"><a href="200-230w-mono-12bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M939H 200-230W Mono 12BB Half-Cut Solar Module</a></li><li class="page_item page-item-6133"><a href="560-580w-mono-12bb-half-cut-solar-module/index.html" class="ct-menu-link">FX-M939H 560-580W Mono 12BB Half-Cut Solar Module</a></li><li class="page_item page-item-6145"><a href="half-cut-solar-module-585-610w/index.html" class="ct-menu-link">FX-M960H Mono 12BB Half-Cut Solar Module 585-610W</a></li><li class="page_item page-item-6151"><a href="half-cut-bifacial-double-glass-module-650-670w/index.html" class="ct-menu-link">FX-M966GF 12BB Half-Cut Bifacial Double Glass Module 650-670W</a></li><li class="page_item page-item-7442"><a href="fx-ms3000-portable-energy-storage-weltrus/index.html" class="ct-menu-link">FX-MS3000 All-in-One Micro ESS | 3014Wh Portable Energy Storage | WELTRUS</a></li><li class="page_item page-item-6139"><a href="half-cut-bifacial-double-glass-module-580-600w/index.html" class="ct-menu-link">FX-T872GF Topcon 16BB Half-Cut Bifacial Double Glass Module 580-600W</a></li><li class="page_item page-item-6124"><a href="680-700w-topcon-half-cut-bifacial-double-glass-module/index.html" class="ct-menu-link">FX-T966GF 680-700W Topcon Half-Cut Bifacial Double Glass Module</a></li><li class="page_item page-item-7523"><a href="fx10ft1044lp-2-all-in-one-liquid-cooled-ess-container-weltrus/index.html" class="ct-menu-link">FX10FT1044LP-2 All-in-one Liquid-cooled ESS Container | WELTRUS</a></li><li class="page_item page-item-7532"><a href="fx20ft2170lp-2-all-in-one-liquid-cooled-ess-container-weltrus/index.html" class="ct-menu-link">FX20FT2170LP-2 All-in-one Liquid-cooled ESS Container | WELTRUS</a></li><li class="page_item page-item-6624"><a href="grpu-new-solar-panel-frame/index.html" class="ct-menu-link">Glass Fiber Reinforced Polyurethane Solar Mounting &#038; Frame | WELTRUS</a></li><li class="page_item page-item-5402"><a href="global-representatives/index.html" class="ct-menu-link">Đại diện toàn cầu</a></li><li class="page_item page-item-309 current_page_item current-menu-item"><span class="ct-sub-menu-parent"><a href="index.html" aria-current="page" class="ct-menu-link">Trang chủ</a></li><li class="page_item page-item-7287"><a href="household-energy-storage-system/index.html" class="ct-menu-link">Household Energy Storage System</a></li><li class="page_item page-item-31"><a href="my-account/index.html" class="ct-menu-link">My account</a></li><li class="page_item page-item-4882"><a href="new-energy-solutions/index.html" class="ct-menu-link">NEW ENERGY SOLUTIONS</a></li><li class="page_item page-item-310"><a href="news/index.html" class="ct-menu-link">Thông tin</a></li><li class="page_item page-item-6234"><a href="politica-de-privacidade/index.html" class="ct-menu-link">Política de Privacidade</a></li><li class="page_item page-item-4281"><a href="power-distribution-industrial-control-series-product-catalog/index.html" class="ct-menu-link">Power Distribution Industrial Control Series Product Catalog</a></li><li class="page_item page-item-3"><a href="privacy-policy/index.html" class="ct-menu-link">Privacy Policy</a></li><li class="page_item page-item-5974"><a href="privacy-policy-2/index.html" class="ct-menu-link">PRIVACY POLICY</a></li>
 <li class="page_item page-item-28 page_item_has_children menu-item-has-children">
     <span class="ct-sub-menu-parent">
         <a href="#" class="ct-menu-link">Sản phẩm</a>
@@ -377,7 +377,7 @@ export default function Layout({ children }) {
 		<div class="elementor-element elementor-element-44cba4a9 e-con-full elementor-hidden-mobile e-flex e-con e-child" data-id="44cba4a9" data-element_type="container">
 				<div class="elementor-element elementor-element-4413fac3 elementor-widget elementor-widget-heading" data-id="4413fac3" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">CONTACT</h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default">LIÊN HỆ</h2>		</div>
 				</div>
 		<div class="elementor-element elementor-element-661caea6 e-flex e-con-boxed e-con e-child" data-id="661caea6" data-element_type="container">
 					<div class="e-con-inner">
@@ -389,12 +389,12 @@ export default function Layout({ children }) {
 						<div class="elementor-icon-box-content">
 
 									<h3 class="elementor-icon-box-title">
-						<a href="https://api.Zalo.com/send?phone=+8613735502672&amp;text=Hello" target="_blank" >
+						<a href="https://zalo.me/0964822438" target="_blank" >
 							Zalo						</a>
 					</h3>
 				
 									<p class="elementor-icon-box-description">
-						+86-13735502672					</p>
+						0964.822.438					</p>
 				
 			</div>
 			
@@ -409,12 +409,11 @@ export default function Layout({ children }) {
 						<div class="elementor-icon-box-content">
 
 									<h3 class="elementor-icon-box-title">
-						<a href="cdn-cgi/l/email-protection.html#3f4c5e535a4c7f485a534b4d4a4c115c5052">
-							E-mail						</a>
+						<a href="mailto:info@sblaichau.vn">Email</a>
 					</h3>
 				
 									<p class="elementor-icon-box-description">
-						<a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="8cffede0e9ffccfbe9e0f8fef9ffa2efe3e1">[email&#160;protected]</a>					</p>
+						<a href="mailto:info@sblaichau.vn">info@sblaichau.vn</a>					</p>
 				
 			</div>
 			
@@ -471,25 +470,25 @@ export default function Layout({ children }) {
 							<li class="elementor-icon-list-item">
 											<a href="new-energy-solutions/index.html">
 
-											<span class="elementor-icon-list-text">New Energy Solutions</span>
+											<span class="elementor-icon-list-text">Giải pháp năng lượng mới</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
 											<a href="solution/floating-solar-solutions/index.html">
 
-											<span class="elementor-icon-list-text">Float Solar Solutions</span>
+											<span class="elementor-icon-list-text">Điện mặt trời nổi</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
 											<a href="solution/advanced-ground-mounted-solar-solutions/index.html">
 
-											<span class="elementor-icon-list-text">Ground-Mounted Solutions</span>
+											<span class="elementor-icon-list-text">Điện mặt trời mặt đất</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
 											<a href="epc-one-stop-solution/index.html">
 
-											<span class="elementor-icon-list-text">EPC One-stop Solutions</span>
+											<span class="elementor-icon-list-text">Giải pháp tổng thể EPC</span>
 											</a>
 									</li>
 						</ul>
@@ -499,7 +498,7 @@ export default function Layout({ children }) {
 		<div class="elementor-element elementor-element-5cdd0c7 e-con-full elementor-hidden-mobile e-flex e-con e-child" data-id="5cdd0c7" data-element_type="container">
 				<div class="elementor-element elementor-element-7792930 elementor-widget elementor-widget-heading" data-id="7792930" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">COMPANY</h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default">CÔNG TY</h2>		</div>
 				</div>
 				<div class="elementor-element elementor-element-7119f2b elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="7119f2b" data-element_type="widget" data-widget_type="icon-list.default">
 				<div class="elementor-widget-container">
@@ -519,7 +518,7 @@ export default function Layout({ children }) {
 								<li class="elementor-icon-list-item">
 											<a href="global-representatives/index.html">
 
-											<span class="elementor-icon-list-text">Global Representatives</span>
+											<span class="elementor-icon-list-text">Đại diện toàn cầu</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
@@ -548,7 +547,7 @@ export default function Layout({ children }) {
 				</div>
 				<div class="elementor-element elementor-element-7898fd7f elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-widget elementor-widget-text-editor" data-id="7898fd7f" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-							<p>Adhering to the development philosophy of market-oriented, customer-centric, and supply based, we continuously promote technological innovation and product upgrades, and provide global users with higher quality, efficient, and environmentally friendly clean energy solutions.</p>						</div>
+							<p>Tuân thủ triết lý phát triển định hướng thị trường, lấy khách hàng làm trung tâm, chúng tôi không ngừng thúc đẩy đổi mới công nghệ và nâng cấp sản phẩm, cung cấp cho người dùng các giải pháp năng lượng sạch chất lượng cao, hiệu quả và thân thiện với môi trường.</p>						</div>
 				</div>
 				<div class="elementor-element elementor-element-47232d9f e-grid-align-left elementor-shape-circle elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="47232d9f" data-element_type="widget" data-widget_type="social-icons.default">
 				<div class="elementor-widget-container">
@@ -589,7 +588,7 @@ export default function Layout({ children }) {
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-6cf71e6e elementor-widget elementor-widget-heading" data-id="6cf71e6e" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">Copyright © 2026 WELTRUS All rights reserved.</h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default">Bản quyền © 2026 S&B Lai Châu. Bảo lưu mọi quyền.</h2>		</div>
 				</div>
 					</div>
 				</div>
@@ -913,19 +912,19 @@ export default function Layout({ children }) {
 					<div class="elementor-icon-box-wrapper">
 
 						<div class="elementor-icon-box-icon">
-				<a href="https://api.Zalo.com/send?phone=+8613735502672&amp;text=Hello" target="_blank" class="elementor-icon elementor-animation-grow" tabindex="-1">
+				<a href="https://zalo.me/0964822438" target="_blank" class="elementor-icon elementor-animation-grow" tabindex="-1">
 				<svg aria-hidden="true" class="e-font-icon-svg e-fab-Zalo" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>				</a>
 			</div>
 			
 						<div class="elementor-icon-box-content">
 
 									<h3 class="elementor-icon-box-title">
-						<a href="https://api.Zalo.com/send?phone=+8613735502672&amp;text=Hello" target="_blank" >
+						<a href="https://zalo.me/0964822438" target="_blank" >
 							Zalo						</a>
 					</h3>
 				
 									<p class="elementor-icon-box-description">
-						+86-13735502672					</p>
+						0964.822.438					</p>
 				
 			</div>
 			
