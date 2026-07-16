@@ -444,42 +444,55 @@ fbq('track', 'PageView');
            min-height: auto !important;
         }
       </style>
-    <style>
-/* Fix for unclickable first submenu items */
-.sub-menu > li:first-child {
-    position: relative !important;
-    z-index: 99999 !important;
+    
+
+
+
+<style id="custom-ui-fixes">
+/* Desktop-only submenu fix */
+@media (min-width: 1025px) {
+    .sub-menu {
+        z-index: 99999 !important;
+    }
+    .sub-menu > li > a {
+        position: relative !important;
+        z-index: 99999 !important;
+    }
+    .elementor-nav-menu--main .elementor-item:not(:hover) + .sub-menu {
+        pointer-events: none !important;
+    }
+    .elementor-nav-menu--main .sub-menu {
+        pointer-events: auto !important;
+    }
+    .menu-item-has-children > a::after, .menu-item-has-children::after {
+        pointer-events: none !important;
+    }
 }
-.sub-menu > li:first-child > a {
-    position: relative !important;
-    z-index: 99999 !important;
-    pointer-events: auto !important;
-}
-.ct-toggle-dropdown-desktop-ghost {
-    pointer-events: none !important;
+
+/* Mobile fix for Zalo and Contact icons stretching */
+@media (max-width: 767px) {
+    .elementor-element-38d72dc {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        width: auto !important;
+        right: 20px !important;
+        bottom: 20px !important;
+    }
+    .elementor-element-73b1d230, .elementor-element-767bd2b9 {
+        width: auto !important;
+        flex: 0 0 auto !important;
+        margin: 5px !important;
+    }
+    .elementor-element-73b1d230 .elementor-widget-icon, .elementor-element-767bd2b9 .elementor-widget-icon {
+        text-align: center !important;
+    }
+    /* Hide the text "Zalo" and "Liên hệ" on mobile to keep icons small, if desired */
+    .elementor-element-73b1d230 .elementor-widget-heading, .elementor-element-767bd2b9 .elementor-widget-heading {
+        display: none !important;
+    }
 }
 </style>
 
-<style>
-/* Aggressive fix for first submenu item */
-.sub-menu {
-    z-index: 99999 !important;
-}
-.sub-menu > li {
-    position: relative !important;
-    z-index: 99999 !important;
-}
-.sub-menu > li > a {
-    position: relative !important;
-    z-index: 99999 !important;
-}
-.menu-item-has-children > a::after {
-    pointer-events: none !important;
-}
-.menu-item-has-children::after {
-    pointer-events: none !important;
-}
-</style>
 </head>
 
 
