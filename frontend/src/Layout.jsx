@@ -139,7 +139,7 @@ export default function Layout({ children }) {
 		</div>
 		<div class="ct-panel-content" data-device="desktop"><div class="ct-panel-content-inner"></div></div><div class="ct-panel-content" data-device="mobile"><div class="ct-panel-content-inner">
 <a href="index.html" class="site-logo-container" data-id="offcanvas-logo" rel="home" itemprop="url">
-			<picture><source srcset="https://www.weltrus.com/wp-content/webp-express/webp-images/uploads/2024/06/白色正方形.png.webp 800w, https://www.weltrus.com/wp-content/webp-express/webp-images/uploads/2024/06/白色正方形-300x147.png.webp 300w, https://www.weltrus.com/wp-content/webp-express/webp-images/uploads/2024/06/白色正方形-768x376.png.webp 768w, https://www.weltrus.com/wp-content/webp-express/webp-images/uploads/2024/06/白色正方形-600x294.png.webp 600w" sizes="(max-width: 800px) 100vw, 800px" type="image/webp"><img loading="lazy" width="800" height="392" src="wp-content/uploads/2024/06/%e7%99%bd%e8%89%b2%e6%ad%a3%e6%96%b9%e5%bd%a2.png" class="default-logo webpexpress-processed" alt="Weltrus Official Website-New Energy Solution Provider" decoding="async" srcset="https://www.weltrus.com/wp-content/uploads/2024/06/白色正方形.png 800w, https://www.weltrus.com/wp-content/uploads/2024/06/白色正方形-300x147.png 300w, https://www.weltrus.com/wp-content/uploads/2024/06/白色正方形-768x376.png 768w, https://www.weltrus.com/wp-content/uploads/2024/06/白色正方形-600x294.png 600w" sizes="(max-width: 800px) 100vw, 800px"></picture>	</a>
+			<img src="/logo.svg" alt="S&B Lai Châu" style="max-height: 50px; width: auto;" />	</a>
 
 
 <nav
@@ -241,7 +241,7 @@ export default function Layout({ children }) {
 <div	class="site-branding"
 	data-id="logo"		itemscope="itemscope" itemtype="https://schema.org/Organization">
 
-			<a href="index.html" class="site-logo-container" rel="home" itemprop="url" ><picture><source srcset="https://www.weltrus.com/wp-content/webp-express/webp-images/uploads/2024/07/logo.png.webp" type="image/webp"><img loading="lazy" width="264" height="152" src="wp-content/uploads/2024/07/logo.png" class="default-logo webpexpress-processed" alt="Weltrus Official Website-New Energy Solution Provider" decoding="async"></picture></a>	
+			<a href="index.html" class="site-logo-container" rel="home" itemprop="url" ><img src="/logo.svg" alt="S&B Lai Châu" style="max-height: 50px; width: auto;" /></a>	
 	</div>
 
 
@@ -335,7 +335,7 @@ export default function Layout({ children }) {
 <div	class="site-branding"
 	data-id="logo"		>
 
-			<a href="index.html" class="site-logo-container" rel="home" itemprop="url" ><picture><source srcset="https://www.weltrus.com/wp-content/webp-express/webp-images/uploads/2024/07/logo.png.webp" type="image/webp"><img loading="lazy" width="264" height="152" src="wp-content/uploads/2024/07/logo.png" class="default-logo webpexpress-processed" alt="Weltrus Official Website-New Energy Solution Provider" decoding="async"></picture></a>	
+			<a href="index.html" class="site-logo-container" rel="home" itemprop="url" ><img src="/logo.svg" alt="S&B Lai Châu" style="max-height: 50px; width: auto;" /></a>	
 	</div>
 
 </div></div><div data-column="end" data-placements="1"><div data-items="primary">
@@ -543,7 +543,7 @@ export default function Layout({ children }) {
 				<div class="elementor-widget-container">
 			<style>/*! elementor - v3.21.0 - 26-05-2024 */
 .elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src\$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>						<a href="index.html">
-			<picture><source srcset="https://www.weltrus.com/wp-content/webp-express/webp-images/uploads/2024/07/logo.png.webp" type="image/webp"><img loading="lazy" width="264" height="152" src="wp-content/uploads/2024/07/logo.png" class="attachment-full size-full wp-image-1812 webpexpress-processed" alt=""></picture>				</a>
+			<img src="/logo.svg" alt="S&B Lai Châu" style="max-height: 50px; width: auto;" />				</a>
 									</div>
 				</div>
 				<div class="elementor-element elementor-element-7898fd7f elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-widget elementor-widget-text-editor" data-id="7898fd7f" data-element_type="widget" data-widget_type="text-editor.default">
