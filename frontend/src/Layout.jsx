@@ -145,7 +145,7 @@ export default function Layout({ children }) {
 <nav
 	class="mobile-menu has-submenu"
 	data-id="mobile-menu" data-interaction="click" data-toggle-type="type-1" data-submenu-dots="yes"	aria-label="Off Canvas Menu">
-	<ul  class="menu" role="menubar"><li id="menu-item-7754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-309 current_page_item menu-item-7754" role="none"><a href="index.html" aria-current="page" class="ct-menu-link" role="menuitem">Trang chủ</a></li>
+	<ul><li id="menu-item-7754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-309 current_page_item menu-item-7754" role="none"><a href="index.html" aria-current="page" class="ct-menu-link" role="menuitem">Trang chủ</a></li>
 <li id="menu-item-7764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7764 animated-submenu-block" role="none"><a href="ci-ess/index.html" class="ct-menu-link" role="menuitem">CI ESS</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button>
 <ul class="sub-menu" role="menu">
 	<li id="menu-item-7765" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7765" role="none"><a href="fx-h-hybrid-inverter-series/index.html" class="ct-menu-link" role="menuitem">Residential storage and accessories</a></li>
