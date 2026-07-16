@@ -459,6 +459,27 @@ fbq('track', 'PageView');
     pointer-events: none !important;
 }
 </style>
+
+<style>
+/* Aggressive fix for first submenu item */
+.sub-menu {
+    z-index: 99999 !important;
+}
+.sub-menu > li {
+    position: relative !important;
+    z-index: 99999 !important;
+}
+.sub-menu > li > a {
+    position: relative !important;
+    z-index: 99999 !important;
+}
+.menu-item-has-children > a::after {
+    pointer-events: none !important;
+}
+.menu-item-has-children::after {
+    pointer-events: none !important;
+}
+</style>
 </head>
 
 
