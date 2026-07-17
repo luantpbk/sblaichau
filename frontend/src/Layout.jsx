@@ -8,6 +8,11 @@ export default function Layout({ children }) {
 
   
   useEffect(() => {
+    const handleZalo = () => setIsZaloOpen(true);
+    const handleContact = () => setIsContactOpen(true);
+    window.addEventListener('openZaloPopup', handleZalo);
+    window.addEventListener('openContactPopup', handleContact);
+
     if (!document.getElementById('force-mobile-menu-css')) {
       const style = document.createElement('style');
       style.id = 'force-mobile-menu-css';
@@ -82,6 +87,11 @@ export default function Layout({ children }) {
       `;
       document.head.appendChild(style);
     }
+
+    return () => {
+      window.removeEventListener('openZaloPopup', handleZalo);
+      window.removeEventListener('openContactPopup', handleContact);
+    };
   }, []);
 
   useEffect(() => {
