@@ -1155,8 +1155,8 @@ var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"
       
       const phone = '0964.822.438';
       res = res.replace(/\+86\s*181\s*5738\s*8806|0573-86221160/gi, phone);
-      res = res.replace(/\+?86\s*137\s*3550\s*2672/gi, phone);
-      res = res.replace(/\+8613735502672/gi, phone);
+      res = res.replace(/\+?86[- ]*137[- ]*3550[- ]*2672/gi, phone);
+      res = res.replace(/\+86-?13735502672/gi, phone);
       res = res.replace(/400\s*900\s*8856/gi, phone);
       res = res.replace(/400-096-8566/gi, phone);
       res = res.replace(/4000968566/gi, phone);
