@@ -141,3 +141,86 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
         margin-bottom: 0 !important;
     }
 }
+
+/* --- FIX ZALO & MAIL POPUPS ON MOBILE --- */
+#elementor-popup-modal-2422 .dialog-widget-content,
+#elementor-popup-modal-658 .dialog-widget-content {
+    width: 90vw !important;
+    max-width: 350px !important;
+    margin: auto !important;
+    border-radius: 15px !important;
+    background-color: #ffffff !important;
+}
+#elementor-popup-modal-2422 .dialog-message,
+#elementor-popup-modal-658 .dialog-message {
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+}
+.elementor-2422 .elementor-element-5efa70e,
+.elementor-658 .elementor-element-5efa70e {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 80px !important;
+    margin: 0 !important;
+    padding: 20px !important;
+}
+.elementor-2422 .elementor-widget-icon-box .elementor-icon-box-wrapper,
+.elementor-658 .elementor-widget-icon-box .elementor-icon-box-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 15px !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+.elementor-2422 .elementor-icon-box-icon,
+.elementor-658 .elementor-icon-box-icon {
+    flex: 0 0 45px !important;
+    width: 45px !important;
+    height: 45px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #0068ff !important;
+    border-radius: 50% !important;
+}
+.elementor-658 .elementor-icon-box-icon { background-color: #00b050 !important; }
+.elementor-2422 .elementor-icon-box-icon svg,
+.elementor-658 .elementor-icon-box-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+    fill: #ffffff !important;
+    display: block !important;
+}
+.elementor-2422 .elementor-icon-box-content,
+.elementor-658 .elementor-icon-box-content {
+    flex: 1 1 auto !important;
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+}
+.elementor-2422 .elementor-icon-box-title,
+.elementor-658 .elementor-icon-box-title {
+    margin: 0 0 5px 0 !important;
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    color: #333 !important;
+    display: block !important;
+}
+.elementor-2422 .elementor-icon-box-description,
+.elementor-2422 .elementor-icon-box-description a,
+.elementor-658 .elementor-icon-box-description,
+.elementor-658 .elementor-icon-box-description a {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+    word-break: break-all !important;
+    display: block !important;
+}
