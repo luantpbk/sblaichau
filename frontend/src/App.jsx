@@ -56,6 +56,8 @@ export default function App() {
       
       // Replace all old phone numbers
       newContent = newContent.replace(/\+86\s*181\s*5738\s*8806|0573-86221160/gi, phone);
+      newContent = newContent.replace(/\+?86[- ]*137[- ]*3550[- ]*2672/gi, phone);
+      newContent = newContent.replace(/\+86-?13735502672/gi, phone);
       newContent = newContent.replace(/400\s*900\s*8856/gi, phone);
       newContent = newContent.replace(/400-096-8566/gi, phone);
       newContent = newContent.replace(/4000968566/gi, phone);
