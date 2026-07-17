@@ -582,6 +582,7 @@ var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_
 		if ('undefined' != typeof window.jQuery) {
 			jQuery(document).ready(function ($) {
 				$(document).on('elementor/popup/show', () => {
+					if (typeof cmplz_categories !== 'undefined') {
 					let rev_cats = cmplz_categories.reverse();
 					for (let key in rev_cats) {
 						if (rev_cats.hasOwnProperty(key)) {
@@ -603,8 +604,9 @@ var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_
 								document.querySelectorAll('[data-service="' + service + '"]').forEach(obj => {
 									cmplz_remove_placeholder(obj);
 								});
-							}
 						}
+					}
+					}
 					}
 				});
 			});
