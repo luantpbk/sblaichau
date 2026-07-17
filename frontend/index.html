@@ -491,9 +491,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     /* Fix Zalo & Mail popup layout on mobile */
+    .elementor-popup-modal .dialog-widget-content {
+        width: 90% !important;
+        max-width: 320px !important;
+        margin: auto !important;
+        padding: 0 !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+    }
+    .elementor-2422, .elementor-658 {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .elementor-2422 .elementor-element, 
+    .elementor-658 .elementor-element {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+    }
     .elementor-2422 .elementor-widget-container,
     .elementor-658 .elementor-widget-container {
-        padding: 20px !important;
+        padding: 25px 20px !important;
+        display: flex !important;
+        justify-content: center !important;
     }
     .elementor-2422 .elementor-widget-icon-box .elementor-icon-box-wrapper,
     .elementor-658 .elementor-widget-icon-box .elementor-icon-box-wrapper {
@@ -504,19 +529,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         gap: 15px !important;
         width: 100% !important;
         margin: 0 !important;
-        box-sizing: border-box !important;
     }
     .elementor-2422 .elementor-icon-box-icon,
     .elementor-658 .elementor-icon-box-icon {
-        flex: 0 0 auto !important;
-        width: 40px !important;
-        height: 40px !important;
+        flex: 0 0 45px !important;
+        width: 45px !important;
+        height: 45px !important;
         margin: 0 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         background-color: #0068ff !important;
         border-radius: 50% !important;
+        overflow: hidden !important;
     }
     .elementor-658 .elementor-icon-box-icon {
         background-color: #00b050 !important;
@@ -534,6 +559,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         width: 24px !important;
         height: 24px !important;
         fill: #fff !important;
+        display: block !important;
+        margin: auto !important;
+        position: static !important;
     }
     .elementor-2422 .elementor-icon-box-content,
     .elementor-658 .elementor-icon-box-content {
@@ -541,13 +569,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         text-align: left !important;
         margin: 0 !important;
         padding: 0 !important;
-        width: auto !important;
         min-width: 0 !important;
     }
     .elementor-2422 .elementor-icon-box-title,
     .elementor-658 .elementor-icon-box-title {
         margin: 0 0 5px 0 !important;
-        font-size: 16px !important;
+        font-size: 18px !important;
         line-height: 1.2 !important;
         color: #333 !important;
     }
@@ -556,12 +583,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .elementor-658 .elementor-icon-box-description,
     .elementor-658 .elementor-icon-box-description a {
         margin: 0 !important;
-        font-size: 15px !important;
+        font-size: 16px !important;
         line-height: 1.2 !important;
         color: #333 !important;
         text-decoration: none !important;
-        white-space: normal !important;
-        word-break: break-all !important;
+        white-space: nowrap !important;
     }
 }
 </style>
