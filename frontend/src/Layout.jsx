@@ -556,7 +556,7 @@ export default function Layout({ children }) {
 				</div>
 				<div class="elementor-element elementor-element-5b1fcf08 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="5b1fcf08" data-element_type="widget" data-widget_type="icon-list.default">
 				<div class="elementor-widget-container">
-			<link rel="stylesheet" href="wp-content/uploads/elementor/css/custom-widget-icon-list.minf9bb.css?ver=1759046054">		<ul class="elementor-icon-list-items">
+					<ul class="elementor-icon-list-items">
 							<li class="elementor-icon-list-item">
 											<a href="products/micro-inverter/index.html" target="_blank">
 
@@ -1094,13 +1094,13 @@ export default function Layout({ children }) {
 			document.body.className = c;
 		})();
 	</script>
-	<script id="sourcebuster-js-js" src="wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.mindd39.js?ver=8.9.5"></script>
+	
 <script id="wc-order-attribution-js-extra">
 var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"ajaxurl":"https://www.weltrus.com/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
 //# sourceURL=wc-order-attribution-js-extra
 </script>
-<script id="wc-order-attribution-js" src="wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.mindd39.js?ver=8.9.5"></script>
-<script id="elementskit-framework-js-frontend-js" src="wp-content/plugins/elementskit-lite/libs/framework/assets/js/frontend-scriptf6c4.js?ver=3.7.4"></script>
+
+
 <script id="elementskit-framework-js-frontend-js-after">
 		var elementskit = {
 			resturl: 'https://www.weltrus.com/wp-json/elementskit/v1/',
@@ -1109,7 +1109,7 @@ var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"ajaxurl":"
 		
 //# sourceURL=elementskit-framework-js-frontend-js-after
 </script>
-<script id="ekit-widget-scripts-js" src="wp-content/plugins/elementskit-lite/widgets/init/assets/js/widget-scriptsf6c4.js?ver=3.7.4"></script>
+
 <script id="ct-scripts-js-extra">
 var ct_localizations = {"ajax_url":"https://www.weltrus.com/wp-admin/admin-ajax.php","public_url":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/","rest_url":"https://www.weltrus.com/wp-json/","search_url":"https://www.weltrus.com/search/QUERY_STRING/","show_more_text":"Show more","more_text":"More","search_live_results":"Search results","search_live_no_result":"No results","search_live_one_result":"You got %s result. Please press Tab to select it.","search_live_many_results":"You got %s results. Please press Tab to select one.","expand_submenu":"Expand dropdown menu","collapse_submenu":"Collapse dropdown menu","dynamic_js_chunks":[{"id":"blocksy_pro_micro_popups","selector":".ct-popup","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/framework/premium/static/bundle/micro-popups.js?ver=2.0.50"},{"id":"blocksy_sticky_header","selector":"header [data-sticky]","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/static/bundle/sticky.js?ver=2.0.50"}],"dynamic_styles":{"lazy_load":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/non-critical-styles.min.css?ver=2.0.50","search_lazy":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/non-critical-search-styles.min.css?ver=2.0.50","back_to_top":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/back-to-top.min.css?ver=2.0.50"},"dynamic_styles_selectors":[{"selector":".ct-header-cart, #woo-cart-panel","url":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/cart-header-element-lazy.min.css?ver=2.0.50"},{"selector":".flexy","url":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/flexy.min.css?ver=2.0.50"},{"selector":".ct-media-container[data-media-id], .ct-dynamic-media[data-media-id]","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/framework/premium/static/bundle/video-lazy.min.css?ver=2.0.50"},{"selector":"#account-modal","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/static/bundle/header-account-modal-lazy.min.css?ver=2.0.50"},{"selector":".ct-header-account","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/static/bundle/header-account-dropdown-lazy.min.css?ver=2.0.50"}]};
 //# sourceURL=ct-scripts-js-extra
@@ -1119,7 +1119,7 @@ var ct_localizations = {"ajax_url":"https://www.weltrus.com/wp-admin/admin-ajax.
 var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"30","version":"7.1.0","store_consent":"","do_not_track_enabled":"","consenttype":"optin","region":"au","geoip":"1","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"https://www.weltrus.com/wp-json/complianz/v1/","locale":"lang=en&locale=en_US","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"38","cookie_path":"/","categories":{"statistics":"statistics","marketing":"marketing"},"tcf_active":"","placeholdertext":"Click to accept {category} cookies and enable this content","css_file":"https://www.weltrus.com/wp-content/uploads/complianz/css/banner-{banner_id}-{type}.css?v=30","page_links":{"eu":{"cookie-statement":{"title":"","url":"https://www.weltrus.com/the-complete-guide-to-industrial-energy-storage-systems/"}}},"tm_categories":"","forceEnableStats":"","preview":"","clean_cookies":"","aria_label":"Click to accept {category} cookies and enable this content"};
 //# sourceURL=cmplz-cookiebanner-js-extra
 </script>
-<script defer id="cmplz-cookiebanner-js" src="wp-content/plugins/complianz-gdpr-premium/cookiebanner/js/complianz.minc285.js?ver=1757408738"></script>
+
 <script id="cmplz-cookiebanner-js-after">
 		if ('undefined' != typeof window.jQuery) {
 			jQuery(document).ready(function (\$) {
@@ -1158,19 +1158,19 @@ var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_
 <script id="gt_widget_script_61087833-js-before">
 window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['61087833'] = {"default_language":"en","languages":["sq","ar","zh-CN","cs","da","nl","en","fr","de","el","hi","hu","id","it","ja","pl","pt","ro","ru","sr","sk","es","sv","th","uk","vi"],"url_structure":"none","wrapper_selector":"#gt-wrapper-61087833","select_language_label":"Select Language","horizontal_position":"inline","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
 //# sourceURL=gt_widget_script_61087833-js-before
-</script><script src="wp-content/plugins/gtranslate/js/dropdown8717.js?ver=7.0" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/" data-gt-orig-domain="www.weltrus.com" data-gt-widget-id="61087833" defer></script><script id="gt_widget_script_61966555-js-before">
+</script><script id="gt_widget_script_61966555-js-before">
 window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['61966555'] = {"default_language":"en","languages":["sq","ar","zh-CN","cs","da","nl","en","fr","de","el","hi","hu","id","it","ja","pl","pt","ro","ru","sr","sk","es","sv","th","uk","vi"],"url_structure":"none","wrapper_selector":"#gt-wrapper-61966555","select_language_label":"Select Language","horizontal_position":"inline","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
 //# sourceURL=gt_widget_script_61966555-js-before
-</script><script src="wp-content/plugins/gtranslate/js/dropdown8717.js?ver=7.0" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/" data-gt-orig-domain="www.weltrus.com" data-gt-widget-id="61966555" defer></script><script id="gt_widget_script_22085269-js-before">
+</script><script id="gt_widget_script_22085269-js-before">
 window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['22085269'] = {"default_language":"en","languages":["sq","ar","zh-CN","cs","da","nl","en","fr","de","el","hi","hu","id","it","ja","pl","pt","ro","ru","sr","sk","es","sv","th","uk","vi"],"url_structure":"none","wrapper_selector":"#gt-wrapper-22085269","select_language_label":"Select Language","horizontal_position":"inline","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
 //# sourceURL=gt_widget_script_22085269-js-before
-</script><script src="wp-content/plugins/gtranslate/js/dropdown8717.js?ver=7.0" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/" data-gt-orig-domain="www.weltrus.com" data-gt-widget-id="22085269" defer></script><script id="imagesloaded-js" src="wp-includes/js/imagesloaded.minbb93.js?ver=5.0.0"></script>
+</script>
 <script id="elementor-recaptcha_v3-api-js" src="../www.google.com/recaptcha/api717a.js?render=explicit&amp;ver=3.21.3"></script>
-<script id="elementor-pro-webpack-runtime-js" src="wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min11d9.js?ver=3.21.3"></script>
-<script id="elementor-webpack-runtime-js" src="wp-content/plugins/elementor/assets/js/webpack.runtime.min3cad.js?ver=3.21.8"></script>
-<script id="elementor-frontend-modules-js" src="wp-content/plugins/elementor/assets/js/frontend-modules.min3cad.js?ver=3.21.8"></script>
-<script id="wp-hooks-js" src="wp-includes/js/dist/hooks.min394d.js?ver=7496969728ca0f95732d"></script>
-<script id="wp-i18n-js" src="wp-includes/js/dist/i18n.mineca5.js?ver=781d11515ad3d91786ec"></script>
+
+
+
+
+
 <script id="wp-i18n-js-after">
 wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 //# sourceURL=wp-i18n-js-after
@@ -1179,39 +1179,39 @@ wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/www.weltrus.com\/wp-admin\/admin-ajax.php","nonce":"869328f765","urls":{"assets":"https:\/\/www.weltrus.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/www.weltrus.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"Zalo":{"title":"Zalo"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"woocommerce":{"menu_cart":{"cart_page_url":"https:\/\/www.weltrus.com\/cart\/","checkout_page_url":"https:\/\/www.weltrus.com\/checkout\/","fragments_nonce":"f184844e0c"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/www.weltrus.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
 //# sourceURL=elementor-pro-frontend-js-before
 </script>
-<script id="elementor-pro-frontend-js" src="wp-content/plugins/elementor-pro/assets/js/frontend.min11d9.js?ver=3.21.3"></script>
-<script id="elementor-waypoints-js" src="wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2"></script>
-<script id="jquery-ui-core-js" src="wp-includes/js/jquery/ui/core.minb37e.js?ver=1.13.3"></script>
+
+
+
 <script id="elementor-frontend-js-before">
 var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":690,"lg":1000,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":689,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":999,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.21.8","is_static":false,"experimentalFeatures":{"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_swiper_latest":true,"container_grid":true,"theme_builder_v2":true,"home_screen":true,"ai-layout":true,"landing-pages":true,"e_lazyload":true,"display-conditions":true,"form-submissions":true,"taxonomy-filter":true},"urls":{"assets":"https:\/\/www.weltrus.com\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"viewport_mobile":689,"viewport_tablet":999,"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","woocommerce_notices_elements":[]},"post":{"id":309,"title":"Weltrus%20Official%20Website-New%20Energy%20Solution%20Provider","excerpt":"","featuredImage":false}};
 //# sourceURL=elementor-frontend-js-before
 </script>
-<script id="elementor-frontend-js" src="wp-content/plugins/elementor/assets/js/frontend.min3cad.js?ver=3.21.8"></script>
-<script id="pro-elements-handlers-js" src="wp-content/plugins/elementor-pro/assets/js/elements-handlers.min11d9.js?ver=3.21.3"></script>
-<script id="animate-circle-js" src="wp-content/plugins/elementskit-lite/widgets/init/assets/js/animate-circle.minf6c4.js?ver=3.7.4"></script>
+
+
+
 <script id="elementskit-elementor-js-extra">
 var ekit_config = {"ajaxurl":"https://www.weltrus.com/wp-admin/admin-ajax.php","nonce":"113b89f8c0"};
 //# sourceURL=elementskit-elementor-js-extra
 </script>
-<script id="elementskit-elementor-js" src="wp-content/plugins/elementskit-lite/widgets/init/assets/js/elementorf6c4.js?ver=3.7.4"></script>
-<script id="e-sticky-js" src="wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min11d9.js?ver=3.21.3"></script>
-<script id="underscore-js" src="wp-includes/js/underscore.min55e2.js?ver=1.13.8"></script>
+
+
+
 <script id="wp-util-js-extra">
 var _wpUtilSettings = {"ajax":{"url":"/wp-admin/admin-ajax.php"}};
 //# sourceURL=wp-util-js-extra
 </script>
-<script id="wp-util-js" src="wp-includes/js/wp-util.min8717.js?ver=7.0"></script>
+
 <script id="wpforms-elementor-js-extra">
 var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"};
 //# sourceURL=wpforms-elementor-js-extra
 </script>
-<script id="wpforms-elementor-js" src="wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min8cb8.js?ver=1.8.8.3"></script>
+
 		<!-- This site uses the Google Analytics by MonsterInsights plugin v10.2.2 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 		<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 					<!-- No tracking code set -->
 				<!-- / Google Analytics by MonsterInsights -->
 		
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"a9bbfffb353847e181bf05856a237f15","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
 `;
 
   // Apply dynamic footer settings
