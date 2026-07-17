@@ -1034,6 +1034,87 @@ export default function Layout({ children }) {
 				</div>
 				</div>
 				<div data-elementor-type="popup" data-elementor-id="2422" class="elementor elementor-2422 elementor-location-popup" data-elementor-settings="{&quot;entrance_animation&quot;:&quot;fadeInRight&quot;,&quot;exit_animation&quot;:&quot;fadeInRight&quot;,&quot;entrance_animation_duration&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:1.2,&quot;sizes&quot;:[]},&quot;a11y_navigation&quot;:&quot;yes&quot;,&quot;timing&quot;:[]}" data-elementor-post-type="elementor_library">
+				<style>
+				{`
+				#elementor-popup-modal-2422 .dialog-widget-content,
+				#elementor-popup-modal-658 .dialog-widget-content {
+					width: 90vw !important;
+					max-width: 350px !important;
+					margin: 0 auto !important;
+					border-radius: 12px !important;
+					padding: 20px !important;
+					display: flex !important;
+					align-items: center !important;
+					justify-content: center !important;
+				}
+				.elementor-2422 .elementor-element-5efa70e,
+				.elementor-658 .elementor-element-5efa70e {
+					width: 100% !important;
+					max-width: 100% !important;
+					margin: 0 !important;
+					padding: 0 !important;
+					left: 0 !important;
+					transform: none !important;
+				}
+				.elementor-2422 .elementor-widget-icon-box .elementor-icon-box-wrapper,
+				.elementor-658 .elementor-widget-icon-box .elementor-icon-box-wrapper {
+					display: flex !important;
+					flex-direction: row !important;
+					align-items: center !important;
+					justify-content: flex-start !important;
+					gap: 20px !important;
+					width: 100% !important;
+					margin: 0 !important;
+				}
+				.elementor-2422 .elementor-icon-box-icon,
+				.elementor-658 .elementor-icon-box-icon {
+					flex: 0 0 50px !important;
+					width: 50px !important;
+					height: 50px !important;
+					margin: 0 !important;
+					display: flex !important;
+					align-items: center !important;
+					justify-content: center !important;
+					background-color: #0068ff !important;
+					border-radius: 50% !important;
+				}
+				.elementor-658 .elementor-icon-box-icon { background-color: #00b050 !important; }
+				.elementor-2422 .elementor-icon-box-icon svg,
+				.elementor-658 .elementor-icon-box-icon svg {
+					width: 28px !important;
+					height: 28px !important;
+					fill: #ffffff !important;
+					display: block !important;
+				}
+				.elementor-2422 .elementor-icon-box-content,
+				.elementor-658 .elementor-icon-box-content {
+					flex: 1 1 auto !important;
+					text-align: left !important;
+					margin: 0 !important;
+					padding: 0 !important;
+					min-width: 0 !important;
+				}
+				.elementor-2422 .elementor-icon-box-title,
+				.elementor-658 .elementor-icon-box-title {
+					margin: 0 0 5px 0 !important;
+					font-size: 18px !important;
+					line-height: 1.2 !important;
+					color: #333 !important;
+				}
+				.elementor-2422 .elementor-icon-box-description,
+				.elementor-2422 .elementor-icon-box-description a,
+				.elementor-658 .elementor-icon-box-description,
+				.elementor-658 .elementor-icon-box-description a {
+					margin: 0 !important;
+					font-size: 16px !important;
+					line-height: 1.2 !important;
+					color: #333 !important;
+					text-decoration: none !important;
+					white-space: normal !important;
+					word-break: break-all !important;
+				}
+				`}
+				</style>
 			<div class="elementor-element elementor-element-5efa70e e-con-full e-flex e-con e-child" data-id="5efa70e" data-element_type="container">
 				<div class="elementor-element elementor-element-cbe23e2 elementor-position-left elementor-vertical-align-middle elementor-mobile-position-left elementor-vertical-align-middle elementor-view-default elementor-widget elementor-widget-icon-box" data-id="cbe23e2" data-element_type="widget" data-widget_type="icon-box.default">
 				<div class="elementor-widget-container">
