@@ -86,7 +86,8 @@ export default function Layout({ children }) {
         }
 
         @media (min-width: 768px) {
-            body .elementor-element-75b9e865.elementor-element-75b9e865 {
+            body .elementor-element-75b9e865.elementor-element-75b9e865,
+            body .elementor-element-703e5411 {
                 display: none !important;
             }
         }
