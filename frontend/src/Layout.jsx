@@ -833,14 +833,14 @@ export default function Layout({ children }) {
 				<div class="elementor-element elementor-element-1fb2d0b8 elementor-view-default elementor-widget elementor-widget-icon" data-id="1fb2d0b8" data-element_type="widget" data-widget_type="icon.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-icon-wrapper">
-			<a class="elementor-icon" href="tel:+8613735502672">
+			<a class="elementor-icon" href="tel:0964822438">
 			<svg aria-hidden="true" class="e-font-icon-svg e-fas-phone-alt" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path></svg>			</a>
 		</div>
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-65abf447 elementor-widget elementor-widget-heading" data-id="65abf447" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default"><a href="tel:+8613735502672">Phone</a></h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default"><a href="tel:0964822438">Phone</a></h2>		</div>
 				</div>
 				</div>
 				</div>
@@ -1155,6 +1155,8 @@ var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"
       
       const phone = '0964.822.438';
       res = res.replace(/\+86\s*181\s*5738\s*8806|0573-86221160/gi, phone);
+      res = res.replace(/\+?86\s*137\s*3550\s*2672/gi, phone);
+      res = res.replace(/\+8613735502672/gi, phone);
       res = res.replace(/400\s*900\s*8856/gi, phone);
       res = res.replace(/400-096-8566/gi, phone);
       res = res.replace(/4000968566/gi, phone);
