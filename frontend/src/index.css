@@ -166,15 +166,25 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
     margin: auto !important;
     transform: none !important; /* Force remove any rogue transforms */
     
-    /* Sizing & Appearance */
-    width: 90vw !important;
-    max-width: 400px !important;
+    /* Shared Appearance */
     height: max-content !important;
     border-radius: 15px !important;
     background-color: #ffffff !important;
     box-shadow: 0 5px 25px rgba(0,0,0,0.2) !important;
     padding: 20px !important;
     box-sizing: border-box !important;
+}
+
+/* Zalo Popup Width */
+#elementor-popup-modal-2422 .dialog-widget-content {
+    width: min(69vw, 400px) !important;
+    max-width: 400px !important;
+}
+
+/* Email Contact Popup Width */
+#elementor-popup-modal-658 .dialog-widget-content {
+    width: 80vw !important;
+    max-width: 800px !important; /* Cap it at 800px on very large 4K screens so it doesn't look absurd */
 }
 
 /* 3. Disable any rogue transforms on inner Elementor elements */
