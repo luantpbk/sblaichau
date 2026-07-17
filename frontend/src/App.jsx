@@ -247,6 +247,63 @@ export default function App() {
                   new window.Swiper(el, options);
               });
 
+              // Check for Elementor video widgets
+              document.querySelectorAll('.elementor-widget-video').forEach(widget => {
+                  try {
+                      const settingsStr = widget.getAttribute('data-settings');
+                      const videoContainer = widget.querySelector('.elementor-video');
+                      if (settingsStr && videoContainer && !videoContainer.innerHTML) {
+                          const settings = JSON.parse(settingsStr);
+                          let url = '';
+                          if (settings.video_type === 'youtube' && settings.youtube_url) {
+                              const match = settings.youtube_url.match(/[?&]v=([^&]+)/) || settings.youtube_url.match(/youtu\.be\/([^?]+)/);
+                              if (match && match[1]) {
+                                  const videoId = match[1];
+                                  let params = '?feature=oembed';
+                                  if (settings.autoplay === 'yes') params += '&autoplay=1';
+                                  if (settings.mute === 'yes') params += '&mute=1';
+                                  if (settings.loop === 'yes') params += '&loop=1&playlist=' + videoId;
+                                  if (settings.controls === 'no') params += '&controls=0';
+                                  url = 'https://www.youtube.com/embed/' + videoId + params;
+                              }
+                          } else if (settings.video_type === 'vimeo' && settings.vimeo_url) {
+                              const match = settings.vimeo_url.match(/vimeo\.com\/(?:video\/)?([0-9]+)/);
+                              if (match && match[1]) {
+                                  let params = '?';
+                                  if (settings.autoplay === 'yes') params += '&autoplay=1';
+                                  if (settings.mute === 'yes') params += '&muted=1';
+                                  if (settings.loop === 'yes') params += '&loop=1';
+                                  url = 'https://player.vimeo.com/video/' + match[1] + params;
+                              }
+                          } else if (settings.video_type === 'hosted' && settings.hosted_url && settings.hosted_url.url) {
+                              let attrs = 'controls';
+                              if (settings.autoplay === 'yes') attrs += ' autoplay';
+                              if (settings.mute === 'yes') attrs += ' muted';
+                              if (settings.loop === 'yes') attrs += ' loop';
+                              let hostUrl = settings.hosted_url.url;
+                              if (hostUrl.startsWith('/wp-content')) hostUrl = hostUrl.replace('/wp-content', '/assets');
+                              videoContainer.innerHTML = '<video class="elementor-video" src="' + hostUrl + '" ' + attrs + ' style="width:100%;height:100%;"></video>';
+                              return;
+                          }
+                          
+                          if (url) {
+                              videoContainer.innerHTML = '<iframe class="elementor-video-iframe" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" src="' + url + '" width="100%" height="100%" frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>';
+                              videoContainer.style.position = 'relative';
+                              if (settings.aspect_ratio) {
+                                  const ratio = settings.aspect_ratio;
+                                  if (ratio === '169') videoContainer.style.paddingBottom = '56.25%';
+                                  else if (ratio === '219') videoContainer.style.paddingBottom = '42.85%';
+                                  else if (ratio === '43') videoContainer.style.paddingBottom = '75%';
+                                  else if (ratio === '32') videoContainer.style.paddingBottom = '66.66%';
+                                  else videoContainer.style.paddingBottom = '56.25%';
+                              } else {
+                                  videoContainer.style.paddingBottom = '56.25%';
+                              }
+                          }
+                      }
+                  } catch(e) { console.error('Error initializing video widget', e); }
+              });
+
               // Check for Elementor background slideshows
               document.querySelectorAll('[data-settings]').forEach(el => {
                   try {
