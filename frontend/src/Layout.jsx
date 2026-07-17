@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 export default function Layout({ children }) {
   const [siteSettings, setSiteSettings] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [isZaloOpen, setIsZaloOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   
   useEffect(() => {
@@ -725,14 +727,14 @@ export default function Layout({ children }) {
 				<div class="elementor-element elementor-element-278e0172 elementor-view-framed elementor-shape-square elementor-widget elementor-widget-icon" data-id="278e0172" data-element_type="widget" data-widget_type="icon.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-icon-wrapper">
-			<a class="elementor-icon" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI0MjIiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D" target="_blank">
+			<a class="elementor-icon" href="#" onClick={(e) => { e.preventDefault(); setIsZaloOpen(true); }} target="_blank">
 			<svg aria-hidden="true" class="e-font-icon-svg e-fab-Zalo" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>			</a>
 		</div>
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-721dc762 elementor-widget elementor-widget-heading" data-id="721dc762" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default"><a href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI0MjIiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D">Zalo</a></h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default"><a href="#" onClick={(e) => { e.preventDefault(); setIsZaloOpen(true); }}>Zalo</a></h2>		</div>
 				</div>
 					</div>
 				</div>
@@ -741,14 +743,14 @@ export default function Layout({ children }) {
 				<div class="elementor-element elementor-element-1eff31b7 elementor-view-framed elementor-shape-square elementor-widget elementor-widget-icon" data-id="1eff31b7" data-element_type="widget" data-widget_type="icon.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-icon-wrapper">
-			<a class="elementor-icon" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY1OCIsInRvZ2dsZSI6ZmFsc2V9">
+			<a class="elementor-icon" href="#" onClick={(e) => { e.preventDefault(); setIsContactOpen(true); }}>
 			<svg aria-hidden="true" class="e-font-icon-svg e-far-envelope" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>			</a>
 		</div>
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-1786e4b4 elementor-widget elementor-widget-heading" data-id="1786e4b4" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default"><a href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY1OCIsInRvZ2dsZSI6ZmFsc2V9">Liên hệ</a></h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default"><a href="#" onClick={(e) => { e.preventDefault(); setIsContactOpen(true); }}>Liên hệ</a></h2>		</div>
 				</div>
 					</div>
 				</div>
@@ -802,14 +804,14 @@ export default function Layout({ children }) {
 				<div class="elementor-element elementor-element-267d74cf elementor-view-default elementor-widget elementor-widget-icon" data-id="267d74cf" data-element_type="widget" data-widget_type="icon.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-icon-wrapper">
-			<a class="elementor-icon" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY1OCIsInRvZ2dsZSI6ZmFsc2V9">
+			<a class="elementor-icon" href="#" onClick={(e) => { e.preventDefault(); setIsContactOpen(true); }}>
 			<svg aria-hidden="true" class="e-font-icon-svg e-fas-envelope" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>			</a>
 		</div>
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-16e7530b elementor-widget elementor-widget-heading" data-id="16e7530b" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default"><a href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY1OCIsInRvZ2dsZSI6ZmFsc2V9">Email</a></h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default"><a href="#" onClick={(e) => { e.preventDefault(); setIsContactOpen(true); }}>Email</a></h2>		</div>
 				</div>
 				</div>
 		<div class="elementor-element elementor-element-35a5028 e-con-full e-flex e-con e-child" data-id="35a5028" data-element_type="container">
@@ -973,95 +975,73 @@ export default function Layout({ children }) {
 </div>
 					<div id="cmplz-manage-consent" data-nosnippet="true"><button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Manage consent</button>
 
-</div>		<div data-elementor-type="popup" data-elementor-id="658" class="elementor elementor-658 elementor-location-popup" data-elementor-settings="{&quot;a11y_navigation&quot;:&quot;yes&quot;,&quot;timing&quot;:[]}" data-elementor-post-type="elementor_library">
-			<div class="elementor-element elementor-element-5a34908 e-flex e-con-boxed e-con e-parent" data-id="5a34908" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-f2b6c02 elementor-widget elementor-widget-heading" data-id="f2b6c02" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">Talk to our experts</h2>		</div>
-				</div>
-				<div class="elementor-element elementor-element-ca857c8 elementor-widget elementor-widget-text-editor" data-id="ca857c8" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-							<ul><li>We will contact you within 12 hours</li><li>Don’t worry, we hate spam too！</li></ul>						</div>
-				</div>
-				<div class="elementor-element elementor-element-96b78af elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="96b78af" data-element_type="widget" data-settings="{&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;button_width&quot;:&quot;100&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}" data-widget_type="form.default">
-				<div class="elementor-widget-container">
-			<style>/*! elementor-pro - v3.21.0 - 20-05-2024 */
-.elementor-button.elementor-hidden,.elementor-hidden{display:none}.e-form__step{width:100%}.e-form__step:not(.elementor-hidden){display:flex;flex-wrap:wrap}.e-form__buttons{flex-wrap:wrap}.e-form__buttons,.e-form__buttons__wrapper{display:flex}.e-form__indicators{display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;font-size:13px;margin-bottom:var(--e-form-steps-indicators-spacing)}.e-form__indicators__indicator{display:flex;flex-direction:column;align-items:center;justify-content:center;flex-basis:0;padding:0 var(--e-form-steps-divider-gap)}.e-form__indicators__indicator__progress{width:100%;position:relative;background-color:var(--e-form-steps-indicator-progress-background-color);border-radius:var(--e-form-steps-indicator-progress-border-radius);overflow:hidden}.e-form__indicators__indicator__progress__meter{width:var(--e-form-steps-indicator-progress-meter-width,0);height:var(--e-form-steps-indicator-progress-height);line-height:var(--e-form-steps-indicator-progress-height);padding-right:15px;border-radius:var(--e-form-steps-indicator-progress-border-radius);background-color:var(--e-form-steps-indicator-progress-color);color:var(--e-form-steps-indicator-progress-meter-color);text-align:right;transition:width .1s linear}.e-form__indicators__indicator:first-child{padding-left:0}.e-form__indicators__indicator:last-child{padding-right:0}.e-form__indicators__indicator--state-inactive{color:var(--e-form-steps-indicator-inactive-primary-color,#c2cbd2)}.e-form__indicators__indicator--state-inactive [class*=indicator--shape-]:not(.e-form__indicators__indicator--shape-none){background-color:var(--e-form-steps-indicator-inactive-secondary-color,#fff)}.e-form__indicators__indicator--state-inactive object,.e-form__indicators__indicator--state-inactive svg{fill:var(--e-form-steps-indicator-inactive-primary-color,#c2cbd2)}.e-form__indicators__indicator--state-active{color:var(--e-form-steps-indicator-active-primary-color,#39b54a);border-color:var(--e-form-steps-indicator-active-secondary-color,#fff)}.e-form__indicators__indicator--state-active [class*=indicator--shape-]:not(.e-form__indicators__indicator--shape-none){background-color:var(--e-form-steps-indicator-active-secondary-color,#fff)}.e-form__indicators__indicator--state-active object,.e-form__indicators__indicator--state-active svg{fill:var(--e-form-steps-indicator-active-primary-color,#39b54a)}.e-form__indicators__indicator--state-completed{color:var(--e-form-steps-indicator-completed-secondary-color,#fff)}.e-form__indicators__indicator--state-completed [class*=indicator--shape-]:not(.e-form__indicators__indicator--shape-none){background-color:var(--e-form-steps-indicator-completed-primary-color,#39b54a)}.e-form__indicators__indicator--state-completed .e-form__indicators__indicator__label{color:var(--e-form-steps-indicator-completed-primary-color,#39b54a)}.e-form__indicators__indicator--state-completed .e-form__indicators__indicator--shape-none{color:var(--e-form-steps-indicator-completed-primary-color,#39b54a);background-color:initial}.e-form__indicators__indicator--state-completed object,.e-form__indicators__indicator--state-completed svg{fill:var(--e-form-steps-indicator-completed-secondary-color,#fff)}.e-form__indicators__indicator__icon{width:var(--e-form-steps-indicator-padding,30px);height:var(--e-form-steps-indicator-padding,30px);font-size:var(--e-form-steps-indicator-icon-size);border-width:1px;border-style:solid;display:flex;justify-content:center;align-items:center;overflow:hidden;margin-bottom:10px}.e-form__indicators__indicator__icon img,.e-form__indicators__indicator__icon object,.e-form__indicators__indicator__icon svg{width:var(--e-form-steps-indicator-icon-size);height:auto}.e-form__indicators__indicator__icon .e-font-icon-svg{height:1em}.e-form__indicators__indicator__number{width:var(--e-form-steps-indicator-padding,30px);height:var(--e-form-steps-indicator-padding,30px);border-width:1px;border-style:solid;display:flex;justify-content:center;align-items:center;margin-bottom:10px}.e-form__indicators__indicator--shape-circle{border-radius:50%}.e-form__indicators__indicator--shape-square{border-radius:0}.e-form__indicators__indicator--shape-rounded{border-radius:5px}.e-form__indicators__indicator--shape-none{border:0}.e-form__indicators__indicator__label{text-align:center}.e-form__indicators__indicator__separator{width:100%;height:var(--e-form-steps-divider-width);background-color:#babfc5}.e-form__indicators--type-icon,.e-form__indicators--type-icon_text,.e-form__indicators--type-number,.e-form__indicators--type-number_text{align-items:flex-start}.e-form__indicators--type-icon .e-form__indicators__indicator__separator,.e-form__indicators--type-icon_text .e-form__indicators__indicator__separator,.e-form__indicators--type-number .e-form__indicators__indicator__separator,.e-form__indicators--type-number_text .e-form__indicators__indicator__separator{margin-top:calc(var(--e-form-steps-indicator-padding, 30px) / 2 - var(--e-form-steps-divider-width, 1px) / 2)}.elementor-field-type-hidden{display:none}.elementor-field-type-html{display:inline-block}.elementor-field-type-tel input{direction:inherit}.elementor-login .elementor-lost-password,.elementor-login .elementor-remember-me{font-size:.85em}.elementor-field-type-recaptcha_v3 .elementor-field-label{display:none}.elementor-field-type-recaptcha_v3 .grecaptcha-badge{z-index:1}.elementor-button .elementor-form-spinner{order:3}.elementor-form .elementor-button>span{display:flex;justify-content:center;align-items:center}.elementor-form .elementor-button .elementor-button-text{white-space:normal;flex-grow:0}.elementor-form .elementor-button svg{height:auto}.elementor-form .elementor-button .e-font-icon-svg{height:1em}.elementor-select-wrapper .select-caret-down-wrapper{position:absolute;top:50%;transform:translateY(-50%);inset-inline-end:10px;pointer-events:none;font-size:11px}.elementor-select-wrapper .select-caret-down-wrapper svg{display:unset;width:1em;aspect-ratio:unset;fill:currentColor}.elementor-select-wrapper .select-caret-down-wrapper i{font-size:19px;line-height:2}.elementor-select-wrapper.remove-before:before{content:""!important}</style>		<form class="elementor-form" method="post" name="New Form">
-			<input type="hidden" name="post_id" value="658"/>
-			<input type="hidden" name="form_id" value="96b78af"/>
-			<input type="hidden" name="referer_title" value="Weltrus Official Website-New Energy Solution Provider" />
+</div>		
+{isContactOpen && (
+  <div id="elementor-popup-modal-658" className="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-popup-modal" style={{ display: 'flex', zIndex: 9999 }}>
+      <div className="dialog-widget-overlay dialog-lightbox-widget-overlay" onClick={() => setIsContactOpen(false)} style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.8)' }}></div>
+      <div className="dialog-widget-content dialog-lightbox-widget-content animated">
+          <div className="dialog-close-button dialog-lightbox-close-button" onClick={() => setIsContactOpen(false)} style={{ position: 'absolute', top: 15, right: 15, cursor: 'pointer', fontSize: 28, zIndex: 10, color: '#666' }}>&times;</div>
+          <div className="elementor-658">
+              <h2 className="elementor-heading-title" style={{ borderLeft: '5px solid #00b050', paddingLeft: 10, textAlign: 'left', marginBottom: 15 }}>Liên hệ chuyên gia</h2>
+              <div className="elementor-widget-text-editor">
+                  <ul style={{textAlign: 'left', paddingLeft: 20, marginBottom: 20}}><li>Chúng tôi sẽ liên hệ với bạn trong vòng 12 giờ</li><li>Đừng lo, chúng tôi cũng ghét thư rác!</li></ul>
+              </div>
+              <form className="elementor-form" onSubmit={(e) => { e.preventDefault(); alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ gọi lại sớm nhất.'); setIsContactOpen(false); }}>
+                  <div className="elementor-field-group" style={{ marginBottom: 15 }}>
+                      <label className="elementor-field-label" style={{ display: 'block', fontWeight: 'bold', marginBottom: 5 }}>Tên</label>
+                      <input type="text" className="elementor-field-textual" required style={{ width: '100%', padding: '10px', boxSizing: 'border-box' }} />
+                  </div>
+                  <div className="elementor-field-group" style={{ marginBottom: 15 }}>
+                      <label className="elementor-field-label" style={{ display: 'block', fontWeight: 'bold', marginBottom: 5 }}>Số điện thoại/Zalo *</label>
+                      <input type="tel" className="elementor-field-textual" required style={{ width: '100%', padding: '10px', boxSizing: 'border-box' }} />
+                  </div>
+                  <div className="elementor-field-group" style={{ marginBottom: 15 }}>
+                      <label className="elementor-field-label" style={{ display: 'block', fontWeight: 'bold', marginBottom: 5 }}>Email *</label>
+                      <input type="email" className="elementor-field-textual" required style={{ width: '100%', padding: '10px', boxSizing: 'border-box' }} />
+                  </div>
+                  <div className="elementor-field-group" style={{ marginBottom: 15 }}>
+                      <label className="elementor-field-label" style={{ display: 'block', fontWeight: 'bold', marginBottom: 5 }}>Lời nhắn</label>
+                      <textarea className="elementor-field-textual" rows="4" style={{ width: '100%', padding: '10px', boxSizing: 'border-box' }}></textarea>
+                  </div>
+                  <div className="elementor-field-group">
+                      <button type="submit" className="elementor-button" style={{ width: '100%', padding: '12px', backgroundColor: '#00b050', color: '#fff', border: 'none', borderRadius: '5px', fontWeight: 'bold', cursor: 'pointer' }}>Gửi</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+)}
 
-							<input type="hidden" name="queried_id" value="309"/>
-			
-			<div class="elementor-form-fields-wrapper elementor-labels-above">
-								<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100">
-												<label for="form-field-name" class="elementor-field-label">
-								Name							</label>
-														<input size="1" type="text" name="form_fields[name]" id="form-field-name" class="elementor-field elementor-size-sm  elementor-field-textual">
-											</div>
-								<div class="elementor-field-type-tel elementor-field-group elementor-column elementor-field-group-field_280fad1 elementor-col-100 elementor-field-required elementor-mark-required">
-												<label for="form-field-field_280fad1" class="elementor-field-label">
-								Phone/Zalo							</label>
-								<input size="1" type="tel" name="form_fields[field_280fad1]" id="form-field-field_280fad1" class="elementor-field elementor-size-sm  elementor-field-textual" required="required" aria-required="true" pattern="[0-9()#&amp;+*-=.]+" title="Only numbers and phone characters (#, -, *, etc) are accepted.">
-
-						</div>
-								<div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required elementor-mark-required">
-												<label for="form-field-email" class="elementor-field-label">
-								Email							</label>
-														<input size="1" type="email" name="form_fields[email]" id="form-field-email" class="elementor-field elementor-size-sm  elementor-field-textual" required="required" aria-required="true">
-											</div>
-								<div class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-message elementor-col-100">
-												<label for="form-field-message" class="elementor-field-label">
-								Message							</label>
-						<textarea class="elementor-field-textual elementor-field  elementor-size-sm" name="form_fields[message]" id="form-field-message" rows="4"></textarea>				</div>
-								<div class="elementor-field-type-recaptcha_v3 elementor-field-group elementor-column elementor-field-group-field_cccd90a elementor-col-100 recaptcha_v3-bottomright">
-					<div class="elementor-field" id="form-field-field_cccd90a"><div class="elementor-g-recaptcha" data-sitekey="6Leq0dYqAAAAAEbowdAQsO-JxMB2D_v-MQY_ZsaS" data-type="v3" data-action="Form" data-badge="bottomright" data-size="invisible"></div></div>				</div>
-								<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-					<button type="submit" class="elementor-button elementor-size-sm">
-						<span >
-															<span class=" elementor-button-icon">
-																										</span>
-																						<span class="elementor-button-text">Send</span>
-													</span>
-					</button>
-				</div>
-			</div>
-		</form>
-				</div>
-				</div>
-					</div>
-				</div>
-				</div>
-				<div data-elementor-type="popup" data-elementor-id="2422" class="elementor elementor-2422 elementor-location-popup" data-elementor-settings="{&quot;entrance_animation&quot;:&quot;fadeInRight&quot;,&quot;exit_animation&quot;:&quot;fadeInRight&quot;,&quot;entrance_animation_duration&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:1.2,&quot;sizes&quot;:[]},&quot;a11y_navigation&quot;:&quot;yes&quot;,&quot;timing&quot;:[]}" data-elementor-post-type="elementor_library">
-			<div class="elementor-element elementor-element-5efa70e e-con-full e-flex e-con e-child" data-id="5efa70e" data-element_type="container">
-				<div class="elementor-element elementor-element-cbe23e2 elementor-position-left elementor-vertical-align-middle elementor-mobile-position-left elementor-vertical-align-middle elementor-view-default elementor-widget elementor-widget-icon-box" data-id="cbe23e2" data-element_type="widget" data-widget_type="icon-box.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-icon-box-wrapper">
-
-						<div class="elementor-icon-box-icon">
-				<a href="https://zalo.me/0964822438" target="_blank" class="elementor-icon elementor-animation-grow" tabindex="-1">
-				<svg aria-hidden="true" class="e-font-icon-svg e-fab-Zalo" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>				</a>
-			</div>
-			
-						<div class="elementor-icon-box-content">
-
-									<h3 class="elementor-icon-box-title">
-						<a href="https://zalo.me/0964822438" target="_blank" >
-							Zalo						</a>
-					</h3>
-				
-									<p class="elementor-icon-box-description">
-						<a href="https://zalo.me/0964822438" target="_blank" style="color: inherit; text-decoration: none;">0964.822.438</a>					</p>
-				
-			</div>
-			
-		</div>
-				</div>
-				</div>
-				</div>
-				</div>
-					<script type='text/javascript'>
+{isZaloOpen && (
+  <div id="elementor-popup-modal-2422" className="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-popup-modal" style={{ display: 'flex', zIndex: 9999 }}>
+      <div className="dialog-widget-overlay dialog-lightbox-widget-overlay" onClick={() => setIsZaloOpen(false)} style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.8)' }}></div>
+      <div className="dialog-widget-content dialog-lightbox-widget-content animated">
+          <div className="dialog-close-button dialog-lightbox-close-button" onClick={() => setIsZaloOpen(false)} style={{ position: 'absolute', top: 15, right: 15, cursor: 'pointer', fontSize: 28, zIndex: 10, color: '#666' }}>&times;</div>
+          <div className="elementor-2422">
+              <div className="elementor-element-5efa70e">
+                  <div className="elementor-widget-icon-box" style={{ textAlign: 'center', paddingTop: 20 }}>
+                      <div className="elementor-icon-box-wrapper">
+                          <div className="elementor-icon-box-icon" style={{ marginBottom: 15 }}>
+                              <a href="https://zalo.me/0964822438" target="_blank" rel="noreferrer" className="elementor-icon">
+                                  <svg aria-hidden="true" style={{ width: 60, height: 60, fill: '#0068ff' }} className="e-font-icon-svg e-fab-Zalo" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+                              </a>
+                          </div>
+                          <div className="elementor-icon-box-content">
+                              <h3 className="elementor-icon-box-title" style={{ margin: '10px 0' }}>
+                                  <a href="https://zalo.me/0964822438" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: '#333', fontSize: 24, fontWeight: 'bold' }}>Zalo</a>
+                              </h3>
+                              <p className="elementor-icon-box-description" style={{ margin: 0 }}>
+                                  <a href="https://zalo.me/0964822438" target="_blank" rel="noreferrer" style={{color: '#666', textDecoration: 'none', fontSize: 18}}>0964.822.438</a>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+)}
+<script type='text/javascript'>
 				const lazyloadRunObserver = () => {
 					const lazyloadBackgrounds = document.querySelectorAll( \`.e-con.e-parent:not(.e-lazyloaded)\` );
 					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
