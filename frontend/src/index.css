@@ -148,13 +148,24 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
     }
 }
 
-/* --- FIX ZALO & MAIL POPUPS ON MOBILE --- */
-/* Ensure proper centering on the dialog content and NOT on the inner element */
+/* --- FIX ZALO & MAIL POPUPS ON MOBILE AND DESKTOP --- */
+/* 1. Force the main wrapper to be a full-screen flex container that centers its children */
+#elementor-popup-modal-2422,
+#elementor-popup-modal-658 {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* 2. Remove all absolute positioning and transforms from the dialog box */
 #elementor-popup-modal-2422 .dialog-widget-content,
 #elementor-popup-modal-658 .dialog-widget-content {
     position: relative !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
     margin: 0 !important;
     width: 90vw !important;
     max-width: 400px !important;
@@ -162,15 +173,18 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
     background-color: #ffffff !important;
     box-shadow: 0 5px 25px rgba(0,0,0,0.2) !important;
     padding: 20px !important;
+    box-sizing: border-box !important;
 }
 
-/* Fix rogue transform applied to the wrong element */
-.elementor-2422 .elementor-element.elementor-element-cbe23e2 {
+/* 3. Disable any rogue transforms on inner Elementor elements */
+#elementor-popup-modal-2422 .elementor-element,
+#elementor-popup-modal-658 .elementor-element,
+.elementor-location-popup {
     transform: none !important;
     left: auto !important;
 }
 
-/* The inner container holding the icon boxes (Zalo popup) */
+/* 4. The inner container holding the icon boxes (Zalo popup) */
 .elementor-2422 .elementor-element-5efa70e {
     width: 100% !important;
     margin: 0 !important;
@@ -180,7 +194,7 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
     gap: 15px !important;
 }
 
-/* The Icon Box wrapper (horizontal layout) */
+/* 5. The Icon Box wrapper (horizontal layout) */
 .elementor-2422 .elementor-widget-icon-box .elementor-icon-box-wrapper {
     display: flex !important;
     flex-direction: row !important;
@@ -189,13 +203,13 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
     gap: 15px !important;
     width: 100% !important;
     margin: 0 !important;
-    padding: 10px !important;
+    padding: 15px !important;
     background: #f8f9fa !important;
     border-radius: 10px !important;
     box-sizing: border-box !important;
 }
 
-/* The Icon itself */
+/* 6. The Icon itself */
 .elementor-2422 .elementor-icon-box-icon {
     flex: 0 0 45px !important;
     width: 45px !important;
@@ -221,12 +235,12 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
     display: block !important;
 }
 
-/* Change color for the second icon (Phone) if needed */
+/* Change color for the second icon (Phone) */
 .elementor-2422 .elementor-widget-icon-box:nth-child(2) .elementor-icon-box-icon {
     background-color: #00b050 !important;
 }
 
-/* The text content */
+/* 7. The text content */
 .elementor-2422 .elementor-icon-box-content {
     flex: 1 1 auto !important;
     text-align: left !important;
@@ -258,4 +272,28 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
     line-height: 1.2 !important;
     white-space: normal !important;
     word-break: break-word !important;
+}
+
+/* 8. Fix Email Popup (658) specific form layout */
+.elementor-658 .elementor-widget-form {
+    width: 100% !important;
+}
+.elementor-658 .elementor-heading-title {
+    text-align: center !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    margin-bottom: 10px !important;
+}
+.elementor-658 .elementor-widget-text-editor {
+    text-align: center !important;
+    font-size: 14px !important;
+    margin-bottom: 15px !important;
+}
+.elementor-658 .elementor-field-group {
+    padding-bottom: 15px !important;
+}
+.elementor-658 .elementor-button {
+    width: 100% !important;
+    padding: 12px !important;
+    border-radius: 5px !important;
 }
