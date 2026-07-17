@@ -736,7 +736,7 @@ export default function Layout({ children }) {
 				</div>
 					</div>
 				</div>
-		<div class="elementor-element elementor-element-767bd2b9 elementor-hidden-mobile e-flex e-con-boxed e-con e-child" data-id="767bd2b9" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-767bd2b9 e-flex e-con-boxed e-con e-child" data-id="767bd2b9" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-1eff31b7 elementor-view-framed elementor-shape-square elementor-widget elementor-widget-icon" data-id="1eff31b7" data-element_type="widget" data-widget_type="icon.default">
 				<div class="elementor-widget-container">
@@ -1052,7 +1052,7 @@ export default function Layout({ children }) {
 					</h3>
 				
 									<p class="elementor-icon-box-description">
-						0964.822.438					</p>
+						<a href="https://zalo.me/0964822438" target="_blank" style="color: inherit; text-decoration: none;">0964.822.438</a>					</p>
 				
 			</div>
 			

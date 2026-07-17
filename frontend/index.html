@@ -478,7 +478,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         flex-wrap: nowrap !important;
         width: auto !important;
         right: 20px !important;
-        bottom: 20px !important;
+        bottom: 90px !important;
     }
     .elementor-element-73b1d230, .elementor-element-767bd2b9 {
         width: auto !important;
@@ -487,6 +487,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .elementor-element-73b1d230 .elementor-widget-icon, .elementor-element-767bd2b9 .elementor-widget-icon {
         text-align: center !important;
+    }
+    /* Fix Zalo popup layout on mobile */
+    .elementor-2422 .elementor-widget-icon-box .elementor-icon-box-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 15px !important;
+    }
+    .elementor-2422 .elementor-icon-box-icon {
+        margin: 0 !important;
+    }
+    .elementor-2422 .elementor-icon-box-content {
+        text-align: left !important;
     }
     /* Hide the text "Zalo" and "Liên hệ" on mobile to keep icons small, if desired */
     .elementor-element-73b1d230 .elementor-widget-heading, .elementor-element-767bd2b9 .elementor-widget-heading {
