@@ -84,6 +84,12 @@ export default function Layout({ children }) {
                 color: #555 !important;
             }
         }
+
+        @media (min-width: 768px) {
+            body .elementor-element-75b9e865.elementor-element-75b9e865 {
+                display: none !important;
+            }
+        }
       `;
       document.head.appendChild(style);
     }
