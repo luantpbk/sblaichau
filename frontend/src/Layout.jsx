@@ -1021,7 +1021,19 @@ export default function Layout({ children }) {
 					<button type="submit" class="elementor-button elementor-size-sm">
 						<span >
 															<span class=" elementor-button-icon">
-																			<div data-elementor-type="popup" data-elementor-id="2422" class="elementor elementor-2422 elementor-location-popup" data-elementor-settings="{&quot;entrance_animation&quot;:&quot;fadeInRight&quot;,&quot;exit_animation&quot;:&quot;fadeInRight&quot;,&quot;entrance_animation_duration&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:1.2,&quot;sizes&quot;:[]},&quot;a11y_navigation&quot;:&quot;yes&quot;,&quot;timing&quot;:[]}" data-elementor-post-type="elementor_library">
+																										</span>
+																						<span class="elementor-button-text">Send</span>
+													</span>
+					</button>
+				</div>
+			</div>
+		</form>
+				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+				<div data-elementor-type="popup" data-elementor-id="2422" class="elementor elementor-2422 elementor-location-popup" data-elementor-settings="{&quot;entrance_animation&quot;:&quot;fadeInRight&quot;,&quot;exit_animation&quot;:&quot;fadeInRight&quot;,&quot;entrance_animation_duration&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:1.2,&quot;sizes&quot;:[]},&quot;a11y_navigation&quot;:&quot;yes&quot;,&quot;timing&quot;:[]}" data-elementor-post-type="elementor_library">
 			<div class="elementor-element elementor-element-5efa70e e-con-full e-flex e-con e-child" data-id="5efa70e" data-element_type="container">
 				<div class="elementor-element elementor-element-cbe23e2 elementor-position-left elementor-vertical-align-middle elementor-mobile-position-left elementor-vertical-align-middle elementor-view-default elementor-widget elementor-widget-icon-box" data-id="cbe23e2" data-element_type="widget" data-widget_type="icon-box.default">
 				<div class="elementor-widget-container">
