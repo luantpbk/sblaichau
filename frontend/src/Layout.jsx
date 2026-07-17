@@ -84,100 +84,10 @@ export default function Layout({ children }) {
                 color: #555 !important;
             }
         }
-
-        @media (min-width: 768px) {
-            /* Hide the mobile bottom sticky menu */
+        @media (min-width: 768px) {
             body .elementor-element-75b9e865.elementor-element-75b9e865 {
                 display: none !important;
             }
-        }
-        
-        /* Force Zalo & Contact bar to look exactly like a mobile bottom bar on ALL screens */
-        body .elementor-element-703e5411 {
-            position: fixed !important;
-            bottom: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            z-index: 999998 !important;
-            background: #22a349 !important;
-            display: flex !important;
-            flex-direction: row !important;
-            justify-content: center !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        
-        body .elementor-element-38d72dc {
-            display: flex !important;
-            flex-direction: row !important;
-            width: 100% !important;
-            max-width: 800px !important; /* Limit width on ultra-wide screens */
-            margin: 0 auto !important;
-            padding: 0 !important;
-            background: transparent !important;
-            position: relative !important; /* override fixed if it was fixed */
-            bottom: auto !important;
-        }
-        
-        /* The two buttons (Zalo & Email) */
-        body .elementor-element-38d72dc > .e-con-child {
-            flex: 1 !important;
-            display: flex !important;
-            flex-direction: row !important;
-            align-items: center !important;
-            justify-content: center !important;
-            gap: 10px !important;
-            padding: 12px 10px !important;
-            border-right: 1px solid rgba(255,255,255,0.2) !important;
-            background: transparent !important;
-            margin: 0 !important;
-            cursor: pointer !important;
-        }
-        body .elementor-element-38d72dc > .e-con-child:last-child {
-            border-right: none !important;
-        }
-        
-        /* Icon styles */
-        body .elementor-element-38d72dc .elementor-widget-icon {
-            padding: 0 !important;
-            margin: 0 !important;
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-        }
-        body .elementor-element-38d72dc .elementor-icon {
-            background: transparent !important;
-            border-radius: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: auto !important;
-            height: auto !important;
-        }
-        body .elementor-element-38d72dc .elementor-icon svg {
-            fill: #fff !important;
-            width: 24px !important;
-            height: 24px !important;
-            display: block !important;
-        }
-        
-        /* Text styles */
-        body .elementor-element-38d72dc .elementor-widget-heading {
-            display: block !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        body .elementor-element-38d72dc .elementor-heading-title {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        body .elementor-element-38d72dc .elementor-heading-title a {
-            color: #fff !important;
-            font-size: 16px !important;
-            font-weight: 600 !important;
-            text-decoration: none !important;
         }
       `;
       document.head.appendChild(style);
