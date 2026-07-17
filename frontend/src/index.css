@@ -149,16 +149,25 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
 }
 
 /* --- FIX ZALO & MAIL POPUPS ON MOBILE --- */
-/* The popup overlay and dialog box */
+/* Ensure proper centering on the dialog content and NOT on the inner element */
 #elementor-popup-modal-2422 .dialog-widget-content,
 #elementor-popup-modal-658 .dialog-widget-content {
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
     width: 90vw !important;
     max-width: 400px !important;
     border-radius: 15px !important;
     background-color: #ffffff !important;
     box-shadow: 0 5px 25px rgba(0,0,0,0.2) !important;
     padding: 20px !important;
-    margin: auto !important;
+}
+
+/* Fix rogue transform applied to the wrong element */
+.elementor-2422 .elementor-element.elementor-element-cbe23e2 {
+    transform: none !important;
+    left: auto !important;
 }
 
 /* The inner container holding the icon boxes (Zalo popup) */
