@@ -1141,6 +1141,33 @@ var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"
 
 `;
 
+  // Aggressive string replacement for the entire Layout
+  const forceReplace = (str) => {
+      let res = str;
+      res = res.replace(/[a-zA-Z0-9._%+-]+@weltrus\.com/gi, 'info@sblaichau.vn');
+      res = res.replace(/support@sblaichau\.vn/gi, 'info@sblaichau.vn');
+      res = res.replace(/sales@weltrus\.com/gi, 'info@sblaichau.vn');
+      
+      const phone = '0964.822.438';
+      res = res.replace(/\+86\s*181\s*5738\s*8806|0573-86221160/gi, phone);
+      res = res.replace(/400\s*900\s*8856/gi, phone);
+      res = res.replace(/400-096-8566/gi, phone);
+      res = res.replace(/4000968566/gi, phone);
+      res = res.replace(/0986\.072\.277/gi, phone);
+      res = res.replace(/0986072277/gi, phone);
+      
+      res = res.replace(/Điện thoại\/WhatsApp/gi, 'Điện thoại/Zalo');
+      res = res.replace(/WhatsApp/gi, 'Zalo');
+      res = res.replace(/wa\.me\/\+?\d+/gi, 'zalo.me/0964822438');
+      res = res.replace(/api\.whatsapp\.com\/send\?phone=\+?\d+/gi, 'zalo.me/0964822438');
+      
+      return res;
+  };
+  
+  finalHeader = forceReplace(finalHeader);
+  finalPreMain = forceReplace(finalPreMain);
+  finalFooter = forceReplace(finalFooter);
+
   // Apply dynamic footer settings
   finalFooter = finalFooter.replace(/0964\.822\.438/g, getSetting('footer_phone1', '0964.822.438'));
   finalFooter = finalFooter.replace(/0986\.072\.277/g, getSetting('footer_phone2', '0986.072.277'));
