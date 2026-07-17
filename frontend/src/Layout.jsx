@@ -86,9 +86,62 @@ export default function Layout({ children }) {
         }
 
         @media (min-width: 768px) {
-            body .elementor-element-75b9e865.elementor-element-75b9e865,
-            body .elementor-element-703e5411 {
+            /* Hide the mobile bottom sticky menu */
+            body .elementor-element-75b9e865.elementor-element-75b9e865 {
                 display: none !important;
+            }
+
+            /* Force Zalo & Contact to be neat floating icons on Tablet & Desktop */
+            body .elementor-element-38d72dc {
+                position: fixed !important;
+                right: 30px !important;
+                bottom: 30px !important;
+                left: auto !important;
+                top: auto !important;
+                width: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 15px !important;
+                background: transparent !important;
+                z-index: 999999 !important;
+            }
+            body .elementor-element-38d72dc > .e-con {
+                background: transparent !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none !important;
+            }
+            /* Hide the text labels "Zalo" / "Liên hệ" */
+            body .elementor-element-38d72dc .elementor-widget-heading {
+                display: none !important;
+            }
+            /* Style the icon wrapper as a circular button */
+            body .elementor-element-38d72dc .elementor-widget-icon {
+                background-color: #22a349 !important;
+                border-radius: 50% !important;
+                width: 50px !important;
+                height: 50px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+            body .elementor-element-38d72dc .elementor-widget-icon:hover {
+                transform: scale(1.1);
+            }
+            /* Ensure the SVG icon is white and centered */
+            body .elementor-element-38d72dc .elementor-icon {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 0 !important;
+            }
+            body .elementor-element-38d72dc .elementor-icon svg {
+                fill: #fff !important;
+                width: 25px !important;
+                height: 25px !important;
             }
         }
       `;
