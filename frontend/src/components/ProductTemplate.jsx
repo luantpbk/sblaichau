@@ -6,7 +6,7 @@ export default function ProductTemplate({ data }) {
   );
 
   if (data.content && data.content.trim().length > 0) {
-      return <div className="category-content-description full-elementor-page" dangerouslySetInnerHTML={{ __html: data.content }} />;
+      return <div className="elementor elementor-1005 elementor-location-single category-content-description full-elementor-page" dangerouslySetInnerHTML={{ __html: data.content }} />;
   }
 
   return (
