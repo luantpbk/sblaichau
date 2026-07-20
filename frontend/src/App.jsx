@@ -148,8 +148,21 @@ export default function App() {
         }
         setData({ type: res.data.type, data: res.data });
         
-        if (res.data.type === 'product') {
-            let productCssLinks = pageCssMap[path];
+        if (res.data.type === 'product' || res.data.type === 'page' || res.data.type === 'category' || res.data.type === 'solution' || res.data.type === 'case') {
+            let productCssLinks = pageCssMap[path] || [];
+            
+            // Dynamic elementor-id extraction from content
+            if (res.data.content) {
+                const match = res.data.content.match(/data-elementor-id=["'](\d+)["']/);
+                if (match) {
+                    const id = match[1];
+                    const dynamicCssUrl = `/assets/uploads/elementor/css/post-${id}.css`;
+                    if (!productCssLinks.includes(dynamicCssUrl)) {
+                        productCssLinks.push(dynamicCssUrl);
+                    }
+                }
+            }
+            
             if (!productCssLinks || productCssLinks.length === 0) {
                 // Fallback Elementor Product Single Template CSS
                 productCssLinks = [
@@ -160,6 +173,7 @@ export default function App() {
                     "/assets/uploads/elementor/css/post-658.css"
                 ];
             }
+            
             if (productCssLinks) {
                 productCssLinks.forEach(href => {
                     if (!document.querySelector(`link[href="${href}"]`)) {
