@@ -197,7 +197,7 @@ async function syncUrls() {
                 await prisma.case.upsert({
                     where: { slug: item.slug },
                     update: {
-                        name: translatedTitle,
+                        title: translatedTitle,
                         content: translatedContent,
                         imageUrl: imageUrl,
                         isTranslated: true,
@@ -205,7 +205,7 @@ async function syncUrls() {
                     },
                     create: {
                         slug: item.slug,
-                        name: translatedTitle,
+                        title: translatedTitle,
                         content: translatedContent,
                         imageUrl: imageUrl,
                         isTranslated: true,
