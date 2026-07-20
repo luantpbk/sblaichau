@@ -22,7 +22,11 @@ const urlsToSync = [
     { url: 'https://www.weltrus.com/fx10ft1044lp-2-all-in-one-liquid-cooled-ess-container-weltrus/', slug: 'fx10ft1044lp-2-all-in-one-liquid-cooled-ess-container-weltrus', type: 'product', catSlug: 'ci-ess' },
     { url: 'https://www.weltrus.com/fx20ft2170lp-2-all-in-one-liquid-cooled-ess-container-weltrus/', slug: 'fx20ft2170lp-2-all-in-one-liquid-cooled-ess-container-weltrus', type: 'product', catSlug: 'ci-ess' },
     { url: 'https://www.weltrus.com/ci-ess/commercial-industrial-ess-5mwh/', slug: 'ci-ess/commercial-industrial-ess-5mwh', type: 'product', catSlug: 'ci-ess' },
-    { url: 'https://www.weltrus.com/category/cases/vanadium-battery-energy-storage/', slug: 'cases/vanadium-battery-energy-storage', type: 'category', catSlug: null }
+    { url: 'https://www.weltrus.com/category/cases/vanadium-battery-energy-storage/', slug: 'cases/vanadium-battery-energy-storage', type: 'category', catSlug: null },
+    { url: 'https://www.weltrus.com/location%ef%bc%9aromania-250kw-1mwh/', slug: 'location-romania-250kw-1mwh', type: 'case', catSlug: 'cases/vanadium-battery-energy-storage' },
+    { url: 'https://www.weltrus.com/location%ef%bc%9akazakhstan-40kw-40kwh/', slug: 'location-kazakhstan-40kw-40kwh', type: 'case', catSlug: 'cases/vanadium-battery-energy-storage' },
+    { url: 'https://www.weltrus.com/location%ef%bc%9anetherlands-100kw-100kwh/', slug: 'location-netherlands-100kw-100kwh', type: 'case', catSlug: 'cases/vanadium-battery-energy-storage' },
+    { url: 'https://www.weltrus.com/location-singapore-500kw-2mwh/', slug: 'location-singapore-500kw-2mwh', type: 'case', catSlug: 'cases/vanadium-battery-energy-storage' }
 ];
 
 async function downloadFile(url, dest) {
@@ -54,6 +58,18 @@ async function syncUrls() {
             data: {
                 slug: 'ci-ess',
                 name: await translateText('C&I ESS'),
+                isTranslated: true
+            }
+        });
+    }
+
+    // Ensure vanadium category exists for cases
+    let vanadiumCategory = await prisma.category.findUnique({ where: { slug: 'cases/vanadium-battery-energy-storage' } });
+    if (!vanadiumCategory) {
+        vanadiumCategory = await prisma.category.create({
+            data: {
+                slug: 'cases/vanadium-battery-energy-storage',
+                name: await translateText('Vanadium battery energy storage'),
                 isTranslated: true
             }
         });
@@ -129,7 +145,20 @@ async function syncUrls() {
             console.log(`Translating content for ${item.slug}...`);
             const title = $('title').text().replace('- Weltrus Official Website-New Energy Solution Provider', '').trim();
             const translatedTitle = await translateText(title);
-            const translatedContent = await translateHtml(finalContentHtml);
+            let translatedContent = '';
+            // Don't translate or save content for the category archive page itself (it's a grid of articles)
+            if (item.type !== 'category') {
+                translatedContent = await translateHtml(finalContentHtml);
+            }
+            
+            let imageUrl = null;
+            if (item.type === 'case') {
+                // Find featured image for cases
+                const firstImg = $content('img').first().attr('src');
+                if (firstImg) {
+                    imageUrl = firstImg;
+                }
+            }
 
             // Save to DB
             if (item.type === 'product') {
@@ -154,14 +183,33 @@ async function syncUrls() {
                     where: { slug: item.slug },
                     update: {
                         name: translatedTitle,
-                        content: translatedContent,
+                        content: '', // Clear old invalid grid content
                         isTranslated: true
                     },
                     create: {
                         slug: item.slug,
                         name: translatedTitle,
-                        content: translatedContent,
+                        content: '',
                         isTranslated: true
+                    }
+                });
+            } else if (item.type === 'case') {
+                await prisma.case.upsert({
+                    where: { slug: item.slug },
+                    update: {
+                        name: translatedTitle,
+                        content: translatedContent,
+                        imageUrl: imageUrl,
+                        isTranslated: true,
+                        categoryId: vanadiumCategory.id
+                    },
+                    create: {
+                        slug: item.slug,
+                        name: translatedTitle,
+                        content: translatedContent,
+                        imageUrl: imageUrl,
+                        isTranslated: true,
+                        categoryId: vanadiumCategory.id
                     }
                 });
             }

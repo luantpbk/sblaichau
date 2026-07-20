@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function DynamicCatalog({ data }) {
-  const { name, description, content, imageUrl, products, solutions, posts } = data;
+  const { name, description, content, imageUrl, products, solutions, posts, cases, news, blogs } = data;
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 16;
 
@@ -43,7 +43,10 @@ export default function DynamicCatalog({ data }) {
   const allItems = [
     ...(products || []),
     ...(solutions || []),
-    ...(posts || [])
+    ...(posts || []),
+    ...(cases || []),
+    ...(news || []),
+    ...(blogs || [])
   ];
 
   const hasItems = allItems.length > 0;
