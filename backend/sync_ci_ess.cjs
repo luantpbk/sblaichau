@@ -76,23 +76,21 @@ async function syncUrls() {
                 }
             });
 
-            let elementorId = null;
             for (const cssUrl of cssLinks) {
                 const match = cssUrl.match(/post-(\d+)\.css/);
                 if (match) {
-                    elementorId = match[1];
-                    const localPath = path.join(__dirname, '../frontend/public/assets/uploads/elementor/css', `post-${elementorId}.css`);
+                    const id = match[1];
+                    const localPath = path.join(__dirname, '../frontend/public/assets/uploads/elementor/css', `post-${id}.css`);
                     await downloadFile(cssUrl.split('?')[0], localPath).catch(console.error);
                 }
             }
             
             // Extract content
             const contentWrapper = $('div[data-elementor-type]').first();
+            let elementorId = null;
             let rawContent = '';
             if (contentWrapper.length > 0) {
-                if (!elementorId) {
-                    elementorId = contentWrapper.attr('data-elementor-id');
-                }
+                elementorId = contentWrapper.attr('data-elementor-id');
                 rawContent = contentWrapper.parent().html() || contentWrapper.html();
             } else {
                 rawContent = $('.site-main').html() || '';
