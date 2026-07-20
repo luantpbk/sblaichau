@@ -84,9 +84,9 @@ async function syncProduct(slug, categoryId) {
                 where: { slug },
                 data: {
                     name: title,
-                    title: title,
                     imageUrl,
-                    content
+                    content,
+                    categoryId
                 }
             });
         } else {
@@ -95,13 +95,10 @@ async function syncProduct(slug, categoryId) {
                 data: {
                     slug,
                     name: title,
-                    title: title,
                     imageUrl,
                     content,
                     isTranslated: false,
-                    categories: {
-                        connect: { id: categoryId }
-                    }
+                    categoryId
                 }
             });
         }
@@ -121,8 +118,7 @@ async function main() {
         category = await prisma.category.create({
             data: {
                 slug: 'micro-inverter',
-                name: 'Micro Inverter',
-                title: 'Micro Inverter'
+                name: 'Micro Inverter'
             }
         });
     }
