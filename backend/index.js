@@ -189,12 +189,28 @@ app.get('/api/content', async (req, res) => {
   res.status(404).json({ error: 'Not found' });
 });
 
+// Helper to sanitize incoming data for Prisma
+function cleanData(data) {
+  const cleaned = { ...data };
+  delete cleaned.id;
+  delete cleaned.createdAt;
+  delete cleaned.updatedAt;
+  delete cleaned.category;
+  delete cleaned.products;
+  delete cleaned.solutions;
+  delete cleaned.news;
+  delete cleaned.blogs;
+  delete cleaned.cases;
+  if (cleaned.categoryId) cleaned.categoryId = Number(cleaned.categoryId);
+  return cleaned;
+}
+
 app.post('/api/pages', authenticateToken, requireAdmin, async (req, res) => {
-  const page = await prisma.page.create({ data: req.body });
+  const page = await prisma.page.create({ data: cleanData(req.body) });
   res.json(page);
 });
 app.put('/api/pages/:id', authenticateToken, requireAdmin, async (req, res) => {
-  const page = await prisma.page.update({ where: { id: Number(req.params.id) }, data: req.body });
+  const page = await prisma.page.update({ where: { id: Number(req.params.id) }, data: cleanData(req.body) });
   res.json(page);
 });
 app.delete('/api/pages/:id', authenticateToken, requireAdmin, async (req, res) => {
@@ -208,11 +224,11 @@ app.get('/api/categories', async (req, res) => {
   res.json(categories);
 });
 app.post('/api/categories', authenticateToken, requireAdmin, async (req, res) => {
-  const category = await prisma.category.create({ data: req.body });
+  const category = await prisma.category.create({ data: cleanData(req.body) });
   res.json(category);
 });
 app.put('/api/categories/:id', authenticateToken, requireAdmin, async (req, res) => {
-  const category = await prisma.category.update({ where: { id: Number(req.params.id) }, data: req.body });
+  const category = await prisma.category.update({ where: { id: Number(req.params.id) }, data: cleanData(req.body) });
   res.json(category);
 });
 app.delete('/api/categories/:id', authenticateToken, requireAdmin, async (req, res) => {
@@ -231,11 +247,11 @@ app.get('/api/products/:slug', async (req, res) => {
   res.json(product);
 });
 app.post('/api/products', authenticateToken, requireAdmin, async (req, res) => {
-  const product = await prisma.product.create({ data: req.body });
+  const product = await prisma.product.create({ data: cleanData(req.body) });
   res.json(product);
 });
 app.put('/api/products/:id', authenticateToken, requireAdmin, async (req, res) => {
-  const product = await prisma.product.update({ where: { id: Number(req.params.id) }, data: req.body });
+  const product = await prisma.product.update({ where: { id: Number(req.params.id) }, data: cleanData(req.body) });
   res.json(product);
 });
 app.delete('/api/products/:id', authenticateToken, requireAdmin, async (req, res) => {
@@ -254,11 +270,11 @@ app.get('/api/news/:slug', async (req, res) => {
   res.json(item);
 });
 app.post('/api/news', authenticateToken, requireAdmin, async (req, res) => {
-  const item = await prisma.news.create({ data: req.body });
+  const item = await prisma.news.create({ data: cleanData(req.body) });
   res.json(item);
 });
 app.put('/api/news/:id', authenticateToken, requireAdmin, async (req, res) => {
-  const item = await prisma.news.update({ where: { id: Number(req.params.id) }, data: req.body });
+  const item = await prisma.news.update({ where: { id: Number(req.params.id) }, data: cleanData(req.body) });
   res.json(item);
 });
 app.delete('/api/news/:id', authenticateToken, requireAdmin, async (req, res) => {
@@ -277,11 +293,11 @@ app.get('/api/blogs/:slug', async (req, res) => {
   res.json(item);
 });
 app.post('/api/blogs', authenticateToken, requireAdmin, async (req, res) => {
-  const item = await prisma.blog.create({ data: req.body });
+  const item = await prisma.blog.create({ data: cleanData(req.body) });
   res.json(item);
 });
 app.put('/api/blogs/:id', authenticateToken, requireAdmin, async (req, res) => {
-  const item = await prisma.blog.update({ where: { id: Number(req.params.id) }, data: req.body });
+  const item = await prisma.blog.update({ where: { id: Number(req.params.id) }, data: cleanData(req.body) });
   res.json(item);
 });
 app.delete('/api/blogs/:id', authenticateToken, requireAdmin, async (req, res) => {
@@ -300,11 +316,11 @@ app.get('/api/cases/:slug', async (req, res) => {
   res.json(item);
 });
 app.post('/api/cases', authenticateToken, requireAdmin, async (req, res) => {
-  const item = await prisma.case.create({ data: req.body });
+  const item = await prisma.case.create({ data: cleanData(req.body) });
   res.json(item);
 });
 app.put('/api/cases/:id', authenticateToken, requireAdmin, async (req, res) => {
-  const item = await prisma.case.update({ where: { id: Number(req.params.id) }, data: req.body });
+  const item = await prisma.case.update({ where: { id: Number(req.params.id) }, data: cleanData(req.body) });
   res.json(item);
 });
 app.delete('/api/cases/:id', authenticateToken, requireAdmin, async (req, res) => {
@@ -323,11 +339,11 @@ app.get('/api/solutions/:slug', async (req, res) => {
   res.json(solution);
 });
 app.post('/api/solutions', authenticateToken, requireAdmin, async (req, res) => {
-  const solution = await prisma.solution.create({ data: req.body });
+  const solution = await prisma.solution.create({ data: cleanData(req.body) });
   res.json(solution);
 });
 app.put('/api/solutions/:id', authenticateToken, requireAdmin, async (req, res) => {
-  const solution = await prisma.solution.update({ where: { id: Number(req.params.id) }, data: req.body });
+  const solution = await prisma.solution.update({ where: { id: Number(req.params.id) }, data: cleanData(req.body) });
   res.json(solution);
 });
 app.delete('/api/solutions/:id', authenticateToken, requireAdmin, async (req, res) => {
