@@ -104,18 +104,6 @@ export default function App() {
         });
     }
 
-    // Nếu là category (từ sidebar click sang)
-    if (path.startsWith('category/')) {
-        const catSlug = path.replace('category/', '');
-        api.get(`/categories/${catSlug}`)
-          .then(res => {
-              if (res.data.content) res.data.content = applyDynamicSettings(res.data.content);
-              setData({ type: 'category', data: res.data });
-          })
-          .catch(err => { console.error(err); setData({ type: '404' }); })
-          .finally(() => setLoading(false));
-        return;
-    }
 
     // Nếu là trang products, lấy tất cả sản phẩm
     if (path === 'products' || path === 'news' || path === 'blog' || path === 'case') {
