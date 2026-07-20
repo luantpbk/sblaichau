@@ -139,7 +139,6 @@ async function syncUrls() {
                     where: { slug: item.slug },
                     update: {
                         name: translatedTitle,
-                        title: translatedTitle,
                         content: translatedContent,
                         isTranslated: true,
                         categoryId: ciEssCategory.id
@@ -147,7 +146,6 @@ async function syncUrls() {
                     create: {
                         slug: item.slug,
                         name: translatedTitle,
-                        title: translatedTitle,
                         content: translatedContent,
                         isTranslated: true,
                         categoryId: ciEssCategory.id
@@ -158,14 +156,12 @@ async function syncUrls() {
                     where: { slug: item.slug },
                     update: {
                         name: translatedTitle,
-                        title: translatedTitle,
                         content: translatedContent,
                         isTranslated: true
                     },
                     create: {
                         slug: item.slug,
                         name: translatedTitle,
-                        title: translatedTitle,
                         content: translatedContent,
                         isTranslated: true
                     }
