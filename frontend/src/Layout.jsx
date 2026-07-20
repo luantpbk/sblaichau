@@ -184,7 +184,7 @@ export default function Layout({ children }) {
 
 <form role="search" method="get" class="ct-search-form"  action="https://www.weltrus.com/" aria-haspopup="listbox" data-live-results="thumbs">
 
-	<input type="search" class="modal-field" placeholder="Search" value="" name="s" autocomplete="off" title="Search for..." aria-label="Search for...">
+	<input type="search" class="modal-field" placeholder="Tìm kiếm" value="" name="s" autocomplete="off" title="Tìm kiếm..." aria-label="Tìm kiếm...">
 
 	<div class="ct-search-form-controls">
 		
@@ -273,7 +273,7 @@ export default function Layout({ children }) {
 </li>
 </ul>
 </li>
-<li id="menu-item-7788" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7788 animated-submenu-block" role="none"><a href="new-energy-solutions/index.html" class="ct-menu-link" role="menuitem">SOLUTIONS</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button>
+<li id="menu-item-7788" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7788 animated-submenu-block" role="none"><a href="new-energy-solutions/index.html" class="ct-menu-link" role="menuitem">Giải pháp</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button>
 <ul class="sub-menu" role="menu">
 	<li id="menu-item-7791" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7791" role="none"><a href="energy-storage-solution/index.html" class="ct-menu-link" role="menuitem">energy storage solution</a></li>
 	<li id="menu-item-7789" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7789" role="none"><a href="solution/floating-solar-solutions/index.html" class="ct-menu-link" role="menuitem">Floating Solar Solutions</a></li>
@@ -427,7 +427,7 @@ export default function Layout({ children }) {
 </li>
 </ul>
 </li>
-<li id="menu-item-7788" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7788 animated-submenu-block" role="none"><a href="new-energy-solutions/index.html" class="ct-menu-link" role="menuitem">SOLUTIONS<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"/></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+<li id="menu-item-7788" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7788 animated-submenu-block" role="none"><a href="new-energy-solutions/index.html" class="ct-menu-link" role="menuitem">Giải pháp<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"/></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
 <ul class="sub-menu" role="menu">
 	<li id="menu-item-7791" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7791" role="none"><a href="energy-storage-solution/index.html" class="ct-menu-link" role="menuitem">energy storage solution</a></li>
 	<li id="menu-item-7789" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7789" role="none"><a href="solution/floating-solar-solutions/index.html" class="ct-menu-link" role="menuitem">Floating Solar Solutions</a></li>
@@ -457,7 +457,7 @@ export default function Layout({ children }) {
 <button
 	data-toggle-panel="#search-modal"
 	class="ct-header-search ct-toggle "
-	aria-label="Search"
+	aria-label="Tìm kiếm"
 	data-label="left"
 	data-id="search">
 
@@ -967,7 +967,7 @@ export default function Layout({ children }) {
 		<a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Manage options</a>
 		<a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Manage services</a>
 		<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Manage {vendor_count} vendors</a>
-		<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/">Read more about these purposes</a>
+		<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/">Tìm hiểu thêm về các mục đích này</a>
 			</div>
 
 	<div class="cmplz-divider cmplz-footer"></div>
@@ -1041,7 +1041,7 @@ var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"ajaxurl":"
 </script>
 
 <script id="ct-scripts-js-extra">
-var ct_localizations = {"ajax_url":"https://www.weltrus.com/wp-admin/admin-ajax.php","public_url":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/","rest_url":"https://www.weltrus.com/wp-json/","search_url":"https://www.weltrus.com/search/QUERY_STRING/","show_more_text":"Show more","more_text":"More","search_live_results":"Search results","search_live_no_result":"No results","search_live_one_result":"You got %s result. Please press Tab to select it.","search_live_many_results":"You got %s results. Please press Tab to select one.","expand_submenu":"Expand dropdown menu","collapse_submenu":"Collapse dropdown menu","dynamic_js_chunks":[{"id":"blocksy_pro_micro_popups","selector":".ct-popup","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/framework/premium/static/bundle/micro-popups.js?ver=2.0.50"},{"id":"blocksy_sticky_header","selector":"header [data-sticky]","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/static/bundle/sticky.js?ver=2.0.50"}],"dynamic_styles":{"lazy_load":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/non-critical-styles.min.css?ver=2.0.50","search_lazy":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/non-critical-search-styles.min.css?ver=2.0.50","back_to_top":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/back-to-top.min.css?ver=2.0.50"},"dynamic_styles_selectors":[{"selector":".ct-header-cart, #woo-cart-panel","url":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/cart-header-element-lazy.min.css?ver=2.0.50"},{"selector":".flexy","url":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/flexy.min.css?ver=2.0.50"},{"selector":".ct-media-container[data-media-id], .ct-dynamic-media[data-media-id]","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/framework/premium/static/bundle/video-lazy.min.css?ver=2.0.50"},{"selector":"#account-modal","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/static/bundle/header-account-modal-lazy.min.css?ver=2.0.50"},{"selector":".ct-header-account","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/static/bundle/header-account-dropdown-lazy.min.css?ver=2.0.50"}]};
+var ct_localizations = {"ajax_url":"https://www.weltrus.com/wp-admin/admin-ajax.php","public_url":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/","rest_url":"https://www.weltrus.com/wp-json/","search_url":"https://www.weltrus.com/search/QUERY_STRING/","show_more_text":"Xem thêm","more_text":"Thêm","search_live_results":"Kết quả tìm kiếm","search_live_no_result":"Không có kết quả","search_live_one_result":"Có %s kết quả. Bấm Tab để chọn.","search_live_many_results":"Có %s kết quả. Bấm Tab để chọn.","expand_submenu":"Mở rộng menu","collapse_submenu":"Thu gọn menu","dynamic_js_chunks":[{"id":"blocksy_pro_micro_popups","selector":".ct-popup","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/framework/premium/static/bundle/micro-popups.js?ver=2.0.50"},{"id":"blocksy_sticky_header","selector":"header [data-sticky]","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/static/bundle/sticky.js?ver=2.0.50"}],"dynamic_styles":{"lazy_load":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/non-critical-styles.min.css?ver=2.0.50","search_lazy":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/non-critical-search-styles.min.css?ver=2.0.50","back_to_top":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/back-to-top.min.css?ver=2.0.50"},"dynamic_styles_selectors":[{"selector":".ct-header-cart, #woo-cart-panel","url":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/cart-header-element-lazy.min.css?ver=2.0.50"},{"selector":".flexy","url":"https://www.weltrus.com/wp-content/themes/blocksy/static/bundle/flexy.min.css?ver=2.0.50"},{"selector":".ct-media-container[data-media-id], .ct-dynamic-media[data-media-id]","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/framework/premium/static/bundle/video-lazy.min.css?ver=2.0.50"},{"selector":"#account-modal","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/static/bundle/header-account-modal-lazy.min.css?ver=2.0.50"},{"selector":".ct-header-account","url":"https://www.weltrus.com/wp-content/plugins/blocksy-companion-pro/static/bundle/header-account-dropdown-lazy.min.css?ver=2.0.50"}]};
 //# sourceURL=ct-scripts-js-extra
 </script>
 <script id="ct-scripts-js" src="wp-content/themes/blocksy/static/bundle/main6ed1.js?ver=2.0.50"></script>
