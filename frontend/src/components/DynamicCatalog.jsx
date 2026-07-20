@@ -64,6 +64,75 @@ export default function DynamicCatalog({ data }) {
 
   const isFullElementorPage = content && content.includes('data-elementor-type="wp-page"');
 
+  useEffect(() => {
+      if (isFullElementorPage) {
+          const carouselContainers = document.querySelectorAll('.product-carousel');
+          carouselContainers.forEach(carousel => {
+              if (carousel.hasAttribute('data-initialized')) return;
+              carousel.setAttribute('data-initialized', 'true');
+              
+              const container = carousel.querySelector('.carousel-container');
+              const pages = carousel.querySelectorAll('.carousel-page');
+              const dots = carousel.querySelectorAll('.carousel-dot');
+              const prevBtn = carousel.querySelector('.carousel-arrow.prev');
+              const nextBtn = carousel.querySelector('.carousel-arrow.next');
+              
+              if (!container || !pages.length) return;
+              
+              let currentPage = 0;
+              const totalPages = pages.length;
+              
+              const updateCarousel = () => {
+                  container.style.transform = `translateX(-${currentPage * 100}%)`;
+                  dots.forEach((dot, index) => {
+                      if (index === currentPage) {
+                          dot.classList.add('active');
+                      } else {
+                          dot.classList.remove('active');
+                      }
+                  });
+              };
+              
+              if (prevBtn) {
+                  prevBtn.addEventListener('click', (e) => {
+                      e.preventDefault();
+                      currentPage = (currentPage - 1 + totalPages) % totalPages;
+                      updateCarousel();
+                  });
+              }
+              
+              if (nextBtn) {
+                  nextBtn.addEventListener('click', (e) => {
+                      e.preventDefault();
+                      currentPage = (currentPage + 1) % totalPages;
+                      updateCarousel();
+                  });
+              }
+              
+              dots.forEach(dot => {
+                  dot.addEventListener('click', (e) => {
+                      e.preventDefault();
+                      currentPage = parseInt(dot.getAttribute('data-page') || 0);
+                      updateCarousel();
+                  });
+              });
+              
+              const interval = setInterval(() => {
+                  currentPage = (currentPage + 1) % totalPages;
+                  updateCarousel();
+              }, 5000);
+              
+              carousel._carouselInterval = interval;
+          });
+      }
+      
+      return () => {
+          document.querySelectorAll('.product-carousel').forEach(carousel => {
+              if (carousel._carouselInterval) clearInterval(carousel._carouselInterval);
+          });
+      }
+  }, [content, isFullElementorPage]);
+
   if (isFullElementorPage) {
     return (
       <div className="category-content-description full-elementor-page" dangerouslySetInnerHTML={{ __html: content }} />
