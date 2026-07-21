@@ -174,6 +174,17 @@ app.get('/api/content', async (req, res) => {
              const { id, isTranslated, category, products, solutions, news, blogs, cases, ...updateData } = translated; 
              await prisma[model].update({ where: { id: item.id }, data: { ...updateData, isTranslated: true } });
              
+             if (translated.content && translated.content.includes('đang được chúng tôi cập nhật thông tin chi tiết')) {
+                 translated.content = '';
+             }
+             if (translated.products && Array.isArray(translated.products)) {
+                 translated.products.forEach(p => {
+                     if (p.content && p.content.includes('đang được chúng tôi cập nhật thông tin chi tiết')) {
+                         p.content = '';
+                     }
+                 });
+             }
+             
              return res.json({ type: model, ...translated, isTranslated: true });
           } catch(err) {
              console.error(`[LAZY-TRANSLATE] Failed to translate ${model} - ${slug}:`, err.message);
@@ -181,8 +192,19 @@ app.get('/api/content', async (req, res) => {
              // but do NOT update the DB, so it will retry next time.
              return res.json({ type: model, ...item, translationFailed: true });
           }
+      } else {
+          if (item.content && item.content.includes('đang được chúng tôi cập nhật thông tin chi tiết')) {
+              item.content = '';
+          }
+          if (item.products && Array.isArray(item.products)) {
+              item.products.forEach(p => {
+                  if (p.content && p.content.includes('đang được chúng tôi cập nhật thông tin chi tiết')) {
+                      p.content = '';
+                  }
+              });
+          }
+          return res.json({ type: model, ...item });
       }
-      return res.json({ type: model, ...item });
     }
   }
   
