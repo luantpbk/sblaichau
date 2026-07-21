@@ -128,7 +128,7 @@ function GenericList({ title, endpoint, columns }) {
     });
     
     // Fetch categories if needed
-    if (endpoint === '/products' || endpoint === '/solutions' || endpoint === '/posts') {
+    if (['/products', '/solutions', '/news', '/blogs', '/cases'].includes(endpoint)) {
        api.get('/categories').then(res => setCategories(res.data)).catch(console.error);
     }
   };
@@ -142,21 +142,63 @@ function GenericList({ title, endpoint, columns }) {
   };
 
   const handleAddNew = () => {
-    setEditingItem({});
+    setEditingItem({ _autoSlug: true });
+  };
+
+  const generateSlug = (text) => {
+    if (!text) return '';
+    return text.toString().toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[đĐ]/g, 'd')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  };
+
+  const handleTitleChange = (e) => {
+    const val = e.target.value;
+    const isNameField = 'name' in editingItem || endpoint === '/products' || endpoint === '/categories';
+    let updates = isNameField ? { name: val } : { title: val };
+    
+    if (!editingItem.id && (!editingItem.slug || editingItem._autoSlug)) {
+      updates.slug = generateSlug(val);
+      updates._autoSlug = true;
+    }
+    
+    setEditingItem({...editingItem, ...updates});
   };
 
   const handleSave = async (e) => {
     e.preventDefault();
     try {
+      let payload = { ...editingItem };
+      ['images', 'features', 'specifications', 'certifications', 'powerCards', 'sidePanels'].forEach(field => {
+        if (typeof payload[field] === 'string') {
+          try { payload[field] = JSON.parse(payload[field]); } catch (e) {}
+        }
+      });
+      
       if (editingItem.id) {
-        await api.put(`${endpoint}/${editingItem.id}`, editingItem);
+        await api.put(`${endpoint}/${editingItem.id}`, payload);
       } else {
-        await api.post(endpoint, editingItem);
+        await api.post(endpoint, payload);
       }
       setEditingItem(null);
       fetchData();
     } catch (err) {
       alert("Lỗi khi lưu: " + (err.response?.data?.error || err.message));
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (window.confirm("Bạn có chắc chắn muốn xóa mục này không? Thao tác này không thể hoàn tác.")) {
+      try {
+        await api.delete(`${endpoint}/${id}`);
+        fetchData();
+      } catch (err) {
+        alert("Lỗi khi xóa: " + (err.response?.data?.error || err.message));
+      }
     }
   };
 
@@ -189,20 +231,46 @@ function GenericList({ title, endpoint, columns }) {
             <label>
               <strong>Tiêu đề / Tên</strong>
               <input className="input" type="text" value={editingItem.title || editingItem.name || ''} 
-                onChange={e => {
-                  if ('name' in editingItem || endpoint === '/products' || endpoint === '/categories') {
-                    setEditingItem({...editingItem, name: e.target.value});
-                  } else {
-                    setEditingItem({...editingItem, title: e.target.value});
-                  }
-                }} required />
+                onChange={handleTitleChange} required />
             </label>
             <label>
               <strong>Đường dẫn (Slug)</strong>
               <input className="input" type="text" value={editingItem.slug || ''} 
-                onChange={e => setEditingItem({...editingItem, slug: e.target.value})} required />
+                onChange={e => setEditingItem({...editingItem, slug: e.target.value, _autoSlug: false})} required />
             </label>
             
+            {(endpoint === '/products' || endpoint === '/solutions' || endpoint === '/categories') && (
+              <label>
+                <strong>Mô tả ngắn (Description)</strong>
+                <textarea className="input" rows="3" value={editingItem.description || ''} 
+                  onChange={e => setEditingItem({...editingItem, description: e.target.value})} />
+              </label>
+            )}
+            
+            {(endpoint === '/pages') && (
+              <label>
+                <strong>Mô tả SEO (seoDescription)</strong>
+                <textarea className="input" rows="3" value={editingItem.seoDescription || ''} 
+                  onChange={e => setEditingItem({...editingItem, seoDescription: e.target.value})} />
+              </label>
+            )}
+
+            {(endpoint === '/news' || endpoint === '/blogs' || endpoint === '/cases') && (
+              <>
+                <label>
+                  <strong>Mô tả ngắn (Excerpt)</strong>
+                  <textarea className="input" rows="3" value={editingItem.excerpt || ''} 
+                    onChange={e => setEditingItem({...editingItem, excerpt: e.target.value})} />
+                </label>
+                <label>
+                  <strong>Ngày xuất bản (Published At)</strong>
+                  <input className="input" type="datetime-local" 
+                    value={editingItem.publishedAt ? new Date(editingItem.publishedAt).toISOString().slice(0, 16) : ''} 
+                    onChange={e => setEditingItem({...editingItem, publishedAt: e.target.value ? new Date(e.target.value).toISOString() : null})} />
+                </label>
+              </>
+            )}
+
             {(endpoint === '/products' || endpoint === '/solutions' || endpoint === '/news' || endpoint === '/blogs' || endpoint === '/cases') && (
               <label>
                 <strong>Danh mục (Category)</strong>
@@ -256,6 +324,31 @@ function GenericList({ title, endpoint, columns }) {
                 )}
               </label>
             )}
+
+            {(endpoint === '/products' || endpoint === '/solutions') && (
+              <>
+                <label>
+                  <strong>Thư viện ảnh (Images - JSON Array)</strong>
+                  <textarea className="input" rows="2" value={typeof editingItem.images === 'string' ? editingItem.images : JSON.stringify(editingItem.images || [])} 
+                    onChange={e => setEditingItem({...editingItem, images: e.target.value})} />
+                </label>
+                <label>
+                  <strong>Tính năng (Features - JSON Array)</strong>
+                  <textarea className="input" rows="2" value={typeof editingItem.features === 'string' ? editingItem.features : JSON.stringify(editingItem.features || [])} 
+                    onChange={e => setEditingItem({...editingItem, features: e.target.value})} />
+                </label>
+                <label>
+                  <strong>Thông số (Specifications - JSON Array)</strong>
+                  <textarea className="input" rows="2" value={typeof editingItem.specifications === 'string' ? editingItem.specifications : JSON.stringify(editingItem.specifications || [])} 
+                    onChange={e => setEditingItem({...editingItem, specifications: e.target.value})} />
+                </label>
+              </>
+            )}
+
+            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem', marginBottom: '0.5rem' }}>
+              <input type="checkbox" checked={editingItem.isTranslated || false} onChange={e => setEditingItem({...editingItem, isTranslated: e.target.checked})} />
+              <strong>Đã dịch tiếng Anh (isTranslated)</strong>
+            </label>
             
             <div style={{ marginTop: '1rem' }}>
               <button type="submit" className="btn btn-primary">Lưu thay đổi</button>
@@ -289,6 +382,7 @@ function GenericList({ title, endpoint, columns }) {
                     <td>
                       <div style={{ display: 'flex', gap: '0.5rem' }}>
                         <button className="btn btn-primary" style={{ padding: '0.25rem 0.5rem', fontSize: '0.875rem' }} onClick={() => handleEdit(row)}>Sửa</button>
+                        <button className="btn btn-secondary" style={{ padding: '0.25rem 0.5rem', fontSize: '0.875rem', backgroundColor: '#e74c3c', borderColor: '#c0392b', color: 'white' }} onClick={() => handleDelete(row.id)}>Xóa</button>
                       </div>
                     </td>
                   </tr>
