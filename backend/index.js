@@ -144,18 +144,20 @@ app.get('/api/content', async (req, res) => {
   const models = ['page', 'category', 'product', 'news', 'blog', 'case', 'solution'];
   
   // Clean up slug if it has prefixes like 'products/' or 'solution/'
-  const baseSlug = slug.split('/').pop();
+  // Also strip trailing /index.html or .html
+  let cleanSlug = slug.replace(/\/index\.html$/, '').replace(/\.html$/, '');
+  const baseSlug = cleanSlug.split('/').pop();
   
   for (const model of models) {
     // Try exact match first
-    let queryArgs = { where: { slug: slug || '' } };
+    let queryArgs = { where: { slug: cleanSlug || '' } };
     if (model === 'category') {
       queryArgs.include = { products: true, solutions: true, news: true, blogs: true, cases: true };
     }
     let item = await prisma[model].findUnique(queryArgs);
     
     // If not found, try base slug
-    if (!item && slug !== baseSlug) {
+    if (!item && cleanSlug !== baseSlug) {
         let baseQueryArgs = { where: { slug: baseSlug || '' } };
         if (model === 'category') {
             baseQueryArgs.include = { products: true, solutions: true, news: true, blogs: true, cases: true };

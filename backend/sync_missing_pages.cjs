@@ -68,7 +68,7 @@ async function syncItem(item) {
         });
         
         let data = {
-            name: title,
+            title,
             content,
             isTranslated: false
         };
