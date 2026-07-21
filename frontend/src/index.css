@@ -459,3 +459,15 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
     background-color: #126e42;
     color: #fff;
 }
+
+/* Fix logo vertical alignment */
+.site-branding[data-id="logo"] {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+.site-logo-container {
+  display: flex !important;
+  align-items: center !important;
+}
+

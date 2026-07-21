@@ -235,7 +235,7 @@ export default function Layout({ children }) {
 		</div>
 		<div class="ct-panel-content" data-device="desktop"><div class="ct-panel-content-inner"></div></div><div class="ct-panel-content" data-device="mobile"><div class="ct-panel-content-inner">
 <a href="index.html" class="site-logo-container" data-id="offcanvas-logo" rel="home" itemprop="url">
-			<img src="/logo.svg" alt="S&B Lai Châu" style="height: 50px; width: 100px; object-fit: contain; display: block; margin-top: 10px;" />	</a>
+			<img src="/logo.svg" alt="S&B Lai Châu" style="height: 50px; width: 100px; object-fit: contain; display: block;" />	</a>
 
 
 <nav
@@ -385,7 +385,7 @@ export default function Layout({ children }) {
 <div	class="site-branding"
 	data-id="logo"		itemscope="itemscope" itemtype="https://schema.org/Organization">
 
-			<a href="index.html" class="site-logo-container" rel="home" itemprop="url" ><img src="/logo.svg" alt="S&B Lai Châu" style="height: 50px; width: 100px; object-fit: contain; display: block; margin-top: 10px;" /></a>	
+			<a href="index.html" class="site-logo-container" rel="home" itemprop="url" ><img src="/logo.svg" alt="S&B Lai Châu" style="height: 50px; width: 100px; object-fit: contain; display: block;" /></a>	
 	</div>
 
 
@@ -479,7 +479,7 @@ export default function Layout({ children }) {
 <div	class="site-branding"
 	data-id="logo"		>
 
-			<a href="index.html" class="site-logo-container" rel="home" itemprop="url" ><img src="/logo.svg" alt="S&B Lai Châu" style="height: 50px; width: 100px; object-fit: contain; display: block; margin-top: 10px;" /></a>	
+			<a href="index.html" class="site-logo-container" rel="home" itemprop="url" ><img src="/logo.svg" alt="S&B Lai Châu" style="height: 50px; width: 100px; object-fit: contain; display: block;" /></a>	
 	</div>
 
 </div></div><div data-column="end" data-placements="1"><div data-items="primary">
@@ -686,7 +686,7 @@ export default function Layout({ children }) {
 				<div class="elementor-widget-container">
 			<style>/*! elementor - v3.21.0 - 26-05-2024 */
 .elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src\$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>						<a href="index.html">
-			<img src="/logo.svg" alt="S&B Lai Châu" style="height: 50px; width: 100px; object-fit: contain; display: block; margin-top: 10px;" />				</a>
+			<img src="/logo.svg" alt="S&B Lai Châu" style="height: 50px; width: 100px; object-fit: contain; display: block;" />				</a>
 									</div>
 				</div>
 				<div class="elementor-element elementor-element-7898fd7f elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-widget elementor-widget-text-editor" data-id="7898fd7f" data-element_type="widget" data-widget_type="text-editor.default">
