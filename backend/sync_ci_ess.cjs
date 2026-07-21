@@ -126,15 +126,37 @@ async function syncUrls() {
             }
             
             // Extract content
-            const contentWrapper = $('div[data-elementor-type]').first();
+            const validElementorWrapper = $('div[data-elementor-type]').filter((i, el) => {
+                const type = $(el).attr('data-elementor-type');
+                return !['header', 'footer', 'popup'].includes(type);
+            }).first();
+
             let elementorId = null;
             let rawContent = '';
-            if (contentWrapper.length > 0) {
-                elementorId = contentWrapper.attr('data-elementor-id');
-                rawContent = contentWrapper.parent().html() || contentWrapper.html();
+
+            if (validElementorWrapper.length > 0) {
+                elementorId = validElementorWrapper.attr('data-elementor-id');
+                rawContent = validElementorWrapper.parent().html() || validElementorWrapper.html();
             } else {
-                rawContent = $('.site-main').html() || '';
+                // Fallback for non-elementor pages (like standard WP posts)
+                if ($('article.post .entry-content').length > 0) {
+                    rawContent = $('article.post .entry-content').html();
+                } else if ($('article.post').length > 0) {
+                    rawContent = $('article.post').html();
+                } else if ($('main').length > 0) {
+                    // For category archive we might want main, but actually we don't translate category content anyway
+                    rawContent = $('main').html();
+                } else {
+                    rawContent = $('body').html();
+                }
             }
+            
+            // Clean up raw content to avoid empty spacing if it's practically empty
+            if (rawContent && rawContent.trim().length < 50 && !rawContent.includes('<img')) {
+                // It's just empty spaces or a few characters
+                rawContent = '';
+            }
+
 
             // If we still didn't find the Elementor ID, check body classes
             if (!elementorId) {
