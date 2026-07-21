@@ -57,7 +57,6 @@ async function main() {
         await fixThumbnailsForModel('News', prisma.news);
         await fixThumbnailsForModel('Blog', prisma.blog);
         await fixThumbnailsForModel('Case', prisma.case);
-        await fixThumbnailsForModel('Page', prisma.page);
     } catch (e) {
         console.error(e);
     } finally {
