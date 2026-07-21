@@ -73,7 +73,12 @@ async function syncItem(item) {
             isTranslated: false
         };
         
-        if (model === 'news' || model === 'blog' || model === 'case' || model === 'solution' || model === 'product') {
+        if (model === 'news' || model === 'blog' || model === 'case') {
+            data.imageUrl = imageUrl;
+            data.excerpt = $('meta[property="og:description"]').attr('content') || '';
+        } else if (model === 'page') {
+            data.seoDescription = $('meta[property="og:description"]').attr('content') || '';
+        } else if (model === 'solution' || model === 'product') {
             data.imageUrl = imageUrl;
             data.description = $('meta[property="og:description"]').attr('content') || '';
         }
