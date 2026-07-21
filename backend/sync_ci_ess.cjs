@@ -22,11 +22,11 @@ const urlsToSync = [
     { url: 'https://www.weltrus.com/fx10ft1044lp-2-all-in-one-liquid-cooled-ess-container-weltrus/', slug: 'fx10ft1044lp-2-all-in-one-liquid-cooled-ess-container-weltrus', type: 'product', catSlug: 'ci-ess' },
     { url: 'https://www.weltrus.com/fx20ft2170lp-2-all-in-one-liquid-cooled-ess-container-weltrus/', slug: 'fx20ft2170lp-2-all-in-one-liquid-cooled-ess-container-weltrus', type: 'product', catSlug: 'ci-ess' },
     { url: 'https://www.weltrus.com/ci-ess/commercial-industrial-ess-5mwh/', slug: 'ci-ess/commercial-industrial-ess-5mwh', type: 'product', catSlug: 'ci-ess' },
-    { url: 'https://www.weltrus.com/category/cases/vanadium-battery-energy-storage/', slug: 'cases/vanadium-battery-energy-storage', type: 'category', catSlug: null },
-    { url: 'https://www.weltrus.com/location%ef%bc%9aromania-250kw-1mwh/', slug: 'location-romania-250kw-1mwh', type: 'case', catSlug: 'cases/vanadium-battery-energy-storage' },
-    { url: 'https://www.weltrus.com/location%ef%bc%9akazakhstan-40kw-40kwh/', slug: 'location-kazakhstan-40kw-40kwh', type: 'case', catSlug: 'cases/vanadium-battery-energy-storage' },
-    { url: 'https://www.weltrus.com/location%ef%bc%9anetherlands-100kw-100kwh/', slug: 'location-netherlands-100kw-100kwh', type: 'case', catSlug: 'cases/vanadium-battery-energy-storage' },
-    { url: 'https://www.weltrus.com/location-singapore-500kw-2mwh/', slug: 'location-singapore-500kw-2mwh', type: 'case', catSlug: 'cases/vanadium-battery-energy-storage' }
+    { url: 'https://www.weltrus.com/category/cases/vanadium-battery-energy-storage/', slug: 'category/cases/vanadium-battery-energy-storage', type: 'category', catSlug: null },
+    { url: 'https://www.weltrus.com/location%ef%bc%9aromania-250kw-1mwh/', slug: 'location-romania-250kw-1mwh', type: 'case', catSlug: 'category/cases/vanadium-battery-energy-storage' },
+    { url: 'https://www.weltrus.com/location%ef%bc%9akazakhstan-40kw-40kwh/', slug: 'location-kazakhstan-40kw-40kwh', type: 'case', catSlug: 'category/cases/vanadium-battery-energy-storage' },
+    { url: 'https://www.weltrus.com/location%ef%bc%9anetherlands-100kw-100kwh/', slug: 'location-netherlands-100kw-100kwh', type: 'case', catSlug: 'category/cases/vanadium-battery-energy-storage' },
+    { url: 'https://www.weltrus.com/location-singapore-500kw-2mwh/', slug: 'location-singapore-500kw-2mwh', type: 'case', catSlug: 'category/cases/vanadium-battery-energy-storage' }
 ];
 
 async function downloadFile(url, dest) {
@@ -54,25 +54,49 @@ async function syncUrls() {
     // Ensure ci-ess category exists
     let ciEssCategory = await prisma.category.findUnique({ where: { slug: 'ci-ess' } });
     if (!ciEssCategory) {
-        ciEssCategory = await prisma.category.create({
-            data: {
-                slug: 'ci-ess',
-                name: await translateText('C&I ESS'),
-                isTranslated: true
-            }
-        });
+        try {
+            ciEssCategory = await prisma.category.create({
+                data: {
+                    slug: 'ci-ess',
+                    name: await translateText('C&I ESS') || 'C&I ESS',
+                    isTranslated: true
+                }
+            });
+            console.log('Created ciEssCategory successfully');
+        } catch (e) {
+            console.error('Failed to create ciEssCategory:', e);
+            ciEssCategory = await prisma.category.create({
+                data: {
+                    slug: 'ci-ess',
+                    name: 'C&I ESS',
+                    isTranslated: true
+                }
+            });
+        }
     }
 
     // Ensure vanadium category exists for cases
-    let vanadiumCategory = await prisma.category.findUnique({ where: { slug: 'cases/vanadium-battery-energy-storage' } });
+    let vanadiumCategory = await prisma.category.findUnique({ where: { slug: 'category/cases/vanadium-battery-energy-storage' } });
     if (!vanadiumCategory) {
-        vanadiumCategory = await prisma.category.create({
-            data: {
-                slug: 'cases/vanadium-battery-energy-storage',
-                name: await translateText('Vanadium battery energy storage'),
-                isTranslated: true
-            }
-        });
+        try {
+            vanadiumCategory = await prisma.category.create({
+                data: {
+                    slug: 'category/cases/vanadium-battery-energy-storage',
+                    name: await translateText('Vanadium battery energy storage') || 'Lưu trữ năng lượng pin Vanadium',
+                    isTranslated: true
+                }
+            });
+            console.log('Created vanadiumCategory successfully');
+        } catch (e) {
+            console.error('Failed to create vanadiumCategory:', e);
+            vanadiumCategory = await prisma.category.create({
+                data: {
+                    slug: 'category/cases/vanadium-battery-energy-storage',
+                    name: 'Lưu trữ năng lượng pin Vanadium',
+                    isTranslated: true
+                }
+            });
+        }
     }
 
     for (const item of urlsToSync) {
