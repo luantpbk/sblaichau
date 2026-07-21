@@ -23,19 +23,21 @@ export default function DynamicCatalog({ data }) {
   };
 
   const renderCard = (item) => (
-    <li key={item.id} className="product type-product status-publish instock has-post-thumbnail product-type-simple">
-        <figure>
-            <a className="ct-media-container" href={`/${item.slug}`} aria-label={item.name || item.title}>
+    <li key={item.id} className="dynamic-card">
+        <figure className="dynamic-card-figure">
+            <a href={`/${item.slug}`} aria-label={item.name || item.title}>
                 <picture>
-                    <img loading="lazy" src={getImageUrl(item)} alt={item.name || item.title} className="wp-post-image" style={{ aspectRatio: '3/4', objectFit: 'cover' }} />
+                    <img loading="lazy" src={getImageUrl(item)} alt={item.name || item.title} className="dynamic-card-image" />
                 </picture>
             </a>
         </figure>
-        <h2 className="woocommerce-loop-product__title">
-            <a className="woocommerce-LoopProduct-link woocommerce-loop-product__link" href={`/${item.slug}`}>{item.name || item.title}</a>
-        </h2>
-        <div className="ct-woo-card-actions" data-add-to-cart="auto-hide">
-            <a href={`/${item.slug}`} className="button product_type_simple" rel="nofollow">Đọc thêm</a>
+        <div className="dynamic-card-content">
+            <h2 className="dynamic-card-title">
+                <a href={`/${item.slug}`}>{item.name || item.title}</a>
+            </h2>
+            <div className="dynamic-card-actions">
+                <a href={`/${item.slug}`} className="dynamic-card-btn" rel="nofollow">Đọc thêm</a>
+            </div>
         </div>
     </li>
   );
@@ -173,7 +175,7 @@ export default function DynamicCatalog({ data }) {
 
           {hasItems && (
             <>
-              <ul data-products="type-1" className="products columns-4">
+              <ul className="dynamic-grid">
                 {currentItems.map(renderCard)}
               </ul>
               

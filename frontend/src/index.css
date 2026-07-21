@@ -371,3 +371,91 @@ body.home .ct-header .ct-menu-link { color: #23a455 !important; } body.home .ct-
 #elementor-popup-modal-658 .elementor-button:hover {
     background-color: #008f40 !important;
 }
+/* --- DYNAMIC CATALOG GRID --- */
+.dynamic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+    margin: 0;
+    list-style: none;
+}
+
+.dynamic-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.dynamic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dynamic-card-figure {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    background: #f8f9fa;
+}
+
+.dynamic-card-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.dynamic-card:hover .dynamic-card-image {
+    transform: scale(1.05);
+}
+
+.dynamic-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.dynamic-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 15px 0;
+}
+
+.dynamic-card-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.dynamic-card-title a:hover {
+    color: #178b54;
+}
+
+.dynamic-card-actions {
+    margin-top: auto;
+}
+
+.dynamic-card-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #178b54;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.dynamic-card-btn:hover {
+    background-color: #126e42;
+    color: #fff;
+}

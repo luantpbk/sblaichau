@@ -176,11 +176,53 @@ async function syncUrls() {
             }
             
             let imageUrl = null;
-            if (item.type === 'case') {
-                // Find featured image for cases
-                const firstImg = $content('img').first().attr('src');
-                if (firstImg) {
-                    imageUrl = firstImg;
+            if (item.type !== 'category') {
+                // 1. Try JSON-LD Schema first
+                $('script[type="application/ld+json"]').each((i, el) => {
+                    try {
+                        const data = JSON.parse($(el).html());
+                        if (data['@graph']) {
+                            const webpage = data['@graph'].find(d => d['@type'] === 'WebPage');
+                            if (webpage && webpage.image && webpage.image.url && !webpage.image.url.includes('logo')) {
+                                imageUrl = webpage.image.url;
+                            } else {
+                                const article = data['@graph'].find(d => d['@type'] === 'BlogPosting');
+                                if (article && article.image && article.image.url && !article.image.url.includes('logo')) {
+                                    imageUrl = article.image.url;
+                                }
+                            }
+                        }
+                    } catch(e) {}
+                });
+
+                // 2. Fallback to og:image if not logo
+                if (!imageUrl) {
+                    const ogImage = $('meta[property="og:image"]').attr('content');
+                    if (ogImage && !ogImage.includes('logo')) {
+                        imageUrl = ogImage;
+                    }
+                }
+
+                // 3. Fallback to first image in content if still missing
+                if (!imageUrl) {
+                    const firstImg = $content('img').first().attr('src');
+                    if (firstImg && !firstImg.includes('logo')) {
+                        imageUrl = firstImg;
+                    }
+                }
+                
+                // Download and map image URL to local assets
+                if (imageUrl && imageUrl.includes('weltrus.com/wp-content/uploads')) {
+                    const urlPath = new URL(imageUrl).pathname;
+                    const localPathname = urlPath.replace('/wp-content', '/assets');
+                    const localDest = path.join(__dirname, '../frontend/public', localPathname);
+                    
+                    try {
+                        await downloadFile(imageUrl, localDest);
+                        imageUrl = localPathname;
+                    } catch (e) {
+                        console.error('Error downloading featured image:', e.message);
+                    }
                 }
             }
 
