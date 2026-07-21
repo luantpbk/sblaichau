@@ -41,16 +41,25 @@ async function syncItem(item) {
         }
         
         let imageUrl = $('meta[property="og:image"]').attr('content') || '';
-        if (imageUrl) {
-            imageUrl = imageUrl.replace(/https?:\/\/(www\.)?weltrus\.com\/wp-content\//gi, '/assets/');
-        }
         
-        // Strip out header, footer, etc. from main
+        // Strip out header, footer, etc. from main first so we don't grab logo from header
         $('header').remove();
         $('footer').remove();
         $('[data-elementor-type="header"]').remove();
         $('[data-elementor-type="footer"]').remove();
         $('[data-elementor-type="popup"]').remove();
+        
+        // If og:image is the generic logo, try to find a real image in the content
+        if (!imageUrl || imageUrl.includes('logo.png') || imageUrl.includes('logo.svg')) {
+            const firstImg = $('main img').first().attr('src');
+            if (firstImg) {
+                imageUrl = firstImg;
+            }
+        }
+        
+        if (imageUrl) {
+            imageUrl = imageUrl.replace(/https?:\/\/(www\.)?weltrus\.com\/wp-content\//gi, '/assets/');
+        }
         
         let content = $('main').html() || '';
         
