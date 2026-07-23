@@ -334,8 +334,6 @@ export default function App() {
                   if (settings.mute === "yes") attrs += " muted";
                   if (settings.loop === "yes") attrs += " loop";
                   let hostUrl = settings.hosted_url.url;
-                  if (hostUrl.startsWith("/wp-content"))
-                    hostUrl = hostUrl.replace("/wp-content", "/assets");
                   videoContainer.innerHTML =
                     '<video class="elementor-video" src="' +
                     hostUrl +
@@ -418,9 +416,6 @@ export default function App() {
                 slideBg.className = "swiper-slide-bg";
                 // Some URLs from API might be root relative, we can use them directly
                 let url = img.url;
-                if (url.startsWith("/wp-content")) {
-                  url = url.replace("/wp-content", "/assets");
-                }
                 slideBg.style.backgroundImage = `url('${url}')`;
                 slideBg.style.backgroundSize = "cover";
                 slideBg.style.backgroundPosition = "center";
