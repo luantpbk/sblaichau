@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export default function Layout({ children }) {
   const [siteSettings, setSiteSettings] = useState([]);
@@ -6,16 +6,15 @@ export default function Layout({ children }) {
   const [isZaloOpen, setIsZaloOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
-  
   useEffect(() => {
     const handleZalo = () => setIsZaloOpen(true);
     const handleContact = () => setIsContactOpen(true);
-    window.addEventListener('openZaloPopup', handleZalo);
-    window.addEventListener('openContactPopup', handleContact);
+    window.addEventListener("openZaloPopup", handleZalo);
+    window.addEventListener("openContactPopup", handleContact);
 
-    if (!document.getElementById('force-mobile-menu-css')) {
-      const style = document.createElement('style');
-      style.id = 'force-mobile-menu-css';
+    if (!document.getElementById("force-mobile-menu-css")) {
+      const style = document.createElement("style");
+      style.id = "force-mobile-menu-css";
       style.innerHTML = `
         @media (max-width: 767px) {
             /* ROOT CONTAINER: Fixed to bottom, flex row */
@@ -95,78 +94,90 @@ export default function Layout({ children }) {
     }
 
     return () => {
-      window.removeEventListener('openZaloPopup', handleZalo);
-      window.removeEventListener('openContactPopup', handleContact);
+      window.removeEventListener("openZaloPopup", handleZalo);
+      window.removeEventListener("openContactPopup", handleContact);
     };
   }, []);
 
   useEffect(() => {
-    fetch('/api/settings')
-      .then(res => res.json())
-      .then(data => setSiteSettings(data))
+    fetch("/api/settings")
+      .then((res) => res.json())
+      .then((data) => setSiteSettings(data))
       .catch(console.error);
 
-    fetch('/api/categories')
-      .then(res => res.json())
-      .then(data => setCategories(data))
+    fetch("/api/categories")
+      .then((res) => res.json())
+      .then((data) => setCategories(data))
       .catch(console.error);
   }, []);
 
   const getSetting = (key, defaultVal) => {
-    const s = siteSettings.find(item => item.key === key);
+    const s = siteSettings.find((item) => item.key === key);
     return s ? s.value : defaultVal;
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const scripts = document.querySelectorAll('#root script');
-      scripts.forEach(oldScript => {
-        if (oldScript.getAttribute('data-executed')) return;
-        const isElementor = oldScript.id === 'elementor-frontend-js' || oldScript.id === 'elementor-pro-frontend-js' || 
-          (oldScript.src && oldScript.src.includes('frontend.min.js')) || 
-          (oldScript.innerHTML && oldScript.innerHTML.includes('elementorFrontendConfig')) ||
-          (oldScript.src && oldScript.src.includes('elementor'));
-          
+      const scripts = document.querySelectorAll("#root script");
+      scripts.forEach((oldScript) => {
+        if (oldScript.getAttribute("data-executed")) return;
+        const isElementor =
+          oldScript.id === "elementor-frontend-js" ||
+          oldScript.id === "elementor-pro-frontend-js" ||
+          (oldScript.src && oldScript.src.includes("frontend.min.js")) ||
+          (oldScript.innerHTML &&
+            oldScript.innerHTML.includes("elementorFrontendConfig")) ||
+          (oldScript.src && oldScript.src.includes("elementor"));
+
         if (isElementor) {
-            const newScript = document.createElement('script');
-            Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-            if (oldScript.src) newScript.src = oldScript.src;
-            else newScript.appendChild(document.createTextNode(oldScript.innerHTML));
-            newScript.setAttribute('data-executed', 'true');
-            if (oldScript.parentNode) {
-                oldScript.parentNode.replaceChild(newScript, oldScript);
-            }
+          const newScript = document.createElement("script");
+          Array.from(oldScript.attributes).forEach((attr) =>
+            newScript.setAttribute(attr.name, attr.value),
+          );
+          if (oldScript.src) newScript.src = oldScript.src;
+          else
+            newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+          newScript.setAttribute("data-executed", "true");
+          if (oldScript.parentNode) {
+            oldScript.parentNode.replaceChild(newScript, oldScript);
+          }
         }
       });
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
-  
-  const desktopCategoriesHtml = categories.map(cat => `
+  const desktopCategoriesHtml = categories
+    .map(
+      (cat) => `
 <li class="page_item page_item_has_children menu-item-has-children animated-submenu-block" role="none">
     <span class="ct-sub-menu-parent">
     <a href="/${cat.slug}" class="ct-menu-link" role="menuitem">${cat.name}</a>
     <button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
     </span>
     <ul class="sub-menu" role="menu">
-        ${cat.products && cat.products.length > 0 ? cat.products.map(p => `<li class="page_item" role="none"><a href="/${p.slug}" class="ct-menu-link" role="menuitem">${p.name}</a></li>`).join('') : '<li class="page_item"><a href="#" class="ct-menu-link">Chưa có sản phẩm</a></li>'}
+        ${cat.products && cat.products.length > 0 ? cat.products.map((p) => `<li class="page_item" role="none"><a href="/${p.slug}" class="ct-menu-link" role="menuitem">${p.name}</a></li>`).join("") : '<li class="page_item"><a href="#" class="ct-menu-link">Chưa có sản phẩm</a></li>'}
     </ul>
 </li>
-  `).join('');
+  `,
+    )
+    .join("");
 
-  const mobileCategoriesHtml = categories.map(cat => `
+  const mobileCategoriesHtml = categories
+    .map(
+      (cat) => `
 <li class="page_item page_item_has_children menu-item-has-children" role="none">
     <span class="ct-sub-menu-parent">
         <a href="/${cat.slug}" class="ct-menu-link" role="menuitem">${cat.name}</a>
         <button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button>
     </span>
     <ul class="sub-menu" role="menu">
-        ${cat.products && cat.products.length > 0 ? cat.products.map(p => `<li class="page_item" role="none"><a href="/${p.slug}" class="ct-menu-link" role="menuitem">${p.name}</a></li>`).join('') : '<li class="page_item"><a href="#" class="ct-menu-link">Chưa có sản phẩm</a></li>'}
+        ${cat.products && cat.products.length > 0 ? cat.products.map((p) => `<li class="page_item" role="none"><a href="/${p.slug}" class="ct-menu-link" role="menuitem">${p.name}</a></li>`).join("") : '<li class="page_item"><a href="#" class="ct-menu-link">Chưa có sản phẩm</a></li>'}
     </ul>
 </li>
-  `).join('');
-
+  `,
+    )
+    .join("");
 
   let finalPreMain = `
 
@@ -533,12 +544,12 @@ export default function Layout({ children }) {
 						<div class="elementor-icon-box-content">
 
 									<h3 class="elementor-icon-box-title">
-						<a href="https://zalo.me/0964822438" target="_blank" >
+						<a href="https://zalo.me/0857688626" target="_blank" >
 							Zalo						</a>
 					</h3>
 				
 									<p class="elementor-icon-box-description">
-						0964.822.438					</p>
+						0857.688.626					</p>
 				
 			</div>
 			
@@ -834,14 +845,14 @@ export default function Layout({ children }) {
 				<div class="elementor-element elementor-element-1fb2d0b8 elementor-view-default elementor-widget elementor-widget-icon" data-id="1fb2d0b8" data-element_type="widget" data-widget_type="icon.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-icon-wrapper">
-			<a class="elementor-icon" href="tel:0964822438">
+			<a class="elementor-icon" href="tel:0857688626">
 			<svg aria-hidden="true" class="e-font-icon-svg e-fas-phone-alt" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path></svg>			</a>
 		</div>
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-65abf447 elementor-widget elementor-widget-heading" data-id="65abf447" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default"><a href="tel:0964822438">Phone</a></h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default"><a href="tel:0857688626">Phone</a></h2>		</div>
 				</div>
 				</div>
 				</div>
@@ -1149,41 +1160,63 @@ var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"
 
   // Aggressive string replacement for the entire Layout
   const forceReplace = (str) => {
-      let res = str;
-      res = res.replace(/[a-zA-Z0-9._%+-]+@weltrus\.com/gi, 'info@sblaichau.vn');
-      res = res.replace(/support@sblaichau\.vn/gi, 'info@sblaichau.vn');
-      res = res.replace(/sales@weltrus\.com/gi, 'info@sblaichau.vn');
-      
-      const phone = '0964.822.438';
-      res = res.replace(/\+86\s*181\s*5738\s*8806|0573-86221160/gi, phone);
-      res = res.replace(/\+?86[- ]*137[- ]*3550[- ]*2672/gi, phone);
-      res = res.replace(/\+86-?13735502672/gi, phone);
-      res = res.replace(/400\s*900\s*8856/gi, phone);
-      res = res.replace(/400-096-8566/gi, phone);
-      res = res.replace(/4000968566/gi, phone);
-      res = res.replace(/0986\.072\.277/gi, phone);
-      res = res.replace(/0986072277/gi, phone);
-      
-      res = res.replace(/Điện thoại\/WhatsApp/gi, 'Điện thoại/Zalo');
-      res = res.replace(/WhatsApp/gi, 'Zalo');
-      res = res.replace(/wa\.me\/\+?\d+/gi, 'zalo.me/0964822438');
-      res = res.replace(/api\.whatsapp\.com\/send\?phone=\+?\d+/gi, 'zalo.me/0964822438');
-      
-      return res;
+    let res = str;
+    res = res.replace(/[a-zA-Z0-9._%+-]+@weltrus\.com/gi, "info@sblaichau.vn");
+    res = res.replace(/support@sblaichau\.vn/gi, "info@sblaichau.vn");
+    res = res.replace(/sales@weltrus\.com/gi, "info@sblaichau.vn");
+
+    const phone = "0857.688.626";
+    res = res.replace(/\+86\s*181\s*5738\s*8806|0573-86221160/gi, phone);
+    res = res.replace(/\+?86[- ]*137[- ]*3550[- ]*2672/gi, phone);
+    res = res.replace(/\+86-?13735502672/gi, phone);
+    res = res.replace(/400\s*900\s*8856/gi, phone);
+    res = res.replace(/400-096-8566/gi, phone);
+    res = res.replace(/4000968566/gi, phone);
+    res = res.replace(/0986\.072\.277/gi, phone);
+    res = res.replace(/0986072277/gi, phone);
+
+    res = res.replace(/Điện thoại\/WhatsApp/gi, "Điện thoại/Zalo");
+    res = res.replace(/WhatsApp/gi, "Zalo");
+    res = res.replace(/wa\.me\/\+?\d+/gi, "zalo.me/0857688626");
+    res = res.replace(
+      /api\.whatsapp\.com\/send\?phone=\+?\d+/gi,
+      "zalo.me/0857688626",
+    );
+
+    return res;
   };
-  
+
   finalHeader = forceReplace(finalHeader);
   finalPreMain = forceReplace(finalPreMain);
   finalFooter = forceReplace(finalFooter);
 
   // Apply dynamic footer settings
-  finalFooter = finalFooter.replace(/0964\.822\.438/g, getSetting('footer_phone1', '0964.822.438'));
-  finalFooter = finalFooter.replace(/0986\.072\.277/g, getSetting('footer_phone2', '0986.072.277'));
-  finalFooter = finalFooter.replace(/support@sblaichau\.vn/g, getSetting('footer_email', 'info@sblaichau.vn'));
-  
+  finalFooter = finalFooter.replace(
+    /0964\.822\.438/g,
+    getSetting("footer_phone1", "0857.688.626"),
+  );
+  finalFooter = finalFooter.replace(
+    /0986\.072\.277/g,
+    getSetting("footer_phone2", "0986.072.277"),
+  );
+  finalFooter = finalFooter.replace(
+    /support@sblaichau\.vn/g,
+    getSetting("footer_email", "info@sblaichau.vn"),
+  );
+
   // Replace the SBLaiChau text h1 logo with actual image tag
-  finalFooter = finalFooter.replace(/<picture>.*?<h1 style="color:#0068ff; margin:0; font-size:24px; font-weight:bold;">SBLaiCh[aÁÂ]u<\/h1><\/picture>/gi, '<img src="' + getSetting('footer_logo', '/assets/uploads/2024/07/logo.png') + '" alt="SB Lai Châu" style="max-height: 50px; width: auto;" />');
-  finalFooter = finalFooter.replace(/<h1 style="color:#0068ff; margin:0; font-size:24px; font-weight:bold;">SBLaiCh[aÁÂ]u<\/h1>/gi, '<img src="' + getSetting('footer_logo', '/assets/uploads/2024/07/logo.png') + '" alt="SB Lai Châu" style="max-height: 50px; width: auto;" />');
+  finalFooter = finalFooter.replace(
+    /<picture>.*?<h1 style="color:#0068ff; margin:0; font-size:24px; font-weight:bold;">SBLaiCh[aÁÂ]u<\/h1><\/picture>/gi,
+    '<img src="' +
+      getSetting("footer_logo", "/assets/uploads/2024/07/logo.png") +
+      '" alt="SB Lai Châu" style="max-height: 50px; width: auto;" />',
+  );
+  finalFooter = finalFooter.replace(
+    /<h1 style="color:#0068ff; margin:0; font-size:24px; font-weight:bold;">SBLaiCh[aÁÂ]u<\/h1>/gi,
+    '<img src="' +
+      getSetting("footer_logo", "/assets/uploads/2024/07/logo.png") +
+      '" alt="SB Lai Châu" style="max-height: 50px; width: auto;" />',
+  );
 
   return (
     <>
@@ -1197,71 +1230,296 @@ var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"
       <div dangerouslySetInnerHTML={{ __html: finalFooter }} />
       {/* Native React Popups */}
       {isContactOpen && (
-  <div id="elementor-popup-modal-658" className="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-popup-modal" style={{ display: 'flex', zIndex: 9999 }}>
-      <div className="dialog-widget-overlay dialog-lightbox-widget-overlay" onClick={() => setIsContactOpen(false)} style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.8)' }}></div>
-      <div className="dialog-widget-content dialog-lightbox-widget-content animated">
-          <div className="dialog-close-button dialog-lightbox-close-button" onClick={() => setIsContactOpen(false)} style={{ position: 'absolute', top: 15, right: 15, cursor: 'pointer', fontSize: 28, zIndex: 10, color: '#666' }}>&times;</div>
-          <div className="elementor-658">
-              <h2 className="elementor-heading-title" style={{ borderLeft: '5px solid #00b050', paddingLeft: 10, textAlign: 'left', marginBottom: 15 }}>Liên hệ chuyên gia</h2>
+        <div
+          id="elementor-popup-modal-658"
+          className="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-popup-modal"
+          style={{ display: "flex", zIndex: 9999 }}
+        >
+          <div
+            className="dialog-widget-overlay dialog-lightbox-widget-overlay"
+            onClick={() => setIsContactOpen(false)}
+            style={{
+              position: "fixed",
+              inset: 0,
+              backgroundColor: "rgba(0,0,0,0.8)",
+            }}
+          ></div>
+          <div className="dialog-widget-content dialog-lightbox-widget-content animated">
+            <div
+              className="dialog-close-button dialog-lightbox-close-button"
+              onClick={() => setIsContactOpen(false)}
+              style={{
+                position: "absolute",
+                top: 15,
+                right: 15,
+                cursor: "pointer",
+                fontSize: 28,
+                zIndex: 10,
+                color: "#666",
+              }}
+            >
+              &times;
+            </div>
+            <div className="elementor-658">
+              <h2
+                className="elementor-heading-title"
+                style={{
+                  borderLeft: "5px solid #00b050",
+                  paddingLeft: 10,
+                  textAlign: "left",
+                  marginBottom: 15,
+                }}
+              >
+                Liên hệ chuyên gia
+              </h2>
               <div className="elementor-widget-text-editor">
-                  <ul style={{textAlign: 'left', paddingLeft: 20, marginBottom: 20}}><li>Chúng tôi sẽ liên hệ với bạn trong vòng 12 giờ</li><li>Đừng lo, chúng tôi cũng ghét thư rác!</li></ul>
+                <ul
+                  style={{
+                    textAlign: "left",
+                    paddingLeft: 20,
+                    marginBottom: 20,
+                  }}
+                >
+                  <li>Chúng tôi sẽ liên hệ với bạn trong vòng 12 giờ</li>
+                  <li>Đừng lo, chúng tôi cũng ghét thư rác!</li>
+                </ul>
               </div>
-              <form className="elementor-form" onSubmit={(e) => { e.preventDefault(); alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ gọi lại sớm nhất.'); setIsContactOpen(false); }}>
-                  <div className="elementor-field-group" style={{ marginBottom: 15 }}>
-                      <label className="elementor-field-label" style={{ display: 'block', fontWeight: 'bold', marginBottom: 5 }}>Tên</label>
-                      <input type="text" className="elementor-field-textual" required style={{ width: '100%', padding: '10px', boxSizing: 'border-box' }} />
-                  </div>
-                  <div className="elementor-field-group" style={{ marginBottom: 15 }}>
-                      <label className="elementor-field-label" style={{ display: 'block', fontWeight: 'bold', marginBottom: 5 }}>Số điện thoại/Zalo *</label>
-                      <input type="tel" className="elementor-field-textual" required style={{ width: '100%', padding: '10px', boxSizing: 'border-box' }} />
-                  </div>
-                  <div className="elementor-field-group" style={{ marginBottom: 15 }}>
-                      <label className="elementor-field-label" style={{ display: 'block', fontWeight: 'bold', marginBottom: 5 }}>Email *</label>
-                      <input type="email" className="elementor-field-textual" required style={{ width: '100%', padding: '10px', boxSizing: 'border-box' }} />
-                  </div>
-                  <div className="elementor-field-group" style={{ marginBottom: 15 }}>
-                      <label className="elementor-field-label" style={{ display: 'block', fontWeight: 'bold', marginBottom: 5 }}>Lời nhắn</label>
-                      <textarea className="elementor-field-textual" rows="4" style={{ width: '100%', padding: '10px', boxSizing: 'border-box' }}></textarea>
-                  </div>
-                  <div className="elementor-field-group">
-                      <button type="submit" className="elementor-button" style={{ width: '100%', padding: '12px', backgroundColor: '#00b050', color: '#fff', border: 'none', borderRadius: '5px', fontWeight: 'bold', cursor: 'pointer' }}>Gửi</button>
-                  </div>
+              <form
+                className="elementor-form"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  alert(
+                    "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ gọi lại sớm nhất.",
+                  );
+                  setIsContactOpen(false);
+                }}
+              >
+                <div
+                  className="elementor-field-group"
+                  style={{ marginBottom: 15 }}
+                >
+                  <label
+                    className="elementor-field-label"
+                    style={{
+                      display: "block",
+                      fontWeight: "bold",
+                      marginBottom: 5,
+                    }}
+                  >
+                    Tên
+                  </label>
+                  <input
+                    type="text"
+                    className="elementor-field-textual"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      boxSizing: "border-box",
+                    }}
+                  />
+                </div>
+                <div
+                  className="elementor-field-group"
+                  style={{ marginBottom: 15 }}
+                >
+                  <label
+                    className="elementor-field-label"
+                    style={{
+                      display: "block",
+                      fontWeight: "bold",
+                      marginBottom: 5,
+                    }}
+                  >
+                    Số điện thoại/Zalo *
+                  </label>
+                  <input
+                    type="tel"
+                    className="elementor-field-textual"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      boxSizing: "border-box",
+                    }}
+                  />
+                </div>
+                <div
+                  className="elementor-field-group"
+                  style={{ marginBottom: 15 }}
+                >
+                  <label
+                    className="elementor-field-label"
+                    style={{
+                      display: "block",
+                      fontWeight: "bold",
+                      marginBottom: 5,
+                    }}
+                  >
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    className="elementor-field-textual"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      boxSizing: "border-box",
+                    }}
+                  />
+                </div>
+                <div
+                  className="elementor-field-group"
+                  style={{ marginBottom: 15 }}
+                >
+                  <label
+                    className="elementor-field-label"
+                    style={{
+                      display: "block",
+                      fontWeight: "bold",
+                      marginBottom: 5,
+                    }}
+                  >
+                    Lời nhắn
+                  </label>
+                  <textarea
+                    className="elementor-field-textual"
+                    rows="4"
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      boxSizing: "border-box",
+                    }}
+                  ></textarea>
+                </div>
+                <div className="elementor-field-group">
+                  <button
+                    type="submit"
+                    className="elementor-button"
+                    style={{
+                      width: "100%",
+                      padding: "12px",
+                      backgroundColor: "#00b050",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "5px",
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Gửi
+                  </button>
+                </div>
               </form>
+            </div>
           </div>
-      </div>
-  </div>
-)}
+        </div>
+      )}
 
-{isZaloOpen && (
-  <div id="elementor-popup-modal-2422" className="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-popup-modal" style={{ display: 'flex', zIndex: 9999 }}>
-      <div className="dialog-widget-overlay dialog-lightbox-widget-overlay" onClick={() => setIsZaloOpen(false)} style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.8)' }}></div>
-      <div className="dialog-widget-content dialog-lightbox-widget-content animated">
-          <div className="dialog-close-button dialog-lightbox-close-button" onClick={() => setIsZaloOpen(false)} style={{ position: 'absolute', top: 15, right: 15, cursor: 'pointer', fontSize: 28, zIndex: 10, color: '#666' }}>&times;</div>
-          <div className="elementor-2422">
+      {isZaloOpen && (
+        <div
+          id="elementor-popup-modal-2422"
+          className="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-popup-modal"
+          style={{ display: "flex", zIndex: 9999 }}
+        >
+          <div
+            className="dialog-widget-overlay dialog-lightbox-widget-overlay"
+            onClick={() => setIsZaloOpen(false)}
+            style={{
+              position: "fixed",
+              inset: 0,
+              backgroundColor: "rgba(0,0,0,0.8)",
+            }}
+          ></div>
+          <div className="dialog-widget-content dialog-lightbox-widget-content animated">
+            <div
+              className="dialog-close-button dialog-lightbox-close-button"
+              onClick={() => setIsZaloOpen(false)}
+              style={{
+                position: "absolute",
+                top: 15,
+                right: 15,
+                cursor: "pointer",
+                fontSize: 28,
+                zIndex: 10,
+                color: "#666",
+              }}
+            >
+              &times;
+            </div>
+            <div className="elementor-2422">
               <div className="elementor-element-5efa70e">
-                  <div className="elementor-widget-icon-box" style={{ textAlign: 'center', paddingTop: 20 }}>
-                      <div className="elementor-icon-box-wrapper">
-                          <div className="elementor-icon-box-icon" style={{ marginBottom: 15 }}>
-                              <a href="https://zalo.me/0964822438" target="_blank" rel="noreferrer" className="elementor-icon">
-                                  <svg aria-hidden="true" style={{ width: 60, height: 60, fill: '#0068ff' }} className="e-font-icon-svg e-fab-Zalo" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
-                              </a>
-                          </div>
-                          <div className="elementor-icon-box-content">
-                              <h3 className="elementor-icon-box-title" style={{ margin: '10px 0' }}>
-                                  <a href="https://zalo.me/0964822438" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: '#333', fontSize: 24, fontWeight: 'bold' }}>Zalo</a>
-                              </h3>
-                              <p className="elementor-icon-box-description" style={{ margin: 0 }}>
-                                  <a href="https://zalo.me/0964822438" target="_blank" rel="noreferrer" style={{color: '#666', textDecoration: 'none', fontSize: 18}}>0964.822.438</a>
-                              </p>
-                          </div>
-                      </div>
+                <div
+                  className="elementor-widget-icon-box"
+                  style={{ textAlign: "center", paddingTop: 20 }}
+                >
+                  <div className="elementor-icon-box-wrapper">
+                    <div
+                      className="elementor-icon-box-icon"
+                      style={{ marginBottom: 15 }}
+                    >
+                      <a
+                        href="https://zalo.me/0857688626"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="elementor-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          style={{ width: 60, height: 60, fill: "#0068ff" }}
+                          className="e-font-icon-svg e-fab-Zalo"
+                          viewBox="0 0 448 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+                        </svg>
+                      </a>
+                    </div>
+                    <div className="elementor-icon-box-content">
+                      <h3
+                        className="elementor-icon-box-title"
+                        style={{ margin: "10px 0" }}
+                      >
+                        <a
+                          href="https://zalo.me/0857688626"
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                            textDecoration: "none",
+                            color: "#333",
+                            fontSize: 24,
+                            fontWeight: "bold",
+                          }}
+                        >
+                          Zalo
+                        </a>
+                      </h3>
+                      <p
+                        className="elementor-icon-box-description"
+                        style={{ margin: 0 }}
+                      >
+                        <a
+                          href="https://zalo.me/0857688626"
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                            color: "#666",
+                            textDecoration: "none",
+                            fontSize: 18,
+                          }}
+                        >
+                          0857.688.626
+                        </a>
+                      </p>
+                    </div>
                   </div>
+                </div>
               </div>
+            </div>
           </div>
-      </div>
-  </div>
-)}
-
+        </div>
+      )}
     </>
   );
 }

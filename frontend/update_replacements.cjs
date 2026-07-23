@@ -1,11 +1,11 @@
-const fs = require('fs');
+const fs = require("fs");
 
-let app = fs.readFileSync('src/App.jsx', 'utf8');
+let app = fs.readFileSync("src/App.jsx", "utf8");
 
 const oldApplyDynamicSettings = `  const applyDynamicSettings = (content) => {
       if (!content) return content;
       const email = settingsRef.current.find(s => s.key === 'footer_email')?.value || 'info@sblaichau.vn';
-      const p1 = settingsRef.current.find(s => s.key === 'footer_phone1')?.value || '0964.822.438';
+      const p1 = settingsRef.current.find(s => s.key === 'footer_phone1')?.value || '0857.688.626';
       const p2 = settingsRef.current.find(s => s.key === 'footer_phone2')?.value || '0986.072.277';
       const address = settingsRef.current.find(s => s.key === 'footer_address')?.value || 'Lai Châu, Việt Nam';
       let newContent = content.replace(/https?:\\/\\/(www\\.)?weltrus\\.com\\/wp-content\\//gi, '/assets/');
@@ -20,7 +20,7 @@ const oldApplyDynamicSettings = `  const applyDynamicSettings = (content) => {
 const newApplyDynamicSettings = `  const applyDynamicSettings = (content) => {
       if (!content) return content;
       const email = 'info@sblaichau.vn';
-      const phone = '0964.822.438';
+      const phone = '0857.688.626';
       const address = settingsRef.current.find(s => s.key === 'footer_address')?.value || 'Lai Châu, Việt Nam';
       let newContent = content.replace(/https?:\\/\\/(www\\.)?weltrus\\.com\\/wp-content\\//gi, '/assets/');
       
@@ -39,8 +39,8 @@ const newApplyDynamicSettings = `  const applyDynamicSettings = (content) => {
       // Replace WhatsApp references to Zalo
       newContent = newContent.replace(/Điện thoại\\/WhatsApp/gi, 'Điện thoại/Zalo');
       newContent = newContent.replace(/WhatsApp/gi, 'Zalo');
-      newContent = newContent.replace(/wa\\.me\\/\\+?\\d+/gi, 'zalo.me/0964822438');
-      newContent = newContent.replace(/api\\.whatsapp\\.com\\/send\\?phone=\\+?\\d+/gi, 'zalo.me/0964822438');
+      newContent = newContent.replace(/wa\\.me\\/\\+?\\d+/gi, 'zalo.me/0857688626');
+      newContent = newContent.replace(/api\\.whatsapp\\.com\\/send\\?phone=\\+?\\d+/gi, 'zalo.me/0857688626');
       
       // Address and domain
       newContent = newContent.replace(/Hangzhou,\\s*China|Zhejiang\\s*Province,\\s*China/gi, address);
@@ -50,14 +50,17 @@ const newApplyDynamicSettings = `  const applyDynamicSettings = (content) => {
   };`;
 
 if (app.includes(oldApplyDynamicSettings)) {
-    app = app.replace(oldApplyDynamicSettings, newApplyDynamicSettings);
-    fs.writeFileSync('src/App.jsx', app);
-    console.log('Successfully updated App.jsx applyDynamicSettings');
+  app = app.replace(oldApplyDynamicSettings, newApplyDynamicSettings);
+  fs.writeFileSync("src/App.jsx", app);
+  console.log("Successfully updated App.jsx applyDynamicSettings");
 } else {
-    console.log('Could not find oldApplyDynamicSettings in App.jsx. Using regex fallback...');
-    // regex fallback to replace the function entirely
-    const regex = /const applyDynamicSettings = \(content\) => \{[\s\S]*?return newContent;\s*\};/;
-    app = app.replace(regex, newApplyDynamicSettings);
-    fs.writeFileSync('src/App.jsx', app);
-    console.log('Used regex fallback to update App.jsx');
+  console.log(
+    "Could not find oldApplyDynamicSettings in App.jsx. Using regex fallback...",
+  );
+  // regex fallback to replace the function entirely
+  const regex =
+    /const applyDynamicSettings = \(content\) => \{[\s\S]*?return newContent;\s*\};/;
+  app = app.replace(regex, newApplyDynamicSettings);
+  fs.writeFileSync("src/App.jsx", app);
+  console.log("Used regex fallback to update App.jsx");
 }
