@@ -49,56 +49,6 @@ export default function App() {
       .catch(console.error);
   }, []);
 
-  const applyDynamicSettings = (content) => {
-    if (!content) return content;
-    const email = "info@sblaichau.vn";
-    const phone = "0857.688.626";
-    const address =
-      settingsRef.current.find((s) => s.key === "footer_address")?.value ||
-      "Lai Châu, Việt Nam";
-    let newContent = content.replace(
-      /https?:\/\/(www\.)?weltrus\.com\/wp-content\//gi,
-      "/assets/",
-    );
-
-    // Replace all variations of old emails with info@sblaichau.vn
-    newContent = newContent.replace(/[a-zA-Z0-9._%+-]+@weltrus\.com/gi, email);
-    newContent = newContent.replace(/support@sblaichau\.vn/gi, email);
-
-    // Replace all old phone numbers
-    newContent = newContent.replace(
-      /\+86\s*181\s*5738\s*8806|0573-86221160/gi,
-      phone,
-    );
-    newContent = newContent.replace(/\+?86[- ]*137[- ]*3550[- ]*2672/gi, phone);
-    newContent = newContent.replace(/\+86-?13735502672/gi, phone);
-    newContent = newContent.replace(/400\s*900\s*8856/gi, phone);
-    newContent = newContent.replace(/400-096-8566/gi, phone);
-    newContent = newContent.replace(/4000968566/gi, phone);
-    newContent = newContent.replace(/0986\.072\.277/gi, phone);
-    newContent = newContent.replace(/0986072277/gi, phone);
-
-    // Replace WhatsApp references to Zalo
-    newContent = newContent.replace(
-      /Điện thoại\/WhatsApp/gi,
-      "Điện thoại/Zalo",
-    );
-    newContent = newContent.replace(/WhatsApp/gi, "Zalo");
-    newContent = newContent.replace(/wa\.me\/\+?\d+/gi, "zalo.me/0857688626");
-    newContent = newContent.replace(
-      /api\.whatsapp\.com\/send\?phone=\+?\d+/gi,
-      "zalo.me/0857688626",
-    );
-
-    // Address and domain
-    newContent = newContent.replace(
-      /Hangzhou,\s*China|Zhejiang\s*Province,\s*China/gi,
-      address,
-    );
-    newContent = newContent.replace(/weltrus\.com/gi, "sblaichau.vn");
-
-    return newContent;
-  };
 
   const getCleanPath = () => {
     let p = window.location.pathname;
@@ -139,7 +89,7 @@ export default function App() {
           .get(`/products`)
           .then((res) => {
             const processedProducts = res.data.map((p) => {
-              if (p.content) p.content = applyDynamicSettings(p.content);
+              // Dynamic settings no longer applied here since DB is cleaned
               return p;
             });
             setData({
@@ -168,7 +118,7 @@ export default function App() {
       .get(`/content?slug=${path}`)
       .then((res) => {
         if (res.data.content) {
-          res.data.content = applyDynamicSettings(res.data.content);
+          // Dynamic settings no longer applied here since DB is cleaned
         }
         setData({ type: res.data.type, data: res.data });
 
